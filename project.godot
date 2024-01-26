@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="ggj24"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
