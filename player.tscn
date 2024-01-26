@@ -1,28 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://5xuuty2dlkdk"]
+[gd_scene load_steps=3 format=3 uid="uid://5xuuty2dlkdk"]
 
-[ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_ibgqk"]
+[ext_resource type="PackedScene" uid="uid://dr2dytgfs0aoh" path="res://Animation.tscn" id="1_hp2fs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbiis"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cbic1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ibgqk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Player" type="CharacterBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hbiis")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-billboard = 1
-sprite_frames = SubResource("SpriteFrames_cbic1")
+[node name="Animation" parent="." instance=ExtResource("1_hp2fs")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.985064, 0.172187, 0, -0.172187, 0.985064, 0, 2.87611, 6.24937)
