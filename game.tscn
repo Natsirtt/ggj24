@@ -1,30 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d30pith2umoyx"]
+[gd_scene load_steps=2 format=3 uid="uid://d30pith2umoyx"]
 
-[ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbiis"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cbic1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_us4x3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_hbiis")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
-billboard = 1
-sprite_frames = SubResource("SpriteFrames_cbic1")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.985064, 0.172187, 0, -0.172187, 0.985064, 0, 2.87611, 6.24937)
+[node name="Player" parent="." instance=ExtResource("1_c6tpr")]
