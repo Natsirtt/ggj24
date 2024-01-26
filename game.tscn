@@ -1,7 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://d30pith2umoyx"]
+[gd_scene load_steps=6 format=3 uid="uid://d30pith2umoyx"]
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
+[ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
+lightmap_size_hint = Vector2i(502, 502)
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evbc7"]
+albedo_texture = ExtResource("1_us4x3")
+uv1_triplanar = true
+
+[sub_resource type="Environment" id="Environment_vv5aq"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_c6tpr")]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.639185, 0)
+mesh = SubResource("QuadMesh_asmqv")
+surface_material_override/0 = SubResource("StandardMaterial3D_evbc7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vv5aq")
