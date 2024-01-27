@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://d30pith2umoyx"]
+[gd_scene load_steps=11 format=3 uid="uid://d30pith2umoyx"]
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
 [ext_resource type="PackedScene" uid="uid://d4jsq0708dl2f" path="res://Ship.tscn" id="3_1pr2s"]
 [ext_resource type="PackedScene" uid="uid://bn0lba2b7kdj1" path="res://citizen.tscn" id="4_hx448"]
+[ext_resource type="PackedScene" uid="uid://chduldksk7ymn" path="res://building.tscn" id="4_ifaxb"]
 [ext_resource type="QuadMesh" uid="uid://dm4bm0pun3bub" path="res://meshes/ground.tres" id="5_1bndy"]
-[ext_resource type="PlaneMesh" uid="uid://csbic8i8myn64" path="res://Art/Environment/Houses/House_01.tres" id="5_5nskt"]
 
 [sub_resource type="Environment" id="Environment_vv5aq"]
 ambient_light_source = 2
@@ -16,11 +16,6 @@ vertices = PackedVector3Array(-2.25, -0.139187, -6.25, -0.75, -0.139187, -6.25, 
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 7), PackedInt32Array(5, 7, 6), PackedInt32Array(10, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(14, 11, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(23, 22, 21), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(31, 30, 29)]
 agent_height = 2.0
 agent_radius = 0.8
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fqj2e"]
-resource_local_to_scene = true
-resource_name = "Shape"
-size = Vector3(3.85559, 3.76831, 2.79456)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evbc7"]
 albedo_texture = ExtResource("1_us4x3")
@@ -41,20 +36,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 0, -5.11)
 
 [node name="Citizen" parent="." instance=ExtResource("4_hx448")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.8853)
-motion_mode = 1
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_uuu30")
 
-[node name="House" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, -0.832817, 0.480034, -5.11444)
-mesh = ExtResource("5_5nskt")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/House"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/House/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.634827, 1.18152, -0.516907)
-shape = SubResource("BoxShape3D_fqj2e")
+[node name="Building" parent="NavigationRegion3D" instance=ExtResource("4_ifaxb")]
 
 [node name="Ground" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.639185, 0)
