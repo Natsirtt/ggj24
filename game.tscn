@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
-[ext_resource type="PackedScene" uid="uid://d4jsq0708dl2f" path="res://Ship.tscn" id="3_1pr2s"]
-[ext_resource type="PackedScene" uid="uid://bn0lba2b7kdj1" path="res://citizen.tscn" id="4_hx448"]
-[ext_resource type="PackedScene" uid="uid://chduldksk7ymn" path="res://building.tscn" id="4_ifaxb"]
+[ext_resource type="PackedScene" path="res://Ship.tscn" id="3_1pr2s"]
+[ext_resource type="PackedScene" path="res://citizen.tscn" id="4_hx448"]
+[ext_resource type="PackedScene" path="res://building.tscn" id="4_ifaxb"]
 [ext_resource type="QuadMesh" uid="uid://dm4bm0pun3bub" path="res://meshes/ground.tres" id="5_1bndy"]
 
 [sub_resource type="Environment" id="Environment_vv5aq"]
