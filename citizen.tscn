@@ -35,5 +35,5 @@ script = ExtResource("3_yqckp")
 interactable_script = NodePath("..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 3.0
+target_desired_distance = 1.5
 debug_enabled = true
