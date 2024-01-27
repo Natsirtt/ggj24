@@ -24,6 +24,7 @@ func _process(_delta):
 		if player_info.can_afford(interactable.cost):
 			player_info.pay(interactable.cost)
 			interactable.interact(self)
+			print("Player interacted")
 			character_interacted.emit()
 
 func _physics_process(_delta):
