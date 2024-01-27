@@ -7,10 +7,12 @@ func _ready():
 	pass
 
 func _physics_process(_delta):
-	navigation.target_position = player_info.player.global_position
-	
+	if navigation.target_position.is_zero_approx():
+		navigation.target_position = player_info.player.global_position
+		await get_tree().physics_frame
+		
 	var direction = (navigation.get_next_path_position() - global_position).normalized()
-	if direction.length() > 0.01:
+	if direction.length() > 0.01 and not navigation.is_target_reached():
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
