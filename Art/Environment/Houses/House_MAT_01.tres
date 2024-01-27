@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bwgnkw8gxctlb"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dsw6dpv12p55i"]
 
 [ext_resource type="Texture2D" uid="uid://bjgtx1orvok5r" path="res://Art/Environment/Houses/Crumble_fornormal.png" id="1_hve55"]
 [ext_resource type="Texture2D" uid="uid://csmbjgdr73fnc" path="res://Art/Environment/Houses/NormalMap (1).png" id="2_rdxoo"]

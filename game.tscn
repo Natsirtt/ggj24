@@ -41,6 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.8853)
 navigation_mesh = SubResource("NavigationMesh_uuu30")
 
 [node name="Building" parent="NavigationRegion3D" instance=ExtResource("4_ifaxb")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 1.78212, 0.610711, -5.51322)
 
 [node name="Ground" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.639185, 0)

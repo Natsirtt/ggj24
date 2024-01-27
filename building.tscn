@@ -5,14 +5,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqj2e"]
 resource_local_to_scene = true
 resource_name = "Shape"
-size = Vector3(3.85559, 3.76831, 2.79456)
+size = Vector3(1.85281, 2.01376, 0.261689)
 
 [node name="Building" type="MeshInstance3D"]
-transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, -0.832817, 0.480034, -5.11444)
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("1_862ht")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.634827, 1.18152, -0.516907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0225369, 0.0592209, -0.000442207)
 shape = SubResource("BoxShape3D_fqj2e")
