@@ -1,6 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://diec8ut83dlo2"]
+[gd_scene load_steps=32 format=3 uid="uid://dr2dytgfs0aoh"]
 
+[ext_resource type="Script" path="res://AnimationHandler.gd" id="1_dqgho"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_sdt6l"]
+[ext_resource type="Texture2D" uid="uid://c506uihcmmuye" path="res://Sprites/testDeer/Deer_Happy_Run_test_0083.png" id="2_ah2aw"]
+[ext_resource type="Texture2D" uid="uid://ctg4i11l0ij05" path="res://Sprites/testDeer/Deer_Happy_Run_test_0084.png" id="3_562ph"]
+[ext_resource type="Texture2D" uid="uid://ckkp0vxm8n3ic" path="res://Sprites/testDeer/Deer_Happy_Run_test_0085.png" id="4_286q4"]
+[ext_resource type="Texture2D" uid="uid://bnnkc1tfriui6" path="res://Sprites/testDeer/Deer_Happy_Run_test_0086.png" id="5_1ykd4"]
+[ext_resource type="Texture2D" uid="uid://bccl4i7lebinp" path="res://Sprites/testDeer/Deer_Happy_Run_test_0087.png" id="6_lew3l"]
+[ext_resource type="Texture2D" uid="uid://bcn3rrp8kwbbg" path="res://Sprites/testDeer/Deer_Happy_Run_test_0088.png" id="7_vfjel"]
+[ext_resource type="Texture2D" uid="uid://b67psi2h7oayw" path="res://Sprites/testDeer/Deer_Happy_Run_test_0089.png" id="8_0wpjo"]
+[ext_resource type="Texture2D" uid="uid://dc7jfkky4vaxb" path="res://Sprites/testDeer/Deer_Happy_Run_test_0090.png" id="9_ri4n0"]
+[ext_resource type="Texture2D" uid="uid://bcgwkcsc72ry3" path="res://Sprites/testDeer/Deer_Happy_Run_test_0091.png" id="10_etafh"]
+[ext_resource type="Texture2D" uid="uid://cqlryocjyvmn2" path="res://Sprites/testDeer/Deer_Happy_Run_test_0092.png" id="11_ko8yv"]
+[ext_resource type="Texture2D" uid="uid://idlcu8fhqo3i" path="res://Sprites/testDeer/Deer_Happy_Run_test_0093.png" id="12_u8ybv"]
+[ext_resource type="Texture2D" uid="uid://btcf4m02jy2hj" path="res://Sprites/testDeer/Deer_Happy_Run_test_0094.png" id="13_dw8ve"]
+[ext_resource type="Texture2D" uid="uid://daoahjvwnfh04" path="res://Sprites/testDeer/Deer_Happy_Run_test_0095.png" id="14_54qsv"]
+[ext_resource type="Texture2D" uid="uid://chwtd570tekm5" path="res://Sprites/testDeer/Deer_Happy_Run_test_0096.png" id="15_pl8rj"]
+[ext_resource type="Texture2D" uid="uid://qvqaxns1pv45" path="res://Sprites/testDeer/Deer_Happy_Run_test_0097.png" id="16_b1421"]
+[ext_resource type="Texture2D" uid="uid://cvh4l06wt60qt" path="res://Sprites/testDeer/Deer_Happy_Run_test_0098.png" id="17_kdifv"]
+[ext_resource type="Texture2D" uid="uid://ckp85lskxek3i" path="res://Sprites/testDeer/Deer_Happy_Run_test_0099.png" id="18_56gb3"]
+[ext_resource type="Texture2D" uid="uid://blvola5xjmd5d" path="res://Sprites/testDeer/Deer_Happy_Run_test_0100.png" id="19_ak2u1"]
+[ext_resource type="Texture2D" uid="uid://bm4hd60pr74nk" path="res://Sprites/testDeer/Deer_Happy_Run_test_0101.png" id="20_m5r2c"]
+[ext_resource type="Texture2D" uid="uid://c5m1iktuix4qb" path="res://Sprites/testDeer/Deer_Happy_Run_test_0102.png" id="21_tgaa5"]
+[ext_resource type="Texture2D" uid="uid://b1qb6l4qui5vp" path="res://Sprites/testDeer/Deer_Happy_Run_test_0103.png" id="22_eg02o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbic1"]
 animations = [{
@@ -11,11 +33,177 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ImageTexture" id="ImageTexture_rw3vo"]
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-billboard = 1
+[sub_resource type="Animation" id="Animation_6r7uo"]
+resource_name = "Test"
+length = 1.0
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.133333, 1, 8.92135e-13, 0.857143, 8.92135e-13, 0.266667, 1, 2.08165e-12, 2, 2.08165e-12, 0.366667, 1, 0.172922, 1, 2.08165e-12, 0.466667, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12, 0.566667, 1, 2.08165e-12, 0.75, 2.08165e-12, 0.566767, 1, -0.137916, 0.75, 2.08165e-12, 0.733333, 1, 2.08165e-12, 2, 2.08165e-12, 1, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.133333, 1, 0, 0, -0.162999, 0.986626, 0.133433, 1, 0, 0, -0.332935, 0.94295, 0.3, 1, 0, 0, 0.225776, 0.974179, 0.433333, 1, -0.0103499, -0.0126386, 0.132842, 0.991003, 0.5, 1, 0, 0, 0.0627992, 0.998026, 0.6, 1, 0, 0, -0.159416, 0.987211, 0.833333, 1, 0, 0, 0.200548, 0.979684)
+
+[sub_resource type="Animation" id="Animation_siirk"]
+resource_name = "new_animation"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0.61376, 1.08267, 0, 0.7, 1, 0.61376, -0.122644, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, -0.862209, 0.506553, 0.4, 1, 0, 0, -0.862209, 0.506553, 0.7, 1, 0, 0, -0.862209, 0.506553)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tr2x4"]
+_data = {
+"Test": SubResource("Animation_6r7uo"),
+"new_animation": SubResource("Animation_siirk")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_al0jc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ah2aw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ah2aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_562ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_286q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1ykd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lew3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vfjel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0wpjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ri4n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_etafh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ko8yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u8ybv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dw8ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_54qsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pl8rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b1421")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kdifv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_56gb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ak2u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_m5r2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tgaa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_eg02o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_m47f6"]
+resource_name = "TestMove"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 2.08165e-12, 2.08165e-12, -0.001, 1, 0.4, 1, -0.00289411, 0.997091, 0.0652962, -0.0392056)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m06sd"]
+_data = {
+"TestMove": SubResource("Animation_m47f6")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_dqgho")
+
+[node name="Body" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.999998, 0.002, 4.15913e-12, -0.002, 0.999998, -4.16745e-12, -4.16745e-12, 4.15913e-12, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_cbic1")
-frame_progress = 0.330295
+animation = &"new_animation"
+
+[node name="Sprite3D" type="Sprite3D" parent="Body"]
+transform = Transform3D(-0.486808, 0.873509, 0, -0.873509, -0.486808, 0, 0, 0, 1, 0.61376, -0.122644, 0)
+texture = SubResource("ImageTexture_rw3vo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Sprite3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_tr2x4")
+}
+
+[node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_al0jc")
+autoplay = "Idle"
+frame_progress = 0.274468
+
+[node name="Sprite Direction" type="AnimationPlayer" parent="Body/DeerBody"]
+libraries = {
+"": SubResource("AnimationLibrary_m06sd")
+}

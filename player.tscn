@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5xuuty2dlkdk"]
 
-[ext_resource type="PackedScene" uid="uid://diec8ut83dlo2" path="res://Animation.tscn" id="1_hp2fs"]
+[ext_resource type="PackedScene" uid="uid://dr2dytgfs0aoh" path="res://Animation.tscn" id="1_hp2fs"]
 [ext_resource type="Script" path="res://player.gd" id="1_robo1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbiis"]
@@ -12,6 +12,7 @@ script = ExtResource("1_robo1")
 shape = SubResource("CapsuleShape3D_hbiis")
 
 [node name="Animation" parent="." instance=ExtResource("1_hp2fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76831, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.985064, 0.172187, 0, -0.172187, 0.985064, 0, 2.87611, 6.24937)

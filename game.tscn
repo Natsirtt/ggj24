@@ -15,7 +15,7 @@ uv1_triplanar = true
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_c6tpr")]
 
