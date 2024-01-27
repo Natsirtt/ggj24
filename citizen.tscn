@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn0lba2b7kdj1"]
+
+[ext_resource type="Script" path="res://scripts/characters/citizen.gd" id="1_40lgw"]
+[ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_qt0s1"]
+[ext_resource type="Script" path="res://interactable.gd" id="2_c3j38"]
+[ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_yqckp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vwh3h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2mbss"]
+radius = 2.0
+
+[node name="Citizen" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80568, 0, -10.0421)
+script = ExtResource("1_40lgw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vwh3h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_qt0s1")
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource("2_c3j38")
+
+[node name="InteractionShape" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("SphereShape3D_2mbss")
+
+[node name="InteractionIndicator" type="Sprite3D" parent="Interactable" node_paths=PackedStringArray("interactable_script")]
+transform = Transform3D(0.267305, 0, 0, 0, 0.470191, 0, 0, 0, 1.01035, 0, 1.34016, 0)
+texture = ExtResource("1_qt0s1")
+script = ExtResource("3_yqckp")
+interactable_script = NodePath("..")

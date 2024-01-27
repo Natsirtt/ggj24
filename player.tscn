@@ -20,6 +20,7 @@ character_node = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.985064, 0.172187, 0, -0.172187, 0.985064, 0, 2.87611, 6.24937)
+current = true
 
 [node name="InteractionZone" type="Area3D" parent="."]
 
