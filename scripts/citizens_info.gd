@@ -1,9 +1,9 @@
 extends Node
 
 enum Stage {
-	DULL,
-	LAUGHING,
-	LAUGHING_TO_DEATH,
+	TOWNIE,
+	CULTIST,
+	SACRIFICEE,
 }
 
 enum Job {

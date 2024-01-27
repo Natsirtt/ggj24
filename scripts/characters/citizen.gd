@@ -28,7 +28,7 @@ var _reserved_spot: Node3D = null
 var _speed = 0.0
 @onready var timer: Timer = $Timer
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
-var stage: citizens_info.Stage = citizens_info.Stage.DULL
+var stage: citizens_info.Stage = citizens_info.Stage.TOWNIE
 var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 
 signal character_moved(velocity)
@@ -45,6 +45,7 @@ enum JobState {
 var state_machine = {
 	citizens_info.Job.LIVE_DULL_LIFE: {
 		JobState.ENTER: func():
+			print("Entering dull life")
 			# In dull life mode, citizens roam aimlessly. So we make them pick
 			# a target position within 50 meters to slowly go to, and then wait a
 			# random amount of time before doing it again.
@@ -58,12 +59,14 @@ var state_machine = {
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
-			timer.timeout.disconnect(_roam)
+			print("Exiting dull life")
+			_disconnect_all_timer_listeners()
 			timer.stop()
 			_target = null,
 	},
 	citizens_info.Job.PRAY: {
 		JobState.ENTER: func():
+			print("Entering pray job")
 			_speed = 3.0
 			var ship = world_info.ship
 			assert(ship.has_free_praying_spot())
@@ -78,24 +81,31 @@ var state_machine = {
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
-			timer.timeout.disconnect(_pray)
+			print("Exiting pray job")
+			_disconnect_all_timer_listeners()
 			timer.stop()
 			world_info.ship.return_praying_spot(_reserved_spot)
 			_target = null,
 	},
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
+			print("Entering defense militia")
 			pass,
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
+			print("Exiting defense militia")
 			pass,
 	}
 }
 
+func _disconnect_all_timer_listeners():
+	for connection in timer.timeout.get_connections():
+		timer.timeout.disconnect(connection["callable"])
+
 func _roam():
-	# this is still biased to closer positions, but I can't be bothered right now
 	print("Starting new roam")
+	# this is still biased to closer positions, but I can't be bothered right now
 	var random_direction = maths.random_inside_unit_circle()
 	var random_distance = randf_range(min_dull_life_roam_distance, max_dull_life_roam_distance)
 	_target = Target.new(Vector3(random_direction.x * random_distance, global_position.y, random_direction.y * random_distance))
