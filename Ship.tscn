@@ -10,3 +10,36 @@ script = ExtResource("1_vwvbp")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_1youq")
+
+[node name="Praying Spots Root" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.43371, 0)
+
+[node name="PrayingSpot" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48575, 0, 0)
+
+[node name="PrayingSpot2" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08647, 0, 0)
+
+[node name="PrayingSpot3" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.00827)
+
+[node name="PrayingSpot4" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40647)
+
+[node name="PrayingSpot5" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68675, 4.76837e-07, -2.07201)
+
+[node name="PrayingSpot6" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12396, -4.76837e-07, 1.91318)
+
+[node name="PrayingSpot7" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22806, 0, 2.49409)
+
+[node name="PrayingSpot8" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55669, 0, -1.6334)
+
+[node name="PrayingSpot9" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71251, 0.271491, -3.3437)
+
+[node name="PrayingSpot10" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15759, 0, 5.80355)

@@ -32,7 +32,7 @@ size = Vector3(100, 100, 0.25)
 environment = SubResource("Environment_vv5aq")
 
 [node name="Ship" parent="." instance=ExtResource("3_1pr2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 0, -5.11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 2.0807, -5.11)
 
 [node name="Citizen" parent="." instance=ExtResource("4_hx448")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.8853)
