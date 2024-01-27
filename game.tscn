@@ -33,3 +33,4 @@ environment = SubResource("Environment_vv5aq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 0, -5.11)
 
 [node name="Citizen" parent="." instance=ExtResource("4_hx448")]
+motion_mode = 1
