@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @onready var animation_handler = $Animation
 @onready var interaction_area = $InteractionZone
@@ -12,6 +12,7 @@ const SPEED = 5.0
 func _ready():
 	interaction_area.connect("area_entered", _on_interaction_area_entered)
 	interaction_area.connect("area_exited", _on_interaction_area_exited)
+	player_info.player = self
 
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
