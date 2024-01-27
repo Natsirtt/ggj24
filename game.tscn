@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
-[ext_resource type="PackedScene" uid="uid://d4jsq0708dl2f" path="res://Ship.tscn" id="3_1pr2s"]
+[ext_resource type="PackedScene" path="res://Ship.tscn" id="3_1pr2s"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
 lightmap_size_hint = Vector2i(502, 502)

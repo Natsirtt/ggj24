@@ -181,7 +181,7 @@ animation = &"new_animation"
 transform = Transform3D(1, 4.09814e-11, 2.52474e-19, -1.11756e-10, 1, 1.85177e-19, -1.89354e-19, 1.86377e-19, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_al0jc")
 autoplay = "Idle"
-frame_progress = 0.301507
+frame_progress = 0.0559506
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {
