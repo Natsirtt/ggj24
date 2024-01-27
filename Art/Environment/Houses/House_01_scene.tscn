@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm8j4b62dhw16"]
+
+[ext_resource type="PackedScene" uid="uid://cv2kulgoewh6t" path="res://Art/Environment/Houses/House_02.fbx" id="1_khq6m"]
+
+[node name="Root Scene" instance=ExtResource("1_khq6m")]
