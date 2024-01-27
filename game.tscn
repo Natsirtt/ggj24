@@ -29,3 +29,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_evbc7")
 environment = SubResource("Environment_vv5aq")
 
 [node name="Ship" parent="." instance=ExtResource("3_1pr2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 0, -5.11)

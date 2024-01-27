@@ -1,19 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4jsq0708dl2f"]
 
+[ext_resource type="PackedScene" uid="uid://dqbwfo7y0t40n" path="res://interactable.tscn" id="1_p3hmo"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_1youq"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_pjbf8"]
-radius = 3.00433
-
 [node name="Ship" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5035, 0, -4.88813)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_1youq")
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.985682, 0, 0, 0, 0.985682, 0, 0, 0, 0.985682, 0, 0, 0)
-shape = SubResource("SphereShape3D_pjbf8")
+[node name="Interactable" parent="." instance=ExtResource("1_p3hmo")]

@@ -1,9 +1,9 @@
 extends Node3D
+
 @onready var _animated_sprite = $Body/DeerBody
 @onready var _sprite_direction = $Body/DeerBody/SpriteDirection
 @onready var isLeft = true
 @export var character_node: Node3D
-
 
 func update_velocity(velocity):
 	if velocity.length() > 0.1:

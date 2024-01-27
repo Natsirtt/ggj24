@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqbwfo7y0t40n"]
+
+[ext_resource type="Script" path="res://interactable.gd" id="1_727mp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pjbf8"]
+resource_local_to_scene = true
+resource_name = "Interaction Shape"
+radius = 3.00433
+
+[node name="Interactable" type="Area3D"]
+script = ExtResource("1_727mp")
+
+[node name="InteractionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.985682, 0, 0, 0, 0.985682, 0, 0, 0, 0.985682, 0, 0, 0)
+shape = SubResource("SphereShape3D_pjbf8")
