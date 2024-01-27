@@ -201,7 +201,7 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_al0jc")
 autoplay = "Idle"
-frame_progress = 0.274468
+frame_progress = 0.460252
 
 [node name="Sprite Direction" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {
