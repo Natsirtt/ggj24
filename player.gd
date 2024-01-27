@@ -6,7 +6,7 @@ var _interactables_in_range: Array[Interactable] = []
 
 signal character_moved(velocity)
 signal character_stopped
-signal interacted
+signal character_interacted
 
 const SPEED = 5.0
 
@@ -20,8 +20,11 @@ func _process(_delta):
 		get_tree().quit(0)
 	
 	if Input.is_action_just_pressed("interact") and _interactables_in_range.size() > 0:
-		_interactables_in_range[0].interact(self)
-		interacted.emit()
+		var interactable = _interactables_in_range[0]
+		if player_info.can_afford(interactable.cost):
+			player_info.pay(interactable.cost)
+			interactable.interact(self)
+			character_interacted.emit()
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
