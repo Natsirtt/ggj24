@@ -76,6 +76,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("24_1icb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_b1tii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8pr4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jv6k2")
+}],
+"loop": true,
+"name": &"Joke_Idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_o6y2p")
 }, {
 "duration": 1.0,
@@ -148,7 +165,7 @@ animations = [{
 "texture": ExtResource("27_jv6k2")
 }],
 "loop": false,
-"name": &"TellJoke",
+"name": &"Joke_Into",
 "speed": 30.0
 }, {
 "frames": [{
@@ -281,7 +298,7 @@ animation = &"new_animation"
 [node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
 transform = Transform3D(1, -1.47372e-10, -1.52246e-20, -8.43665e-11, 1, -8.4014e-20, 1.37041e-19, -2.00235e-19, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_al0jc")
-animation = &"TellJoke"
+animation = &"Joke_Idle"
 autoplay = "Idle"
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
