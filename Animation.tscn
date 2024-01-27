@@ -1,28 +1,52 @@
-[gd_scene load_steps=31 format=3 uid="uid://dr2dytgfs0aoh"]
+[gd_scene load_steps=55 format=3 uid="uid://dr2dytgfs0aoh"]
 
 [ext_resource type="Script" path="res://AnimationHandler.gd" id="1_dqgho"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_sdt6l"]
 [ext_resource type="Texture2D" uid="uid://c506uihcmmuye" path="res://Sprites/testDeer/Deer_Happy_Run_test_0083.png" id="2_ah2aw"]
 [ext_resource type="Texture2D" uid="uid://ctg4i11l0ij05" path="res://Sprites/testDeer/Deer_Happy_Run_test_0084.png" id="3_562ph"]
 [ext_resource type="Texture2D" uid="uid://ckkp0vxm8n3ic" path="res://Sprites/testDeer/Deer_Happy_Run_test_0085.png" id="4_286q4"]
+[ext_resource type="Texture2D" uid="uid://dvonnwd6a5h1v" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0078.png" id="4_o6y2p"]
 [ext_resource type="Texture2D" uid="uid://bnnkc1tfriui6" path="res://Sprites/testDeer/Deer_Happy_Run_test_0086.png" id="5_1ykd4"]
+[ext_resource type="Texture2D" uid="uid://0s2ap2xctds8" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0079.png" id="5_nkhry"]
 [ext_resource type="Texture2D" uid="uid://bccl4i7lebinp" path="res://Sprites/testDeer/Deer_Happy_Run_test_0087.png" id="6_lew3l"]
+[ext_resource type="Texture2D" uid="uid://bgjyvpwkljvw1" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0080.png" id="6_m1tnh"]
+[ext_resource type="Texture2D" uid="uid://bmto1h83wyjcb" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0081.png" id="7_0ao5m"]
 [ext_resource type="Texture2D" uid="uid://bcn3rrp8kwbbg" path="res://Sprites/testDeer/Deer_Happy_Run_test_0088.png" id="7_vfjel"]
 [ext_resource type="Texture2D" uid="uid://b67psi2h7oayw" path="res://Sprites/testDeer/Deer_Happy_Run_test_0089.png" id="8_0wpjo"]
+[ext_resource type="Texture2D" uid="uid://bgyl2ltpunmx4" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0082.png" id="8_rohru"]
+[ext_resource type="Texture2D" uid="uid://cijvr42i4dx18" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0083.png" id="9_72j4a"]
 [ext_resource type="Texture2D" uid="uid://dc7jfkky4vaxb" path="res://Sprites/testDeer/Deer_Happy_Run_test_0090.png" id="9_ri4n0"]
+[ext_resource type="Texture2D" uid="uid://dp3vy3moxoaq3" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0084.png" id="10_7dypx"]
 [ext_resource type="Texture2D" uid="uid://bcgwkcsc72ry3" path="res://Sprites/testDeer/Deer_Happy_Run_test_0091.png" id="10_etafh"]
 [ext_resource type="Texture2D" uid="uid://cqlryocjyvmn2" path="res://Sprites/testDeer/Deer_Happy_Run_test_0092.png" id="11_ko8yv"]
+[ext_resource type="Texture2D" uid="uid://cn1vhnfhgpymj" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0085.png" id="11_miwhl"]
+[ext_resource type="Texture2D" uid="uid://dkqtm5qf3505a" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0086.png" id="12_nkb6i"]
 [ext_resource type="Texture2D" uid="uid://idlcu8fhqo3i" path="res://Sprites/testDeer/Deer_Happy_Run_test_0093.png" id="12_u8ybv"]
+[ext_resource type="Texture2D" uid="uid://cbgn1fe47a3as" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0087.png" id="13_1g6wo"]
 [ext_resource type="Texture2D" uid="uid://btcf4m02jy2hj" path="res://Sprites/testDeer/Deer_Happy_Run_test_0094.png" id="13_dw8ve"]
 [ext_resource type="Texture2D" uid="uid://daoahjvwnfh04" path="res://Sprites/testDeer/Deer_Happy_Run_test_0095.png" id="14_54qsv"]
+[ext_resource type="Texture2D" uid="uid://bmnihkmefhao1" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0088.png" id="14_00551"]
 [ext_resource type="Texture2D" uid="uid://chwtd570tekm5" path="res://Sprites/testDeer/Deer_Happy_Run_test_0096.png" id="15_pl8rj"]
+[ext_resource type="Texture2D" uid="uid://xc4rkfwnmskr" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0089.png" id="15_yuprn"]
 [ext_resource type="Texture2D" uid="uid://qvqaxns1pv45" path="res://Sprites/testDeer/Deer_Happy_Run_test_0097.png" id="16_b1421"]
+[ext_resource type="Texture2D" uid="uid://cg587giktnuxb" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0090.png" id="16_gi7ig"]
 [ext_resource type="Texture2D" uid="uid://cvh4l06wt60qt" path="res://Sprites/testDeer/Deer_Happy_Run_test_0098.png" id="17_kdifv"]
+[ext_resource type="Texture2D" uid="uid://cl8glklikyg85" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0091.png" id="17_p486r"]
 [ext_resource type="Texture2D" uid="uid://ckp85lskxek3i" path="res://Sprites/testDeer/Deer_Happy_Run_test_0099.png" id="18_56gb3"]
+[ext_resource type="Texture2D" uid="uid://ywhgbjg2bal4" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0092.png" id="18_dq23r"]
 [ext_resource type="Texture2D" uid="uid://blvola5xjmd5d" path="res://Sprites/testDeer/Deer_Happy_Run_test_0100.png" id="19_ak2u1"]
+[ext_resource type="Texture2D" uid="uid://ctkcimg8fexj" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0093.png" id="19_rt38x"]
+[ext_resource type="Texture2D" uid="uid://b0270u5t5kaao" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0094.png" id="20_dac5c"]
 [ext_resource type="Texture2D" uid="uid://bm4hd60pr74nk" path="res://Sprites/testDeer/Deer_Happy_Run_test_0101.png" id="20_m5r2c"]
 [ext_resource type="Texture2D" uid="uid://c5m1iktuix4qb" path="res://Sprites/testDeer/Deer_Happy_Run_test_0102.png" id="21_tgaa5"]
+[ext_resource type="Texture2D" uid="uid://bwr5gm2w1ar3g" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0095.png" id="21_u1kgm"]
 [ext_resource type="Texture2D" uid="uid://b1qb6l4qui5vp" path="res://Sprites/testDeer/Deer_Happy_Run_test_0103.png" id="22_eg02o"]
+[ext_resource type="Texture2D" uid="uid://b5ny3tlor5yuv" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0096.png" id="22_wk4hl"]
+[ext_resource type="Texture2D" uid="uid://dyydqqf8pppdl" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0097.png" id="23_a10ng"]
+[ext_resource type="Texture2D" uid="uid://cltto8ds682jt" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0098.png" id="24_1icb2"]
+[ext_resource type="Texture2D" uid="uid://1vb1ip3rr24e" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0099.png" id="25_b1tii"]
+[ext_resource type="Texture2D" uid="uid://dugqr5bx0gops" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0100.png" id="26_8pr4i"]
+[ext_resource type="Texture2D" uid="uid://bbmka3q7me30x" path="res://Sprites/TestDeerCorrupt/Deer_CorruptedINTO_0101.png" id="27_jv6k2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbic1"]
 animations = [{
@@ -49,6 +73,83 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o6y2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nkhry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m1tnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ao5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rohru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_72j4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7dypx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_miwhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nkb6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1g6wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_00551")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yuprn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gi7ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p486r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dq23r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rt38x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dac5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_u1kgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wk4hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a10ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1icb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_b1tii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8pr4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jv6k2")
+}],
+"loop": false,
+"name": &"TellJoke",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,10 +279,10 @@ sprite_frames = SubResource("SpriteFrames_cbic1")
 animation = &"new_animation"
 
 [node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
-transform = Transform3D(1, 4.09814e-11, 2.52474e-19, -1.11756e-10, 1, 1.85177e-19, -1.89354e-19, 1.86377e-19, 1, 0, 0, 0)
+transform = Transform3D(1, -1.47372e-10, -1.52246e-20, -8.43665e-11, 1, -8.4014e-20, 1.37041e-19, -2.00235e-19, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_al0jc")
+animation = &"TellJoke"
 autoplay = "Idle"
-frame_progress = 0.0559506
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {
