@@ -25,7 +25,7 @@ class Target:
 var _target: Target = null
 var _reserved_spot: Node3D = null
 
-var _speed = 1.0
+var _speed = 0.0
 @onready var timer: Timer = $Timer
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
 var stage: citizens_info.Stage = citizens_info.Stage.DULL
@@ -95,6 +95,7 @@ var state_machine = {
 
 func _roam():
 	# this is still biased to closer positions, but I can't be bothered right now
+	print("Starting new roam")
 	var random_direction = maths.random_inside_unit_circle()
 	var random_distance = randf_range(min_dull_life_roam_distance, max_dull_life_roam_distance)
 	_target = Target.new(Vector3(random_direction.x * random_distance, global_position.y, random_direction.y * random_distance))
