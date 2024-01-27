@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://dr2dytgfs0aoh"]
+[gd_scene load_steps=189 format=3 uid="uid://dr2dytgfs0aoh"]
 
 [ext_resource type="Script" path="res://AnimationHandler.gd" id="1_dqgho"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_sdt6l"]
@@ -157,6 +157,30 @@
 [ext_resource type="Texture2D" uid="uid://p303bxfajta" path="res://Sprites/Townie/Townie_Idle_0016.png" id="155_y7rx8"]
 [ext_resource type="Texture2D" uid="uid://beuip2kqjhq5" path="res://Sprites/Townie/Townie_Idle_0017.png" id="156_akssf"]
 [ext_resource type="Texture2D" uid="uid://tkf3pamk4jm1" path="res://Sprites/Townie/Townie_Idle_0018.png" id="157_bob3l"]
+[ext_resource type="Texture2D" uid="uid://bf1vvacgffwtr" path="res://Sprites/Townie/Townie_Walk_0019.png" id="158_qunvf"]
+[ext_resource type="Texture2D" uid="uid://bdh2ipkerlpri" path="res://Sprites/Townie/Townie_Walk_0020.png" id="159_fcwp5"]
+[ext_resource type="Texture2D" uid="uid://cwpeuhk6mbamb" path="res://Sprites/Townie/Townie_Walk_0021.png" id="160_ks4vu"]
+[ext_resource type="Texture2D" uid="uid://g5wwgib0gn81" path="res://Sprites/Townie/Townie_Walk_0022.png" id="161_xdy8q"]
+[ext_resource type="Texture2D" uid="uid://ccvdg1jot14qo" path="res://Sprites/Townie/Townie_Walk_0023.png" id="162_ddou6"]
+[ext_resource type="Texture2D" uid="uid://ce58ip4a0mdxv" path="res://Sprites/Townie/Townie_Walk_0024.png" id="163_8eclr"]
+[ext_resource type="Texture2D" uid="uid://j2crinsw3lxm" path="res://Sprites/Townie/Townie_Walk_0025.png" id="164_u1mcx"]
+[ext_resource type="Texture2D" uid="uid://bex55igsjv6t7" path="res://Sprites/Townie/Townie_Walk_0026.png" id="165_kcdn7"]
+[ext_resource type="Texture2D" uid="uid://cit5if1xq7mxp" path="res://Sprites/Townie/Townie_Walk_0027.png" id="166_7rg14"]
+[ext_resource type="Texture2D" uid="uid://bh5wiu84v7qli" path="res://Sprites/Townie/Townie_Walk_0028.png" id="167_wdoc8"]
+[ext_resource type="Texture2D" uid="uid://bu001o45lm8ix" path="res://Sprites/Townie/Townie_Walk_0029.png" id="168_aaufr"]
+[ext_resource type="Texture2D" uid="uid://dno22khripfxm" path="res://Sprites/Townie/Townie_Walk_0030.png" id="169_o3ax3"]
+[ext_resource type="Texture2D" uid="uid://t5de3a46dj0y" path="res://Sprites/Townie/Townie_Walk_0031.png" id="170_r5xlx"]
+[ext_resource type="Texture2D" uid="uid://48o5xkk3qm7y" path="res://Sprites/Townie/Townie_Walk_0032.png" id="171_5wrd2"]
+[ext_resource type="Texture2D" uid="uid://1rlxxiskv43e" path="res://Sprites/Townie/Townie_Walk_0033.png" id="172_k4juo"]
+[ext_resource type="Texture2D" uid="uid://bpf0jv7v7p85b" path="res://Sprites/Townie/Townie_Walk_0034.png" id="173_7743b"]
+[ext_resource type="Texture2D" uid="uid://igrkbvnjecqc" path="res://Sprites/Townie/Townie_Walk_0035.png" id="174_b7w60"]
+[ext_resource type="Texture2D" uid="uid://ibo4fei5in87" path="res://Sprites/Townie/Townie_Walk_0036.png" id="175_focrw"]
+[ext_resource type="Texture2D" uid="uid://b84nypwxhc8d" path="res://Sprites/Townie/Townie_Walk_0037.png" id="176_er1o8"]
+[ext_resource type="Texture2D" uid="uid://bsrvhrafcyl1f" path="res://Sprites/Townie/Townie_Walk_0038.png" id="177_633wk"]
+[ext_resource type="Texture2D" uid="uid://bint64tcaet08" path="res://Sprites/Townie/Townie_Walk_0039.png" id="178_1trpo"]
+[ext_resource type="Texture2D" uid="uid://c63r1ut4dadrp" path="res://Sprites/Townie/Townie_Walk_0040.png" id="179_jdxv8"]
+[ext_resource type="Texture2D" uid="uid://diibjbkycs5hf" path="res://Sprites/Townie/Townie_Walk_0041.png" id="180_dcmre"]
+[ext_resource type="Texture2D" uid="uid://dsfv5hk13lv1f" path="res://Sprites/Townie/Townie_Walk_0042.png" id="181_k26w8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbic1"]
 animations = [{
@@ -687,6 +711,83 @@ animations = [{
 "loop": true,
 "name": &"Townie_Idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("158_qunvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_fcwp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_ks4vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_xdy8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_ddou6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_8eclr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_u1mcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_kcdn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_7rg14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_wdoc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_aaufr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_o3ax3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_r5xlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_5wrd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_k4juo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_7743b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_b7w60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_focrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_er1o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_633wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_1trpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_jdxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_dcmre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_k26w8")
+}],
+"loop": true,
+"name": &"Townie_Walk",
+"speed": 10.0
 }]
 
 [sub_resource type="Animation" id="Animation_cy2vj"]
@@ -750,8 +851,9 @@ animation = &"new_animation"
 [node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
 transform = Transform3D(1, -1.47372e-10, -1.52246e-20, -8.43665e-11, 1, -8.4014e-20, 1.37041e-19, -2.00235e-19, 1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_al0jc")
-animation = &"Townie_Idle"
-autoplay = "Townie_Idle"
+animation = &"Townie_Walk"
+autoplay = "Player_Idle"
+frame_progress = 0.946365
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {

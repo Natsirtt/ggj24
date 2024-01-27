@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn0lba2b7kdj1"]
+[gd_scene load_steps=8 format=3 uid="uid://bn0lba2b7kdj1"]
 
 [ext_resource type="Script" path="res://scripts/characters/citizen.gd" id="1_40lgw"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_qt0s1"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_c3j38"]
 [ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_yqckp"]
+[ext_resource type="PackedScene" uid="uid://dr2dytgfs0aoh" path="res://Animation.tscn" id="5_cvekp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vwh3h"]
 
@@ -18,9 +19,6 @@ script = ExtResource("1_40lgw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vwh3h")
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_qt0s1")
 
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource("2_c3j38")
@@ -39,3 +37,7 @@ target_desired_distance = 1.5
 debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Node3D" parent="." node_paths=PackedStringArray("character_node") instance=ExtResource("5_cvekp")]
+transform = Transform3D(1.2919, 0, 0, 0, 1.2919, 0, 0, 0, 1.2919, 0, 0.644313, 0)
+character_node = NodePath("..")
