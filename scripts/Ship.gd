@@ -16,9 +16,11 @@ func reserve_praying_spot():
 	assert(has_free_praying_spot())
 	reserved_praying_spots.append(free_praying_spots.pick_random())
 	free_praying_spots.erase(reserved_praying_spots[-1])
+	print("Reserved spot " + str(reserved_praying_spots[-1]))
 	return reserved_praying_spots[-1]
 
 func return_praying_spot(spot: Node3D):
 	assert(reserved_praying_spots.has(spot))
 	free_praying_spots.append(spot)
 	reserved_praying_spots.erase(spot)
+	print("Returned spot " + str(spot))
