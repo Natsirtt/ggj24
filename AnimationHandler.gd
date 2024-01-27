@@ -2,19 +2,16 @@ extends Node3D
 
 @onready var _animated_sprite = $Body/DeerBody
 @onready var _sprite_direction = $Body/DeerBody/SpriteDirection
-@onready var isLeft = true
-@onready var is_interacting = false
+var isLeft = true
+var is_interacting = false
 @export var character_node: Node3D
 
-func play_interact_anim(is_interacting):
-		self.is_interacting = is_interacting
-	
 
 func update_velocity(velocity):
 	if is_interacting:
-		_animated_sprite.play("TellJoke")
+		return
 		
-	elif velocity.length() > 0.1:
+	if velocity.length() > 0.1:
 		_animated_sprite.play("default")
 		if velocity.x < -0.1 :
 			if isLeft:
@@ -30,8 +27,6 @@ func update_velocity(velocity):
 			else :
 				_sprite_direction.play("MoveRight")
 				isLeft = false
-			
-			
 	else:
 		_animated_sprite.play("Idle")
 
@@ -42,9 +37,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("interact"):
-		play_interact_anim(true)
-	else: 
-		play_interact_anim(false)
+	if Input.is_action_just_pressed("interact"):
+		_playAnimWithInto("Joke")
+		self.is_interacting = true
+	elif Input.is_action_just_released("interact"): 
+		self.is_interacting = false
+		
 	
 
+func _playAnimWithInto(AnimName):
+	_animated_sprite.play(AnimName + "_Into")
+	_animated_sprite.animation_finished.connect(func():	_animated_sprite.play(AnimName + "_Idle"), CONNECT_ONE_SHOT)
+	
+	
+	pass
