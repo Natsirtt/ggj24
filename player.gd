@@ -6,6 +6,10 @@ signal character_moved(velocity)
 
 const SPEED = 5.0
 
+func _process(_delta):
+	if Input.is_action_pressed("quit"):
+		get_tree().quit(0)
+
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
