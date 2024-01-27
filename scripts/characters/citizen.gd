@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var max_dull_life_ilde_time = 20.0
 @export var min_dull_life_roam_distance = 5.0
 @export var max_dull_life_roam_distance = 15.0
+@export var favour_generated_per_prayer = 1
+@export var seconds_between_favour_generation = 5
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -21,6 +23,7 @@ class Target:
 		return target as Vector3
 
 var _target: Target = null
+var _reserved_spot: Node3D = null
 
 var _speed = 1.0
 @onready var timer: Timer = $Timer
@@ -31,6 +34,7 @@ var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 signal character_moved(velocity)
 signal character_stopped
 signal stage_changed(stage: citizens_info.Stage)
+signal job_changed(job: citizens_info.Job)
 
 enum JobState {
 	ENTER,
@@ -63,10 +67,20 @@ var state_machine = {
 			_speed = 3.0
 			var ship = world_info.ship
 			assert(ship.has_free_praying_spot())
-			_target = Target.new(ship.reserve_praying_spot()),
+			_reserved_spot = ship.reserve_praying_spot()
+			_target = Target.new(_reserved_spot)
+			navigation.target_reached.connect(func():
+				print("Reached praying spot")
+				_target = null
+				timer.timeout.connect(_pray)
+				timer.start(seconds_between_favour_generation), CONNECT_ONE_SHOT
+			),
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
+			timer.timeout.disconnect(_pray)
+			timer.stop()
+			world_info.ship.return_praying_spot(_reserved_spot)
 			_target = null,
 	},
 	citizens_info.Job.DEFEND: {
@@ -85,6 +99,9 @@ func _roam():
 	var random_distance = randf_range(min_dull_life_roam_distance, max_dull_life_roam_distance)
 	_target = Target.new(Vector3(random_direction.x * random_distance, global_position.y, random_direction.y * random_distance))
 
+func _pray():
+	player_info.generate_favour(favour_generated_per_prayer)
+
 func _get_job_func(state: JobState):
 	return state_machine[job][state]
 
@@ -92,9 +109,12 @@ func change_job(new_job: citizens_info.Job):
 	_get_job_func(JobState.EXIT).call()
 	job = new_job
 	_get_job_func(JobState.ENTER).call()
+	job_changed.emit(job)
+	print(str(self) + "'s job is now " + str(job))
 
 func _ready():
 	_get_job_func(JobState.ENTER).call()
+	change_job(citizens_info.Job.PRAY)
 
 func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)
