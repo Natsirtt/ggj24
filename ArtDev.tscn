@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvhnyryxhuidi"]
+[gd_scene load_steps=12 format=3 uid="uid://dvhnyryxhuidi"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_jo0j6"]
 [ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="2_rx5od"]
 [ext_resource type="Material" uid="uid://dsw6dpv12p55i" path="res://Art/Environment/Houses/House_MAT_01.tres" id="4_0pa5c"]
 [ext_resource type="PackedScene" uid="uid://dm8j4b62dhw16" path="res://Art/Environment/Houses/House_01_scene.tscn" id="4_1vmkc"]
 [ext_resource type="PackedScene" uid="uid://da3xmxvrpjs2x" path="res://Art/Environment/Houses/House_small_01_scene.tscn" id="5_esjb0"]
+[ext_resource type="PackedScene" uid="uid://csog11a7toirx" path="res://Art/Environment/Rocketship/Tape_Scene.tscn" id="6_3nlrb"]
+[ext_resource type="PackedScene" uid="uid://bxgniohcy24q2" path="res://Rocketship_Scene.tscn" id="7_5ldd6"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
 lightmap_size_hint = Vector2i(502, 502)
@@ -51,7 +53,7 @@ mesh = SubResource("QuadMesh_asmqv")
 surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
 
 [node name="Ground2" type="MeshInstance3D" parent="."]
-transform = Transform3D(8.42594, 0, 0, 0, 2.93211, 0.0923508, 0, -0.114844, 2.35783, -0.949908, -1.53837, -177.738)
+transform = Transform3D(8.42594, 0, 0, 0, 2.93211, 0.0923508, 0, -0.114844, 2.35783, 109.85, -23.2277, -170.261)
 material_override = ExtResource("4_0pa5c")
 mesh = SubResource("QuadMesh_asmqv")
 surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
@@ -84,3 +86,9 @@ mesh = SubResource("ArrayMesh_ekiap")
 
 [node name="Root Scene" parent="." instance=ExtResource("5_esjb0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38283, -1.64318, -1.0316)
+
+[node name="Root Scene5" parent="." instance=ExtResource("6_3nlrb")]
+transform = Transform3D(0.507185, 0, 0, 0, 0.716893, 0, 0, 0, 1, 13.9766, 0.572738, 2.11829)
+
+[node name="Root Scene6" parent="." instance=ExtResource("7_5ldd6")]
+transform = Transform3D(0.744756, 0, 0, 0, 0.744756, 0, 0, 0, 1, 13.9432, 0.190933, 2.62013)

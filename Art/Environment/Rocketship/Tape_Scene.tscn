@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://csog11a7toirx"]
+
+[ext_resource type="PackedScene" uid="uid://c2ugmg7bb147u" path="res://Art/Environment/tape.fbx" id="1_kyvje"]
+[ext_resource type="Material" uid="uid://dban08tkctuft" path="res://Art/Environment/Rocketship/Rocketship_Tape_MAT.tres" id="2_2rp66"]
+
+[node name="Root Scene" instance=ExtResource("1_kyvje")]
+
+[node name="tape" parent="RootNode" index="0"]
+material_override = ExtResource("2_2rp66")
+cast_shadow = 0
