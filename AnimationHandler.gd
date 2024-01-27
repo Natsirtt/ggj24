@@ -1,4 +1,4 @@
-extends Node3D
+class_name AnimationHandler extends Node3D
 
 @onready var _animated_sprite = $Body/DeerBody
 @onready var _sprite_direction = $Body/DeerBody/SpriteDirection

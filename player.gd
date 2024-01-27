@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody3D
 
-@onready var animation_handler = $Animation
+@onready var animation_handler: AnimationHandler = $Animation
 @onready var interaction_area = $InteractionZone
 var _interactables_in_range: Array[Interactable] = []
 
