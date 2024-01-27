@@ -12,8 +12,8 @@ func update_velocity(velocity):
 		return
 		
 	if velocity.length() > 0.1:
-		_animated_sprite.play("default")
-		if velocity.x < -0.1 :
+		_animated_sprite.play("Player_Walk")
+		if velocity.x > 0.1 :
 			if isLeft:
 				pass
 			else :
@@ -21,14 +21,14 @@ func update_velocity(velocity):
 				isLeft = true
 			
 			
-		elif velocity.x > 0.1:
+		elif velocity.x < - 0.1:
 			if !isLeft:
 				pass
 			else :
 				_sprite_direction.play("MoveRight")
 				isLeft = false
 	else:
-		_animated_sprite.play("Idle")
+		_animated_sprite.play("Player_Idle")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,7 +38,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		_playAnimWithInto("Joke")
+		_playAnimWithInto("Player_Joke")
 		self.is_interacting = true
 	elif Input.is_action_just_released("interact"): 
 		self.is_interacting = false
