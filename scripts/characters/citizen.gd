@@ -1,12 +1,18 @@
 extends CharacterBody3D
 
 const SPEED = 4.0
+@onready var navigation: NavigationAgent3D = $NavigationAgent3D
+
+func _ready():
+	pass
 
 func _physics_process(_delta):
-	pass
-	var input_dir = Vector3.ZERO
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if navigation.target_position.is_zero_approx():
+		navigation.target_position = player_info.player.global_position
+		await get_tree().physics_frame
+		
+	var direction = (navigation.get_next_path_position() - global_position).normalized()
+	if direction.length() > 0.01 and not navigation.is_target_reached():
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:

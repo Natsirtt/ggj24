@@ -15,6 +15,15 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+player_info="*res://scripts/player_info.gd"
+world_info="*res://scripts/world_info.gd"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
 [display]
 
 window/size/mode=3
