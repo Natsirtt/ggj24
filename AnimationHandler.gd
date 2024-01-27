@@ -16,7 +16,7 @@ func update_velocity(velocity):
 				isLeft = true
 			
 			
-		else:
+		elif velocity.x > 0.1:
 			if !isLeft:
 				pass
 			else :
