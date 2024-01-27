@@ -5,6 +5,7 @@ extends CharacterBody3D
 var _interactables_in_range = []
 
 signal character_moved(velocity)
+signal interacted
 
 const SPEED = 5.0
 
@@ -17,6 +18,7 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("interact") and _interactables_in_range.size() > 0:
 		_interactables_in_range[0].interact(self)
+		interacted.emit()
 
 
 func _physics_process(_delta):
