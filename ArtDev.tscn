@@ -1,32 +1,90 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvhnyryxhuidi"]
+[gd_scene load_steps=8 format=3 uid="uid://dvhnyryxhuidi"]
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_jo0j6"]
-[ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="2_473a1"]
-[ext_resource type="PackedScene" uid="uid://d4jsq0708dl2f" path="res://Ship.tscn" id="3_qofm3"]
+[ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="2_44vg8"]
+[ext_resource type="Material" uid="uid://bwgnkw8gxctlb" path="res://Art/Environment/Houses/House_MAT_01.tres" id="3_euuv1"]
+[ext_resource type="PlaneMesh" uid="uid://csbic8i8myn64" path="res://Art/Environment/Houses/House_01.tres" id="4_0pa5c"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
 lightmap_size_hint = Vector2i(502, 502)
 size = Vector2(100, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evbc7"]
-albedo_texture = ExtResource("2_473a1")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22r0j"]
+albedo_color = Color(0.384314, 0.384314, 0.384314, 1)
 
 [sub_resource type="Environment" id="Environment_vv5aq"]
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.93
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 1.0
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_energy = 1.43
+fog_sun_scatter = 13.0
+fog_density = 0.078
+volumetric_fog_enabled = true
 
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_jo0j6")]
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.639185, 0)
+transform = Transform3D(2.19128, 0, 0, 0, -1.03752e-07, 1, 0, -2.37356, -4.37114e-08, -0.949908, -1.53837, 1.21059)
+material_override = ExtResource("2_44vg8")
 mesh = SubResource("QuadMesh_asmqv")
-surface_material_override/0 = SubResource("StandardMaterial3D_evbc7")
+surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.681588, -0.63607, 0.361736, 0.485462, 0.762962, 0.426867, -0.547508, -0.115338, 0.828814, 1.5026, 8.43026, -0.0214856)
+light_color = Color(1, 0.847059, 0.505882, 1)
+light_energy = 1.505
+light_indirect_energy = 3.618
+shadow_enabled = true
+directional_shadow_split_1 = 0.0
+directional_shadow_fade_start = 0.0
+directional_shadow_max_distance = 91.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vv5aq")
 
-[node name="Ship" parent="." instance=ExtResource("3_qofm3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 0, -5.11)
+[node name="House01" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.46462, 0.0211654, -0.0153562, -0.0119259, 0.0116881, -3.79137, -0.0926709, 0.561398, 0.0795144, -0.0481517, 2.03935, -4.60855)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
+
+[node name="House02" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.46462, 0.0211654, -0.0153562, -0.0119259, 0.0116881, -3.79137, -0.0926709, 0.561398, 0.0795144, 11.8707, 1.87014, -22.0564)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="House02"]
+transform = Transform3D(0.405451, -2.79397e-09, 9.16771e-09, -2.98023e-08, 1.77962, -1.86265e-08, 2.96859e-09, -1.58325e-08, 0.263697, -4.15399, 33.6273, -0.906457)
+light_energy = 3.993
+omni_range = 6.078
+
+[node name="House04" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.46462, 0.0211654, -0.0153562, -0.0119259, 0.0116881, -3.79137, -0.0926709, 0.561398, 0.0795144, 11.8707, 1.87014, -40.8834)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
+
+[node name="House05" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.46462, 0.0211654, -0.0153562, -0.0119259, 0.0116881, -3.79137, -0.0926709, 0.561398, 0.0795144, -4.17427, 1.87014, -42.0339)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
+
+[node name="House06" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.46462, 0.0211654, -0.0153562, -0.0119259, 0.0116881, -3.79137, -0.0926709, 0.561398, 0.0795144, 3.46213, 1.87014, -68.7734)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
+
+[node name="House07" type="MeshInstance3D" parent="."]
+transform = Transform3D(195.069, 0.0401829, -0.213755, -0.943907, 0.0221902, -52.7751, -7.33467, 1.06582, 1.10683, 3.46213, 1.87014, -68.7734)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
+
+[node name="House03" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.46462, 0.0211654, -0.0153562, -0.0119259, 0.0116881, -3.79137, -0.0926709, 0.561398, 0.0795144, 11.8707, 1.87014, -22.0564)
+material_override = ExtResource("3_euuv1")
+mesh = ExtResource("4_0pa5c")
