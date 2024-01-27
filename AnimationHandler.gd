@@ -8,25 +8,28 @@ var is_interacting = false
 
 
 func update_velocity(velocity):
+	if velocity.x > 0.1 :
+		if isLeft:
+				pass
+		else :
+			_sprite_direction.play("MoveLeft")
+			isLeft = true
+			
+			
+	elif velocity.x < - 0.1:
+		if !isLeft:
+			pass
+		else :
+			_sprite_direction.play("MoveRight")
+			isLeft = false
+	
+	
 	if is_interacting:
 		return
 		
 	if velocity.length() > 0.1:
 		_animated_sprite.play("Player_Walk")
-		if velocity.x > 0.1 :
-			if isLeft:
-				pass
-			else :
-				_sprite_direction.play("MoveLeft")
-				isLeft = true
-			
-			
-		elif velocity.x < - 0.1:
-			if !isLeft:
-				pass
-			else :
-				_sprite_direction.play("MoveRight")
-				isLeft = false
+
 	else:
 		_animated_sprite.play("Player_Idle")
 
