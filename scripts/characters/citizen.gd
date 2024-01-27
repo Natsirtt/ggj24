@@ -2,8 +2,9 @@ extends CharacterBody3D
 
 const SPEED = 4.0
 
-func _physics_process(delta):
-	var input_dir = _get_direction_vector()
+func _physics_process(_delta):
+	pass
+	var input_dir = Vector3.ZERO
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -13,6 +14,3 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-func _get_direction_vector():
-	return Vector3.ONE
