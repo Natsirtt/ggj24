@@ -104,8 +104,7 @@ var state_machine = {
 					var new_target = candidate_goons.pick_random()
 					new_target.is_targeted_by_defender = true
 					navigation.target_reached.connect(func():
-						var goon = _target.target as Goon
-						goon.scare_off()
+						new_target.scare_off()
 						_target = null, CONNECT_ONE_SHOT)
 					_target = Target.new(new_target),
 		JobState.EXIT: func():
