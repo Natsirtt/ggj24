@@ -95,6 +95,7 @@ var state_machine = {
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
 			print("Entering defense militia")
+			animation_handler.color_tint = Color.LIGHT_CORAL
 			timer.one_shot = false
 			timer.timeout.connect(func():
 				print("It's payday!")
@@ -161,6 +162,7 @@ func _get_job_func(state: JobState):
 
 func change_job(new_job: citizens_info.Job):
 	_get_job_func(JobState.EXIT).call()
+	animation_handler.color_tint = Color.WHITE
 	job = new_job
 	_get_job_func(JobState.ENTER).call()
 	job_changed.emit(job)

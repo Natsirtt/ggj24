@@ -7,6 +7,11 @@ var is_interacting = false
 var timer : Timer
 @export var skin : String = "Townie"
 @export var character_node: Node3D
+var color_tint: Color = Color.WHITE:
+	set(val):
+		$Body/DeerBody.modulate = val
+	get:
+		return $Body/DeerBody.modulate
 
 
 func update_velocity(velocity):
