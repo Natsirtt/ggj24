@@ -4,51 +4,76 @@
 [ext_resource type="Script" path="res://interactable.gd" id="2_xggto"]
 [ext_resource type="Texture2D" uid="uid://cfas1w4p75jro" path="res://Art/UI/Interaction_Icon.png" id="3_hkj0l"]
 [ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_w2n0l"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1youq"]
+[ext_resource type="PackedScene" path="res://Rocketship_Scene.tscn" id="5_drrdo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fajes"]
-radius = 1.5
+radius = 2.0
 
 [node name="Ship" type="Node3D"]
 script = ExtResource("1_vwvbp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 2.4823, 0)
-mesh = SubResource("BoxMesh_1youq")
 
 [node name="Praying Spots Root" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0666635, 0)
 
 [node name="PrayingSpot" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48575, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99075, 0, 0.994246)
 
 [node name="PrayingSpot2" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08647, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81916, 0, -0.169744)
 
 [node name="PrayingSpot3" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.00827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16133, 0, -2.12181)
 
 [node name="PrayingSpot4" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0536906, 0, 2.23601)
 
 [node name="PrayingSpot5" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68675, 4.76837e-07, -2.07201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65966, 9.53674e-07, 1.95597)
 
 [node name="PrayingSpot6" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12396, -4.76837e-07, 1.91318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.378315, -4.76837e-07, 2.77614)
 
 [node name="PrayingSpot7" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22806, 0, 2.49409)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98794, 0, 2.56401)
 
 [node name="PrayingSpot8" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55669, 0, -1.6334)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.254, 0, 3.65695)
 
 [node name="PrayingSpot9" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71251, 0.271491, -3.3437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68619, 0.271491, 0.526842)
 
 [node name="PrayingSpot10" type="Node3D" parent="Praying Spots Root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15759, 0, 5.80355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17743, -4.76837e-07, 0.595252)
+
+[node name="PrayingSpot11" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75002, -4.76837e-07, 3.7738)
+
+[node name="PrayingSpot12" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364863, -4.76837e-07, 3.53984)
+
+[node name="PrayingSpot13" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83899, -4.76837e-07, 3.47866)
+
+[node name="PrayingSpot14" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15318, -4.76837e-07, 3.03558)
+
+[node name="PrayingSpot15" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88695, -4.76837e-07, 4.35145)
+
+[node name="PrayingSpot16" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15409, 0, 3.05016)
+
+[node name="PrayingSpot17" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61686, -4.76837e-07, 1.68683)
+
+[node name="PrayingSpot18" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89575, -4.76837e-07, 1.80039)
+
+[node name="PrayingSpot19" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68166, -4.76837e-07, 2.68367)
+
+[node name="PrayingSpot20" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37671, -4.76837e-07, 3.22381)
 
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource("2_xggto")
@@ -56,10 +81,13 @@ cost = 2
 context_for_player = "ship"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.857195)
 shape = SubResource("SphereShape3D_fajes")
 
 [node name="Indicator" type="Sprite3D" parent="Interactable" node_paths=PackedStringArray("interactable_script")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 1.49777, 0.684329)
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 2.78114, -0.354544)
 texture = ExtResource("3_hkj0l")
 script = ExtResource("3_w2n0l")
 interactable_script = NodePath("..")
+
+[node name="Root Scene" parent="." instance=ExtResource("5_drrdo")]

@@ -56,6 +56,9 @@ func _process(_delta):
 	_compute_closest_interactable()
 
 func _physics_process(_delta):
+	if game_has_ended:
+		return
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")

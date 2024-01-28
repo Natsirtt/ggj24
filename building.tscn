@@ -1,20 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://chduldksk7ymn"]
+[gd_scene load_steps=6 format=3 uid="uid://chduldksk7ymn"]
 
-[ext_resource type="PackedScene" uid="uid://cv2kulgoewh6t" path="res://Art/Environment/Houses/House_02.fbx" id="1_bd3n0"]
+[ext_resource type="Script" path="res://building.gd" id="1_mamfn"]
+[ext_resource type="PackedScene" uid="uid://cj5j5db0swntb" path="res://spawner.tscn" id="2_8nfhy"]
+[ext_resource type="PackedScene" uid="uid://bn0lba2b7kdj1" path="res://citizen.tscn" id="3_d542u"]
+[ext_resource type="PackedScene" uid="uid://da3xmxvrpjs2x" path="res://Art/Environment/Houses/House_small_01_scene.tscn" id="3_flxny"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqj2e"]
 resource_local_to_scene = true
 resource_name = "Shape"
-size = Vector3(5.29011, 9, 1.01165)
+size = Vector3(6.42548, 5.29712, 0.492301)
 
 [node name="Building" type="Node3D"]
 transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_mamfn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 1.74623e-10, 0, -1.74623e-10, 1, 0, 0, 0, 1, 0.681603, 2.91, -0.113811)
+transform = Transform3D(1, 1.74623e-10, 0, -1.74623e-10, 1, 0, 0, 0, 1, 0.0278318, 2.66842, 0.117952)
 shape = SubResource("BoxShape3D_fqj2e")
 
-[node name="Root Scene" parent="." instance=ExtResource("1_bd3n0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.822921, 0.0838169, 0.514325)
+[node name="Spawner" parent="." instance=ExtResource("2_8nfhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0383663, 0.947129, 0.957031)
+initial_wait = 45
+seconds_between_spawns = 35
+scene_to_spawn = ExtResource("3_d542u")
+
+[node name="FBX" parent="." instance=ExtResource("3_flxny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89654, -0.00482372, 0)
