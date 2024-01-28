@@ -17,7 +17,7 @@ albedo_color = Color(0.384314, 0.384314, 0.384314, 1)
 
 [sub_resource type="Environment" id="Environment_vv5aq"]
 ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(0.588235, 0.607843, 0.584314, 1)
 ambient_light_energy = 0.93
 glow_enabled = true
 glow_normalized = true
@@ -25,6 +25,7 @@ glow_intensity = 3.68
 glow_bloom = 1.0
 glow_blend_mode = 0
 fog_enabled = true
+fog_light_color = Color(0.388235, 0.584314, 0.639216, 1)
 fog_light_energy = 0.39
 fog_density = 0.0696
 volumetric_fog_enabled = true
@@ -47,7 +48,7 @@ _surfaces = [{
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120404, -0.51611, 0.221821)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.19066, 0, 0, 0, -1.03723e-07, 0.999717, 0, -2.37289, -4.3699e-08, -0.949908, -1.53837, 1.21059)
+transform = Transform3D(2.19066, 0, 0, 0, -1.03723e-07, 0.999717, 0, -2.37289, -4.3699e-08, -1.80785, -1.47784, 2.19933)
 material_override = ExtResource("2_rx5od")
 mesh = SubResource("QuadMesh_asmqv")
 surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
@@ -60,7 +61,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.703668, -0.480711, 0.523229, -0.251506, 0.520203, 0.81617, -0.664527, -0.705908, 0.245148, 5.89043, 8.61486, 0.454242)
-light_color = Color(0.870588, 0.866667, 0.866667, 1)
+light_color = Color(0.85098, 0.886275, 0.882353, 1)
 light_energy = 0.517
 light_indirect_energy = 2.723
 shadow_enabled = true
@@ -75,10 +76,31 @@ environment = SubResource("Environment_vv5aq")
 transform = Transform3D(1, 0, 0, 0, 0.987609, 0.156934, 0, -0.156934, 0.987609, 7.24561, -1.51069, -6.10394)
 
 [node name="Root Scene3" parent="." instance=ExtResource("4_1vmkc")]
-transform = Transform3D(1, 0, 0, 0, 0.999763, 0.0217625, 0, -0.0217625, 0.999763, -0.0145059, -1.51873, -9.17413)
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -0.0145059, -1.51873, -9.17413)
+
+[node name="Root Scene9" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -12.7664, -1.26855, -10.1998)
+
+[node name="Root Scene11" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -8.42866, 0.0744392, -16.8637)
+
+[node name="Root Scene12" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 4.33021, 0.0744392, -16.8637)
+
+[node name="Root Scene13" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 14.947, 0.686725, -15.3902)
+
+[node name="Root Scene14" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 25.4011, 0.686725, -14.4282)
+
+[node name="Root Scene10" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -22.1966, -1.26855, -10.1998)
 
 [node name="Root Scene4" parent="." instance=ExtResource("4_1vmkc")]
 transform = Transform3D(1, 0, 0, 0, 1, -0.000942484, 0, 0.000942484, 1, -5.62838, -1.43172, -5.71396)
+
+[node name="Root Scene15" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1, 0, 0, 0, 1, -0.000942484, 0, 0.000942484, 1, 24.7132, -1.43172, -5.71396)
 
 [node name="HouseSmall01" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86383, 4.76837e-07, -1.2702)
@@ -87,8 +109,14 @@ mesh = SubResource("ArrayMesh_ekiap")
 [node name="Root Scene" parent="." instance=ExtResource("5_esjb0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38283, -1.64318, -1.0316)
 
+[node name="Root Scene8" parent="." instance=ExtResource("5_esjb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25581, -1.59685, -9.39933)
+
+[node name="Root Scene7" parent="." instance=ExtResource("5_esjb0")]
+transform = Transform3D(0.999571, -0.0292999, 0, 0.0292999, 0.999571, 0, 0, 0, 1, -20.1271, -1.9661, -4.14909)
+
 [node name="Root Scene5" parent="." instance=ExtResource("6_3nlrb")]
-transform = Transform3D(0.507185, 0, 0, 0, 0.716893, 0, 0, 0, 1, 13.9766, 0.572738, 2.11829)
+transform = Transform3D(0.754728, 0, 0.0960542, 0, 0.716893, 0, -0.0728316, 0, 0.995376, 13.4539, 0.676738, 2.22075)
 
 [node name="Root Scene6" parent="." instance=ExtResource("7_5ldd6")]
-transform = Transform3D(0.744756, 0, 0, 0, 0.744756, 0, 0, 0, 1, 13.9432, 0.190933, 2.62013)
+transform = Transform3D(0.744756, 0, 0, 0, 0.744756, 0, 0, 0, 1, 13.4785, 0.260136, 2.70475)
