@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Citizen extends CharacterBody3D
 
 @export var min_dull_life_idle_time = 5.0
 @export var max_dull_life_ilde_time = 20.0
@@ -155,6 +155,7 @@ func _ready():
 	change_stage(citizens_info.Stage.TOWNIE)
 	change_job(citizens_info.Job.LIVE_DULL_LIFE)
 	interactable.interacted.connect(_on_interact)
+	citizens_info.citizens.append(self)
 
 func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)
