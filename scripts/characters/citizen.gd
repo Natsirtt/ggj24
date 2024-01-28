@@ -76,6 +76,8 @@ var state_machine = {
 			navigation.target_reached.connect(func():
 				print("Reached praying spot")
 				_target = null
+				# somehow _pray is already connected sometimes?
+				_disconnect_all_timer_listeners()
 				timer.timeout.connect(_pray)
 				timer.start(seconds_between_favour_generation), CONNECT_ONE_SHOT
 			),
