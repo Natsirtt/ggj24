@@ -15,6 +15,10 @@ func _ready():
 	timer.start(initial_wait)
 
 func _spawn():
+	if player_info.player.game_has_ended:
+		timer.paused = true
+		return
+		
 	print("Spawning a " + str(scene_to_spawn))
 	var scene := scene_to_spawn.instantiate() as Node3D
 	add_child(scene)

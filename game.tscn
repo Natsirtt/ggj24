@@ -35,7 +35,7 @@ size = Vector3(100, 100, 0.25)
 environment = SubResource("Environment_vv5aq")
 
 [node name="Ship" parent="." instance=ExtResource("3_1pr2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 2.0807, -5.11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, -0.573254, -5.11)
 
 [node name="Citizen" parent="." instance=ExtResource("4_hx448")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.8853)
@@ -79,6 +79,6 @@ shape = SubResource("BoxShape3D_vxvn4")
 
 [node name="Spawner" parent="." instance=ExtResource("8_1lsvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.65097, -0.159467, 0.101066)
-initial_wait = 3
+initial_wait = 1
 seconds_between_spawns = 6
 scene_to_spawn = ExtResource("8_bktuc")

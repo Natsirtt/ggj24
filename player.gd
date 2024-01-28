@@ -5,6 +5,8 @@ class_name Player extends CharacterBody3D
 var _interactables_in_range: Array[Interactable] = []
 var closest_interactable: Interactable = null
 
+var game_has_ended := false
+signal game_ended(won: bool)
 signal character_moved(velocity)
 signal character_stopped
 signal character_interacted
@@ -35,6 +37,9 @@ func _compute_closest_interactable():
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
 		get_tree().quit(0)
+	
+	if game_has_ended:
+		return
 	
 	if Input.is_action_just_pressed("interact") and _interactables_in_range.size() > 0:
 		var interactable = _interactables_in_range[0]
@@ -81,3 +86,8 @@ func _on_interaction_area_exited(body):
 		closest_interactable = null
 		
 	_interactables_in_range.erase(interactable)
+
+func end_game(won: bool):
+	if not game_has_ended:
+		game_ended.emit(won)
+		game_has_ended = true
