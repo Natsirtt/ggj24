@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c75sy8kylvufe"]
+[gd_scene load_steps=8 format=3 uid="uid://bk71jg8xvawlq"]
 
 [ext_resource type="Script" path="res://interactable.gd" id="1_qt4na"]
 [ext_resource type="Script" path="res://goon.gd" id="1_ru2l3"]
@@ -27,7 +27,7 @@ context_for_player = "attack"
 shape = SubResource("SphereShape3D_178l4")
 
 [node name="AnimationHandler" parent="." node_paths=PackedStringArray("character_node") instance=ExtResource("2_yiwsi")]
-transform = Transform3D(1.5765, 0, 0, 0, 1.46952, 0, 0, 0, 1, 0, 0.521011, 0)
+transform = Transform3D(1.5765, 0, 0, 0, 1.46952, 0, 0, 0, 1, 0, 0.994535, 0)
 skin = "Goon"
 character_node = NodePath("..")
 

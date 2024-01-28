@@ -55,8 +55,8 @@ func _process(delta):
 	pass
 
 var context_timings = {
-	"Goon_save": 1.0
-	
+	"Goon_save": 1.0,
+	"Cultist_pray": 4.0
 }
 
 var anim_remapper = {
