@@ -13,6 +13,7 @@ size = Vector3(4.8943, 7.39014, 0.492301)
 [node name="Building" type="Node3D"]
 transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_w5p8j")
+enable_spawning = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
