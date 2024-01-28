@@ -40,6 +40,7 @@ func _ready():
 	character_node.connect("character_moved", update_velocity)
 	character_node.connect("character_stopped", update_velocity.bind(Vector3.ZERO))
 	character_node.connect("character_interacted", _handleInteract.bind(null))
+	character_node.connect("character_stage_changed", _handleStageChange.bind(null))
 	timer = Timer.new()
 	add_child(timer)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,4 +64,5 @@ func _playAnimWithInto(AnimName):
 	_animated_sprite.animation_finished.connect(func():	_animated_sprite.play(AnimName + "_Idle"), CONNECT_ONE_SHOT)
 	
 	
-	
+func _handleStageChange(State):
+	pass	
