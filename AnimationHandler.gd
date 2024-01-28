@@ -56,7 +56,8 @@ func _process(delta):
 
 var context_timings = {
 	"Goon_save": 1.0,
-	"Cultist_pray": 4.0
+	"Cultist_pray": 4.0,
+	"Cultist_attack": 1.2,
 }
 
 var anim_remapper = {
@@ -79,7 +80,10 @@ func _handleInteract(context):
 	print("AnimHandleInteract")
 	
 	timer.one_shot = true
-	timer.timeout.connect(func(): is_interacting = false, CONNECT_ONE_SHOT)
+	timer.timeout.connect(func():
+		is_interacting = false
+		_animated_sprite.play(skin + "_Idle")
+		, CONNECT_ONE_SHOT)
 	timer.start(context_timings.get(anim_name, 3.0))
 	
 	
