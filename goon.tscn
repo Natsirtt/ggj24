@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://c75sy8kylvufe"]
+
+[ext_resource type="Script" path="res://interactable.gd" id="1_qt4na"]
+[ext_resource type="Script" path="res://goon.gd" id="1_ru2l3"]
+[ext_resource type="PackedScene" uid="uid://dr2dytgfs0aoh" path="res://Animation.tscn" id="2_yiwsi"]
+[ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_43cym"]
+[ext_resource type="Texture2D" uid="uid://cfas1w4p75jro" path="res://Art/UI/Interaction_Icon.png" id="3_71pk1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0h06"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_178l4"]
+
+[node name="Goon" type="CharacterBody3D"]
+script = ExtResource("1_ru2l3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_a0h06")
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource("1_qt4na")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("SphereShape3D_178l4")
+
+[node name="InteractionIndicator" type="Sprite3D" parent="Interactable" node_paths=PackedStringArray("interactable_script")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0.939447, 0)
+texture = ExtResource("3_71pk1")
+script = ExtResource("3_43cym")
+interactable_script = NodePath("..")
+
+[node name="AnimationHandler" parent="." node_paths=PackedStringArray("character_node") instance=ExtResource("2_yiwsi")]
+skin = "Goon"
+character_node = NodePath("..")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

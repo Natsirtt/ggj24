@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d30pith2umoyx"]
+[gd_scene load_steps=13 format=3 uid="uid://d30pith2umoyx"]
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chduldksk7ymn" path="res://building.tscn" id="4_ifaxb"]
 [ext_resource type="QuadMesh" uid="uid://dm4bm0pun3bub" path="res://meshes/ground.tres" id="5_1bndy"]
 [ext_resource type="PackedScene" uid="uid://doau3qjqx430j" path="res://HUD.tscn" id="7_hx27e"]
+[ext_resource type="PackedScene" uid="uid://c75sy8kylvufe" path="res://goon.tscn" id="8_bktuc"]
 
 [sub_resource type="Environment" id="Environment_vv5aq"]
 ambient_light_source = 2
@@ -74,3 +75,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_evbc7")
 shape = SubResource("BoxShape3D_vxvn4")
 
 [node name="Hud" parent="." instance=ExtResource("7_hx27e")]
+
+[node name="Goon" parent="." instance=ExtResource("8_bktuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
