@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvhnyryxhuidi"]
+[gd_scene load_steps=17 format=3 uid="uid://dvhnyryxhuidi"]
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_jo0j6"]
 [ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="2_rx5od"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bfmtmm3jf5wew" path="res://Art/Environment/Plants/pine_scene.tscn" id="9_xumab"]
 [ext_resource type="PackedScene" uid="uid://f6btxepntcfh" path="res://Art/Environment/Plants/bush_scene.tscn" id="10_y05h1"]
 [ext_resource type="PackedScene" uid="uid://bo68vhogqfqm6" path="res://Art/Environment/Plants/oak_scene.tscn" id="11_anyck"]
+[ext_resource type="PackedScene" uid="uid://chrfr8pnfslsy" path="res://Sound/background_music_player.tscn" id="12_m3bm4"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
 lightmap_size_hint = Vector2i(502, 502)
@@ -193,3 +194,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06504, 0, 1.01495)
 
 [node name="Root Scene30" parent="." instance=ExtResource("11_anyck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8675, 0, -2.99812)
+
+[node name="Background music" parent="." instance=ExtResource("12_m3bm4")]
