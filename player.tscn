@@ -36,3 +36,5 @@ current = true
 
 [node name="InteractionRadius" type="CollisionShape3D" parent="InteractionZone"]
 shape = SubResource("SphereShape3D_wkrx4")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
