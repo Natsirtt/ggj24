@@ -64,7 +64,7 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Exiting dull life")
-			_disconnect_all_timer_listeners()
+			_disconnect_all_listeners()
 			timer.stop()
 			_target = null,
 	},
@@ -79,7 +79,7 @@ var state_machine = {
 				print("Reached praying spot")
 				_target = null
 				# somehow _pray is already connected sometimes?
-				_disconnect_all_timer_listeners()
+				_disconnect_all_listeners()
 				timer.timeout.connect(_pray)
 				timer.start(seconds_between_favour_generation), CONNECT_ONE_SHOT
 			),
@@ -87,7 +87,7 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Exiting pray job")
-			_disconnect_all_timer_listeners()
+			_disconnect_all_listeners()
 			timer.stop()
 			world_info.ship.return_praying_spot(_reserved_spot)
 			_target = null,
@@ -95,10 +95,14 @@ var state_machine = {
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
 			print("Entering defense militia")
+			timer.one_shot = false
 			timer.timeout.connect(func():
+				print("It's payday!")
 				if not player_info.can_afford(1):
+					print("You can't pay me? I'm done!")
 					change_stage(citizens_info.Stage.DESERTER)
 					change_job(citizens_info.Job.FLEE)
+					return
 				player_info.pay(1)
 			)
 			timer.start(seconds_between_defender_salary),
@@ -115,7 +119,7 @@ var state_machine = {
 					_target = Target.new(new_target),
 		JobState.EXIT: func():
 			print("Exiting defense militia")
-			_disconnect_all_timer_listeners(),
+			_disconnect_all_listeners(),
 	},
 	citizens_info.Job.FLEE: {
 		JobState.ENTER: func():
@@ -127,13 +131,15 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Stopped fleeing")
-			_disconnect_all_timer_listeners(),
+			_disconnect_all_listeners(),
 	},
 }
 
-func _disconnect_all_timer_listeners():
+func _disconnect_all_listeners():
 	for connection in timer.timeout.get_connections():
 		timer.timeout.disconnect(connection["callable"])
+	for connection in navigation.target_reached.get_connections():
+		navigation.target_reached.disconnect(connection["callable"])
 
 func _roam():
 	print("Starting new roam")
