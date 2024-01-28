@@ -157,3 +157,5 @@ light_energy = 1.637
 libraries = {
 "": SubResource("AnimationLibrary_m2s3n")
 }
+
+[node name="AudioTimer" type="Timer" parent="."]
