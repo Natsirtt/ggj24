@@ -13,7 +13,7 @@ enum Job {
 	PRAY,
 }
 
-var citizens: Array[Citizen] = []
+var citizens = []
 
 func get_stage(stage: Stage):
 	return citizens.filter(func(citizen): return citizen.stage == stage)

@@ -51,14 +51,14 @@ func _process(delta):
 	
 	
 func _handleInteract(context):
-	_playAnimWithInto("Player_Joke")
+	_playAnimWithInto(skin + "_Joke")
 	self.is_interacting = true
 	
 	print("AnimHandleInteract")
 	
 	timer.one_shot = true
 	timer.timeout.connect(func(): is_interacting = false, CONNECT_ONE_SHOT)
-	timer.start(5)
+	timer.start(4)
 	
 	
 func _playAnimWithInto(AnimName):
@@ -67,4 +67,12 @@ func _playAnimWithInto(AnimName):
 	
 	
 func _handleStageChange(State):
-	_animated_sprite.play(skin + "_Idle")	
+	if State == 1:
+		is_interacting = true
+		_animated_sprite.play("Townie_Turn_Into")	
+		timer.one_shot = true
+		timer.timeout.connect(func(): _handleStageChange(-1) , CONNECT_ONE_SHOT)
+		timer.start(1)
+	else:
+		_animated_sprite.play(skin + "_Idle")	
+		is_interacting = false
