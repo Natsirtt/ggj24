@@ -11,6 +11,10 @@ class_name Citizen extends CharacterBody3D
 @onready var audio_timer: Timer = $AudioTimer
 
 var fanatic_laughter_stream := load("res://Sound/Blastwave_FX_LaughMale_BW.16306.mp3")
+var cultist_chuckle_streams := [
+	load("res://Sound/Chuckle_01.mp3"),
+	load("res://Sound/Chuckle_02.mp3"),
+]
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -195,6 +199,8 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.context_for_player = "cultist"
 		interactable.cost = 0
 		_speed = 3.0
+		if _can_play_audio():
+			_play_audio_with_delay(cultist_chuckle_streams.pick_random(), 0.0)
 		$Interactable/InteractionIndicatorActionProxy.show()
 		$Interactable/InteractionIndicatorFavourProxy.hide()
 	elif new_stage == citizens_info.Stage.FANATIC:
