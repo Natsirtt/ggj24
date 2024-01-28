@@ -38,9 +38,10 @@ func _physics_process(_delta):
 		velocity.z = direction.z * SPEED
 		character_moved.emit(velocity)
 	else:
+		if not velocity.is_zero_approx():
+			character_stopped.emit()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		character_stopped.emit()
 
 	move_and_slide()
 
