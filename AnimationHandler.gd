@@ -56,7 +56,8 @@ var context_timings = {
 
 var anim_remapper = {
 	"Player_attack": "Player_cultist",
-	"Player_ship": "Player_cultist"
+	"Player_ship": "Player_cultist",
+	"Goon_attack" : "Goon_save"
 }
 
 
