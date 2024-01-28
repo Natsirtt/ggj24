@@ -7,6 +7,10 @@ class_name Citizen extends CharacterBody3D
 @export var favour_generated_per_prayer = 1
 @export var seconds_between_favour_generation = 4
 @export var seconds_between_defender_salary = 2
+@onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var audio_timer: Timer = $AudioTimer
+
+var fanatic_laughter_stream := load("res://Sound/Blastwave_FX_LaughMale_BW.16306.mp3")
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -164,6 +168,18 @@ func _pray():
 func _get_job_func(state: JobState):
 	return state_machine[job][state]
 
+func _can_play_audio():
+	return audio_timer.is_stopped() and not audio.playing
+
+func _play_audio_with_delay(stream, delay):
+	audio_timer.one_shot = true
+	audio_timer.timeout.connect(func():
+		audio.stream = stream
+		audio.play()
+		audio_timer.stop()
+		, CONNECT_ONE_SHOT)
+	audio_timer.start(delay)
+
 func change_job(new_job: citizens_info.Job):
 	assert(new_job != job or job == citizens_info.Job.LIVE_DULL_LIFE)
 	_get_job_func(JobState.EXIT).call()
@@ -187,6 +203,8 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.can_interact = false
 		_speed = 5.0
 		world_info.ship.refuel(1)
+		if _can_play_audio():
+			_play_audio_with_delay(fanatic_laughter_stream, .33)
 	elif new_stage == citizens_info.Stage.TOWNIE:
 		animation_handler.skin = "Townie"
 		interactable.context_for_player = "townie"

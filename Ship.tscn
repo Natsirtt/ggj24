@@ -121,3 +121,5 @@ light_color = Color(1, 1, 0.290196, 1)
 light_energy = 1.637
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioTimer" type="Timer" parent="."]
