@@ -22,7 +22,7 @@ func _ready():
 			else:
 				lamps[i].hide()
 	)
-	refuel(4)
+	
 	world_info.ship = self
 	for spot in $"Praying Spots Root".get_children():
 		free_praying_spots.append(spot as Node3D)
