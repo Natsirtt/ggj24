@@ -1,16 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://d30pith2umoyx"]
+[gd_scene load_steps=18 format=3 uid="uid://d30pith2umoyx"]
 
-[ext_resource type="PackedScene" uid="uid://dy8hn4shc8nlf" path="res://player.tscn" id="1_c6tpr"]
+[ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="PackedScene" uid="uid://d4jsq0708dl2f" path="res://Ship.tscn" id="3_1pr2s"]
 [ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="4_5qbtd"]
 [ext_resource type="PackedScene" uid="uid://chduldksk7ymn" path="res://building.tscn" id="4_ifaxb"]
-[ext_resource type="PackedScene" uid="uid://bqwrffsmk5ffj" path="res://building_small.tscn" id="7_e5e5f"]
-[ext_resource type="PackedScene" uid="uid://doau3qjqx430j" path="res://HUD.tscn" id="7_hx27e"]
-[ext_resource type="PackedScene" uid="uid://cj5j5db0swntb" path="res://spawner.tscn" id="8_1lsvx"]
-[ext_resource type="PackedScene" uid="uid://c75sy8kylvufe" path="res://goon.tscn" id="8_bktuc"]
+[ext_resource type="PackedScene" uid="uid://bfccrd35b3m16" path="res://building_small.tscn" id="7_e5e5f"]
+[ext_resource type="PackedScene" path="res://HUD.tscn" id="7_hx27e"]
+[ext_resource type="PackedScene" path="res://spawner.tscn" id="8_1lsvx"]
+[ext_resource type="PackedScene" path="res://goon.tscn" id="8_bktuc"]
 [ext_resource type="PackedScene" uid="uid://bo68vhogqfqm6" path="res://Art/Environment/Plants/oak_scene.tscn" id="9_ju3xr"]
 [ext_resource type="PackedScene" uid="uid://f6btxepntcfh" path="res://Art/Environment/Plants/bush_scene.tscn" id="10_kltpr"]
 [ext_resource type="PackedScene" uid="uid://bfmtmm3jf5wew" path="res://Art/Environment/Plants/pine_scene.tscn" id="11_ad5lf"]
+[ext_resource type="PackedScene" uid="uid://b05j4mic2cxwa" path="res://building_big.tscn" id="12_y03fp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uuu30"]
 vertices = PackedVector3Array(-5.34085, -0.977845, -14.1952, -3.84085, -0.977845, -14.1952, -4.09085, -0.977845, -115.445, -6.09085, -0.977845, -12.9452, -5.34085, -0.977845, -14.1952, -4.09085, -0.977845, -115.445, -110.341, -0.977845, -115.445, -110.341, -0.977845, -12.9452, -2.84085, -0.977845, -14.1952, -2.34085, -0.977845, -115.445, -4.09085, -0.977845, -115.445, -3.84085, -0.977845, -14.1952, 0.659149, -0.977845, -11.4452, -0.590851, -0.977845, -11.4452, -0.340851, -0.977845, -6.69517, 1.40915, -0.977845, -12.1952, 0.659149, -0.977845, -11.4452, -0.340851, -0.977845, -6.69517, 5.15915, -0.977845, -6.69517, 1.40915, -0.977845, -12.9452, 5.15915, -0.977845, -6.69517, 106.659, -0.977845, -5.44517, 106.659, -0.977845, -115.445, -2.34085, -0.977845, -115.445, 1.40915, -0.977845, -12.9452, 1.40915, -0.977845, -12.1952, 5.15915, -0.977845, -6.69517, 5.15915, -0.977845, -6.69517, 5.90915, -0.977845, -5.44517, 106.659, -0.977845, -5.44517, -2.34085, -0.977845, -115.445, -2.84085, -0.977845, -14.1952, 0.659149, -0.977845, -13.6952, -2.34085, -0.977845, -115.445, 0.659149, -0.977845, -13.6952, 1.40915, -0.977845, -12.9452, -1.34085, -0.977845, -6.69517, -0.340851, -0.977845, -6.69517, -0.590851, -0.977845, -11.4452, -2.09085, -0.977845, -5.94517, -1.34085, -0.977845, -6.69517, -0.590851, -0.977845, -11.4452, -5.34085, -0.977845, -11.6952, -0.0908508, -0.977845, -4.19517, -1.34085, -0.977845, -4.44517, -110.341, -0.977845, -12.9452, -110.341, -0.977845, 119.805, -0.0908508, -0.977845, 119.805, -2.09085, -0.977845, -5.19517, -2.09085, -0.977845, -5.94517, -5.34085, -0.977845, -11.6952, -6.09085, -0.977845, -12.9452, -110.341, -0.977845, -12.9452, -1.34085, -0.977845, -4.44517, -2.09085, -0.977845, -5.19517, -110.341, -0.977845, -12.9452, 106.659, -0.977845, -5.44517, 5.90915, -0.977845, -5.44517, 5.15915, -0.977845, -4.44517, 3.90915, -0.977845, 119.805, 106.659, -0.977845, 119.805, 5.15915, -0.977845, -4.44517, 3.65915, -0.977845, -4.44517, 3.90915, -0.977845, 119.805, -0.0908508, -0.977845, -4.19517, -0.0908508, -0.977845, 119.805, 3.90915, -0.977845, 119.805, 3.65915, -0.977845, -4.44517)
@@ -243,11 +244,6 @@ transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 10.9026,
 transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 14.7251, -0.674079, -8.54667)
 
 [node name="Hud" parent="NavigationRegion3D/Building14" instance=ExtResource("7_hx27e")]
-
-[node name="Building15" parent="NavigationRegion3D" instance=ExtResource("7_e5e5f")]
-transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 14.7251, -0.674079, -8.54667)
-
-[node name="Hud" parent="NavigationRegion3D/Building15" instance=ExtResource("7_hx27e")]
 
 [node name="Building26" parent="NavigationRegion3D" instance=ExtResource("7_e5e5f")]
 transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, -46.3697, -0.674079, -14.294)
@@ -515,3 +511,24 @@ transform = Transform3D(0.954751, 0, 0, 0, 1.06485, 0, 0, 0, 0.949211, -32.7098,
 
 [node name="Root Scene63" parent="Root Scene2" instance=ExtResource("9_ju3xr")]
 transform = Transform3D(0.954751, 0, 0, 0, 0.905559, 0, 0, 0, 0.949211, -35.4127, 0.0497335, 28.9922)
+
+[node name="Building" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 9.68118, -0.48889, -28.2675)
+
+[node name="Building2" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 2.62075, -0.444328, -37.1955)
+
+[node name="Building3" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 22.1651, -0.621825, -33.6623)
+
+[node name="Building4" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, 13.4324, -0.621825, -51.9951)
+
+[node name="Building5" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, -10.2854, -0.854354, -34.5029)
+
+[node name="Building6" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, -21.6547, -0.854354, -45.3484)
+
+[node name="Building7" parent="." instance=ExtResource("12_y03fp")]
+transform = Transform3D(1, 0.000610865, 0, -0.000610865, 1, 0, 0, 0, 1, -40.8733, -0.854354, -23.674)
