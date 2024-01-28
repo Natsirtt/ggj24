@@ -204,6 +204,8 @@ func change_stage(new_stage: citizens_info.Stage):
 	print(str(self) + " changed to stage " + str(stage))
 
 func _ready():
+	
+	self.global_position = Vector3(global_position.x, 0.28 , global_position.z)
 	change_stage(citizens_info.Stage.TOWNIE)
 	change_job(citizens_info.Job.LIVE_DULL_LIFE)
 	interactable.interacted.connect(_on_interact)
