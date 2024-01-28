@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bup5utt6x4nfi"]
+[gd_scene load_steps=6 format=3 uid="uid://bqwrffsmk5ffj"]
 
 [ext_resource type="PackedScene" uid="uid://dm8j4b62dhw16" path="res://Art/Environment/Houses/House_01_scene.tscn" id="1_gabck"]
 [ext_resource type="Script" path="res://building.gd" id="1_w5p8j"]
