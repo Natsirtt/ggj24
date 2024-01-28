@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c46cy5nv77ed3"
-path="res://.godot/imported/rocketship.fbx-7a9e851776077ef7a5e34b651cd70a15.scn"
+uid="uid://jt2xwslo26ak"
+path="res://.godot/imported/pine.fbx-cd5e6a9fd144bae514b9ce767c7032ac.scn"
 
 [deps]
 
-source_file="res://Art/Environment/rocketship.fbx"
-dest_files=["res://.godot/imported/rocketship.fbx-7a9e851776077ef7a5e34b651cd70a15.scn"]
+source_file="res://Art/Environment/Plants/pine.fbx"
+dest_files=["res://.godot/imported/pine.fbx-cd5e6a9fd144bae514b9ce767c7032ac.scn"]
 
 [params]
 

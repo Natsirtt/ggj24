@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://f6btxepntcfh"]
+
+[ext_resource type="PackedScene" uid="uid://d0io5brn31pb0" path="res://Art/Environment/Plants/bush.fbx" id="1_j4q22"]
+[ext_resource type="Material" uid="uid://gltlp3k0ej2w" path="res://Art/Environment/Plants/plant_MAT.tres" id="2_tq1vi"]
+
+[node name="Root Scene2" instance=ExtResource("1_j4q22")]
+
+[node name="bush" parent="RootNode" index="0"]
+material_override = ExtResource("2_tq1vi")

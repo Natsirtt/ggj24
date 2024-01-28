@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo68vhogqfqm6"]
+
+[ext_resource type="PackedScene" uid="uid://ca468pp6e6csb" path="res://Art/Environment/Plants/oak.fbx" id="1_lqf5u"]
+[ext_resource type="Material" uid="uid://gltlp3k0ej2w" path="res://Art/Environment/Plants/plant_MAT.tres" id="2_g7t8b"]
+
+[node name="Root Scene2" instance=ExtResource("1_lqf5u")]
+
+[node name="oak" parent="RootNode" index="0"]
+material_override = ExtResource("2_g7t8b")
