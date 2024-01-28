@@ -129,6 +129,7 @@ func change_stage(new_stage: citizens_info.Stage):
 	if new_stage == citizens_info.Stage.CULTIST:
 		animation_handler.skin = "Cultist"
 		interactable.context_for_player = "cultist"
+		interactable.cost = 0
 		_speed = 3.0
 		change_job(citizens_info.Job.PRAY)
 	elif new_stage == citizens_info.Stage.FANATIC:
@@ -139,6 +140,7 @@ func change_stage(new_stage: citizens_info.Stage):
 	elif new_stage == citizens_info.Stage.TOWNIE:
 		animation_handler.skin = "Townie"
 		interactable.context_for_player = "townie"
+		interactable.cost = 1
 		_speed = 1.0
 	elif new_stage == citizens_info.Stage.DESERTER:
 		animation_handler.skin = "Deserter"
@@ -158,7 +160,15 @@ func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)
 
 func _on_interact(interactor):
-	pass
+	assert(stage == citizens_info.Stage.TOWNIE or stage == citizens_info.Stage.CULTIST)
+	if stage == citizens_info.Stage.TOWNIE:
+		change_stage(citizens_info.Stage.CULTIST)
+		change_job(citizens_info.Job.PRAY)
+	elif stage == citizens_info.Stage.CULTIST:
+		if job == citizens_info.Job.PRAY:
+			change_job(citizens_info.Job.DEFEND)
+		else:
+			change_job(citizens_info.Job.PRAY)
 
 func _physics_process(_delta):
 	var was_stopped = velocity.is_zero_approx()

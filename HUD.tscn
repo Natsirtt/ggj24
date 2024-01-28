@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://doau3qjqx430j"]
+
+[ext_resource type="LabelSettings" uid="uid://b46tplunxjx4n" path="res://HUD_label_settings.tres" id="1_4iw34"]
+[ext_resource type="Script" path="res://HUD.gd" id="1_h1krp"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_h1krp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 10.0
+offset_right = 135.0
+offset_bottom = 40.0
+
+[node name="Favour title" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Favour: "
+label_settings = ExtResource("1_4iw34")
+
+[node name="Favour value" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "10"
+label_settings = ExtResource("1_4iw34")

@@ -22,7 +22,7 @@ shape = SubResource("CapsuleShape3D_vwh3h")
 
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource("2_c3j38")
-cost = 3
+cost = 1
 context_for_player = "townie"
 
 [node name="InteractionShape" type="CollisionShape3D" parent="Interactable"]
