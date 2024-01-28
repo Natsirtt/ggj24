@@ -7,6 +7,9 @@ var _interactables_in_range: Array[Interactable] = []
 signal character_moved(velocity)
 signal character_stopped
 signal character_interacted
+# HACK! We want the AnimationHandler to work seamlessly with Player and Citizen and Goon;
+# overall 
+signal character_stage_changed(stage: citizens_info.Stage)
 
 const SPEED = 5.0
 

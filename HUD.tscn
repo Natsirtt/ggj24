@@ -6,17 +6,32 @@
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_h1krp")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 10.0
-offset_right = 135.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Favour title" type="Label" parent="HBoxContainer"]
+[node name="Favour" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="VBoxContainer/Favour"]
 layout_mode = 2
 text = "Favour: "
 label_settings = ExtResource("1_4iw34")
 
-[node name="Favour value" type="Label" parent="HBoxContainer"]
+[node name="value" type="Label" parent="VBoxContainer/Favour"]
 layout_mode = 2
 text = "10"
+label_settings = ExtResource("1_4iw34")
+
+[node name="Fuel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="VBoxContainer/Fuel"]
+layout_mode = 2
+text = "Fuel: "
+label_settings = ExtResource("1_4iw34")
+
+[node name="value" type="Label" parent="VBoxContainer/Fuel"]
+layout_mode = 2
+text = "0"
 label_settings = ExtResource("1_4iw34")

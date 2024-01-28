@@ -36,7 +36,7 @@ var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 signal character_moved(velocity)
 signal character_stopped
 signal character_interacted
-signal stage_changed(stage: citizens_info.Stage)
+signal character_stage_changed(stage: citizens_info.Stage)
 signal job_changed(job: citizens_info.Job)
 
 enum JobState {
@@ -148,7 +148,7 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.can_interact = false
 		_speed = 4.0
 	stage = new_stage
-	stage_changed.emit(stage)
+	character_stage_changed.emit(stage)
 	print(str(self) + " changed to stage " + str(stage))
 
 func _ready():
