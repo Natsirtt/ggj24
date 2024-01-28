@@ -61,6 +61,7 @@ func leave_and_never_return():
 
 func scare_off():
 	timer.paused = true
+	is_targeted_by_defender = true # so if another reason to scare them off was used, they don't get chased anyway
 	leave_and_never_return()
 
 func _physics_process(delta):

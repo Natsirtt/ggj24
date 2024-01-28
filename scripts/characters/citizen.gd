@@ -137,6 +137,8 @@ func _roam():
 	_target = Target.new(Vector3(random_direction.x * random_distance, global_position.y, random_direction.y * random_distance))
 
 func _pray():
+	# For some reason that I do not understand this is called even when
+	# the timer should have been cleared
 	player_info.generate_favour(favour_generated_per_prayer)
 	character_interacted.emit("pray")
 
