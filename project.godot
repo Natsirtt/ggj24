@@ -10,7 +10,10 @@ config_version=5
 
 [application]
 
-config/name="ggj24"
+config/name="Bher'loth-Bher'loth Happy Refueling"
+config/description="You had to make an emergency pit-stop on a dull planet where fun is not allowed! Fortunately, that means Citizens here are prone to laughter, as long as the Government Goons aren't watching. What a coincidence, laughter is exactly what powers your ship! Well, real laughter, coming from the depths of your soul after being blessed by the Great Bher'loth-Bher'loth the Hilarious One.
+
+Bring laughter and happiness to this world by spreading the word of the Great Bher'loth-Bher'loth the Hilarious One to gain his favour, so he may bless your followers with the ultimate laughter, which will refuel your ship!"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
