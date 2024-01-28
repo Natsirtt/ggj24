@@ -2,11 +2,27 @@ class_name Ship extends Node3D
 
 var free_praying_spots: Array[Node3D] = []
 var reserved_praying_spots: Array[Node3D] = []
-var fuel = 1
+var lamps: Array[Node3D] = []
+var fuel = 0
 
 signal fuel_changed(fuel: int)
 
 func _ready():
+	lamps.append($Lamps/Lamp_01)
+	lamps.append($Lamps/Lamp_02)
+	lamps.append($Lamps/Lamp_03)
+	for l in lamps:
+		l.hide()
+	
+	fuel_changed.connect(func(f):
+		var number_of_lit_lamps = floori(f * 3 / player_info.fuel_win_amount)
+		for i in range(3):
+			if i < number_of_lit_lamps:
+				lamps[i].show()
+			else:
+				lamps[i].hide()
+	)
+	refuel(4)
 	world_info.ship = self
 	for spot in $"Praying Spots Root".get_children():
 		free_praying_spots.append(spot as Node3D)
