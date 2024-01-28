@@ -2093,7 +2093,7 @@ transform = Transform3D(1, -2.80977e-09, 5.48574e-20, 4.90476e-09, 1, 1.10686e-1
 sprite_frames = SubResource("SpriteFrames_al0jc")
 animation = &"Fanatic_Joke_Idle"
 autoplay = "Player_Idle"
-frame_progress = 0.97397
+frame_progress = 0.637649
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {

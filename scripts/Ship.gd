@@ -17,7 +17,7 @@ func _process(_delta):
 	$Interactable.can_interact = citizens_info.get_stage(citizens_info.Stage.CULTIST).size() > 0
 
 func _on_interact(_interactor):
-	var chosen_one: Citizen = citizens_info.get_stage(citizens_info.Stage.CULTIST).pick_random()
+	var chosen_one = citizens_info.get_stage(citizens_info.Stage.CULTIST).pick_random()
 	chosen_one.change_stage(citizens_info.Stage.FANATIC)
 	chosen_one.change_job(citizens_info.Job.LIVE_DULL_LIFE)
 

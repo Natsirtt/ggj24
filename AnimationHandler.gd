@@ -67,9 +67,9 @@ func _playAnimWithInto(AnimName):
 	
 	
 func _handleStageChange(State):
-	if State == 1:
+	if State == 1 or State == 2:
 		is_interacting = true
-		_animated_sprite.play("Townie_Turn_Into")	
+		_animated_sprite.play(skin + "_Turn_Into")	
 		timer.one_shot = true
 		timer.timeout.connect(func(): _handleStageChange(-1) , CONNECT_ONE_SHOT)
 		timer.start(1)
