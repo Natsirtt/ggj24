@@ -4,7 +4,7 @@ class_name Ship extends Node3D
 var free_praying_spots: Array[Node3D] = []
 var reserved_praying_spots: Array[Node3D] = []
 var lamps: Array[Node3D] = []
-var fuel = 23
+var fuel = 0
 
 var refueling_sound := load("res://Sound/Sound_RocketCharge.mp3")
 var taking_off_sound := load("res://Sound/transport_space_shuttle_launch_from_distance_rumble.mp3")
