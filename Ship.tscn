@@ -120,6 +120,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68166, -4.76837e-07, 2.683
 [node name="PrayingSpot20" type="Node3D" parent="Praying Spots Root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37671, -4.76837e-07, 3.22381)
 
+[node name="PrayingSpot21" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62919, -4.76837e-07, 5.80358)
+
+[node name="PrayingSpot22" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.28108, -4.76837e-07, 6.12775)
+
+[node name="PrayingSpot23" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16147, -4.76837e-07, 9.97357)
+
+[node name="PrayingSpot24" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05959, -4.76837e-07, 9.97357)
+
+[node name="PrayingSpot26" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6055, -4.76837e-07, 1.79774)
+
+[node name="PrayingSpot25" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17235, -4.76837e-07, 10.9911)
+
+[node name="PrayingSpot27" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0468, -4.76837e-07, 12.4738)
+
+[node name="PrayingSpot28" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06093, -4.76837e-07, 8.99618)
+
+[node name="PrayingSpot29" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96318, -4.76837e-07, 5.94872)
+
+[node name="PrayingSpot30" type="Node3D" parent="Praying Spots Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90938, -4.76837e-07, 8.02164)
+
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource("2_xggto")
 cost = 3
