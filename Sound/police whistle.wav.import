@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5rwye4g02y0a"
+path="res://.godot/imported/police whistle.wav-2d61905e87e84bea57a900eca6c0512d.sample"
+
+[deps]
+
+source_file="res://Sound/police whistle.wav"
+dest_files=["res://.godot/imported/police whistle.wav-2d61905e87e84bea57a900eca6c0512d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
