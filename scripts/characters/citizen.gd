@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var min_dull_life_roam_distance = 5.0
 @export var max_dull_life_roam_distance = 15.0
 @export var favour_generated_per_prayer = 1
-@export var seconds_between_favour_generation = 5
+@export var seconds_between_favour_generation = 10
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -113,6 +113,7 @@ func _roam():
 
 func _pray():
 	player_info.generate_favour(favour_generated_per_prayer)
+	character_interacted.emit("pray")
 
 func _get_job_func(state: JobState):
 	return state_machine[job][state]
@@ -129,6 +130,7 @@ func change_stage(new_stage: citizens_info.Stage):
 		animation_handler.skin = "Cultist"
 		interactable.context_for_player = "cultist"
 		_speed = 3.0
+		change_job(citizens_info.Job.PRAY)
 	elif new_stage == citizens_info.Stage.FANATIC:
 		animation_handler.skin = "Fanatic"
 		interactable.context_for_player = "fanatic"
@@ -143,10 +145,13 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.context_for_player = "deserter"
 		interactable.can_interact = false
 		_speed = 4.0
-	print(str(self) + " changed to stage " + str(new_stage))
+	stage = new_stage
+	stage_changed.emit(stage)
+	print(str(self) + " changed to stage " + str(stage))
 
 func _ready():
-	_get_job_func(JobState.ENTER).call()
+	change_stage(citizens_info.Stage.TOWNIE)
+	change_job(citizens_info.Job.LIVE_DULL_LIFE)
 	interactable.interacted.connect(_on_interact)
 
 func _process(delta):
