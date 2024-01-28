@@ -48,17 +48,33 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+var context_timings = {
+	"Goon_save": 1.0
 	
+}
+
+var anim_remapper = {
+	"Player_attack": "Player_cultist",
+	"Player_ship": "Player_cultist"
+}
+
+
+	
+
 	
 func _handleInteract(context):
-	_playAnimWithInto(skin + "_Joke")
+	var anim_name = skin + "_" + context
+
+	var real_anim_name = anim_remapper.get(anim_name, anim_name)
+	_playAnimWithInto(real_anim_name)
 	self.is_interacting = true
 	
 	print("AnimHandleInteract")
 	
 	timer.one_shot = true
 	timer.timeout.connect(func(): is_interacting = false, CONNECT_ONE_SHOT)
-	timer.start(4)
+	timer.start(context_timings.get(anim_name, 3.0))
 	
 	
 func _playAnimWithInto(AnimName):
@@ -67,12 +83,15 @@ func _playAnimWithInto(AnimName):
 	
 	
 func _handleStageChange(State):
-	if State == 1 or State == 2:
+	if State == citizens_info.Stage.CULTIST or State == citizens_info.Stage.FANATIC :
 		is_interacting = true
 		_animated_sprite.play(skin + "_Turn_Into")	
 		timer.one_shot = true
 		timer.timeout.connect(func(): _handleStageChange(-1) , CONNECT_ONE_SHOT)
-		timer.start(1)
+		if State == citizens_info.Stage.CULTIST:
+			timer.start(1)
+		else:
+			timer.start(3)
 	else:
 		_animated_sprite.play(skin + "_Idle")	
 		is_interacting = false
