@@ -1,8 +1,8 @@
 extends Node
 
 @export var player: Player
-var favour: int = 20
-var fuel_win_amount = 6
+var favour: int = 5
+var fuel_win_amount = 24
 
 signal favour_generated(amount: int)
 signal favour_consumed(amount: int)
