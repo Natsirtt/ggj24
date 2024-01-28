@@ -96,7 +96,7 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Exiting defense militia")
-			pass,
+			_disconnect_all_timer_listeners(),
 	}
 }
 
