@@ -43,6 +43,8 @@ func _ready():
 	character_node.connect("character_stage_changed", _handleStageChange.bind(null))
 	timer = Timer.new()
 	add_child(timer)
+	_animated_sprite.play(skin + "_Idle")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

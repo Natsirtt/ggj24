@@ -25,14 +25,17 @@ class Target:
 var _target: Target = null
 var _reserved_spot: Node3D = null
 
-var _speed = 1.0
+var _speed = 0.0
 @onready var timer: Timer = $Timer
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
-var stage: citizens_info.Stage = citizens_info.Stage.DULL
+@onready var interactable: Interactable = $Interactable
+@onready var animation_handler: AnimationHandler = $AnimationHandler
+var stage: citizens_info.Stage = citizens_info.Stage.TOWNIE
 var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 
 signal character_moved(velocity)
 signal character_stopped
+signal character_interacted
 signal stage_changed(stage: citizens_info.Stage)
 signal job_changed(job: citizens_info.Job)
 
@@ -45,10 +48,10 @@ enum JobState {
 var state_machine = {
 	citizens_info.Job.LIVE_DULL_LIFE: {
 		JobState.ENTER: func():
+			print("Entering dull life")
 			# In dull life mode, citizens roam aimlessly. So we make them pick
 			# a target position within 50 meters to slowly go to, and then wait a
 			# random amount of time before doing it again.
-			_speed = 1.0
 			timer.process_callback = Timer.TIMER_PROCESS_IDLE
 			timer.start(randf_range(min_dull_life_idle_time, max_dull_life_ilde_time))
 			timer.timeout.connect(func():
@@ -58,13 +61,14 @@ var state_machine = {
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
-			timer.timeout.disconnect(_roam)
+			print("Exiting dull life")
+			_disconnect_all_timer_listeners()
 			timer.stop()
 			_target = null,
 	},
 	citizens_info.Job.PRAY: {
 		JobState.ENTER: func():
-			_speed = 3.0
+			print("Entering pray job")
 			var ship = world_info.ship
 			assert(ship.has_free_praying_spot())
 			_reserved_spot = ship.reserve_praying_spot()
@@ -78,22 +82,30 @@ var state_machine = {
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
-			timer.timeout.disconnect(_pray)
+			print("Exiting pray job")
+			_disconnect_all_timer_listeners()
 			timer.stop()
 			world_info.ship.return_praying_spot(_reserved_spot)
 			_target = null,
 	},
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
+			print("Entering defense militia")
 			pass,
 		JobState.PROCESS: func(delta):
 			pass,
 		JobState.EXIT: func():
+			print("Exiting defense militia")
 			pass,
 	}
 }
 
+func _disconnect_all_timer_listeners():
+	for connection in timer.timeout.get_connections():
+		timer.timeout.disconnect(connection["callable"])
+
 func _roam():
+	print("Starting new roam")
 	# this is still biased to closer positions, but I can't be bothered right now
 	var random_direction = maths.random_inside_unit_circle()
 	var random_distance = randf_range(min_dull_life_roam_distance, max_dull_life_roam_distance)
@@ -112,12 +124,36 @@ func change_job(new_job: citizens_info.Job):
 	job_changed.emit(job)
 	print(str(self) + "'s job is now " + str(job))
 
+func change_stage(new_stage: citizens_info.Stage):
+	if new_stage == citizens_info.Stage.CULTIST:
+		animation_handler.skin = "Cultist"
+		interactable.context_for_player = "cultist"
+		_speed = 3.0
+	elif new_stage == citizens_info.Stage.FANATIC:
+		animation_handler.skin = "Fanatic"
+		interactable.context_for_player = "fanatic"
+		interactable.can_interact = false
+		_speed = 5.0
+	elif new_stage == citizens_info.Stage.TOWNIE:
+		animation_handler.skin = "Townie"
+		interactable.context_for_player = "townie"
+		_speed = 1.0
+	elif new_stage == citizens_info.Stage.DESERTER:
+		animation_handler.skin = "Deserter"
+		interactable.context_for_player = "deserter"
+		interactable.can_interact = false
+		_speed = 4.0
+	print(str(self) + " changed to stage " + str(new_stage))
+
 func _ready():
 	_get_job_func(JobState.ENTER).call()
-	change_job(citizens_info.Job.PRAY)
+	interactable.interacted.connect(_on_interact)
 
 func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)
+
+func _on_interact(interactor):
+	pass
 
 func _physics_process(_delta):
 	var was_stopped = velocity.is_zero_approx()

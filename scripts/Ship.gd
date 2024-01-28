@@ -2,6 +2,7 @@ class_name Ship extends Node3D
 
 var free_praying_spots: Array[Node3D] = []
 var reserved_praying_spots: Array[Node3D] = []
+var fluel = 0
 
 func _ready():
 	world_info.ship = self

@@ -22,6 +22,8 @@ shape = SubResource("CapsuleShape3D_vwh3h")
 
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource("2_c3j38")
+cost = 3
+context_for_player = "townie"
 
 [node name="InteractionShape" type="CollisionShape3D" parent="Interactable"]
 shape = SubResource("SphereShape3D_2mbss")
@@ -33,11 +35,9 @@ script = ExtResource("3_yqckp")
 interactable_script = NodePath("..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 1.5
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Node3D" parent="." node_paths=PackedStringArray("character_node") instance=ExtResource("5_cvekp")]
+[node name="AnimationHandler" parent="." node_paths=PackedStringArray("character_node") instance=ExtResource("5_cvekp")]
 transform = Transform3D(1.2919, 0, 0, 0, 1.2919, 0, 0, 0, 1.2919, 0, 0.644313, 0)
 character_node = NodePath("..")
