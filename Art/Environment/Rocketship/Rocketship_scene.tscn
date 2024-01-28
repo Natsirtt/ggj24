@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d14aikb7dq04c"]
+
+[ext_resource type="Material" uid="uid://d1w4a7wdtvqfi" path="res://Art/Environment/Rocketship/Rocketship_MAT.tres" id="2_44fxm"]
+
+[node name="Root Scene"]
+
+[node name="rocketship" parent="RootNode" index="0"]
+material_override = ExtResource("2_44fxm")
+mesh = null
