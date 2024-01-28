@@ -4,6 +4,7 @@ enum Stage {
 	TOWNIE,
 	CULTIST,
 	FANATIC,
+	DESERTER,
 }
 
 enum Job {

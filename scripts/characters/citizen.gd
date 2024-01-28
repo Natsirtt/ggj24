@@ -29,6 +29,7 @@ var _speed = 0.0
 @onready var timer: Timer = $Timer
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
 @onready var interactable: Interactable = $Interactable
+@onready var animation_handler: AnimationHandler = $AnimationHandler
 var stage: citizens_info.Stage = citizens_info.Stage.TOWNIE
 var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 
@@ -51,7 +52,6 @@ var state_machine = {
 			# In dull life mode, citizens roam aimlessly. So we make them pick
 			# a target position within 50 meters to slowly go to, and then wait a
 			# random amount of time before doing it again.
-			_speed = 1.0
 			timer.process_callback = Timer.TIMER_PROCESS_IDLE
 			timer.start(randf_range(min_dull_life_idle_time, max_dull_life_ilde_time))
 			timer.timeout.connect(func():
@@ -69,7 +69,6 @@ var state_machine = {
 	citizens_info.Job.PRAY: {
 		JobState.ENTER: func():
 			print("Entering pray job")
-			_speed = 3.0
 			var ship = world_info.ship
 			assert(ship.has_free_praying_spot())
 			_reserved_spot = ship.reserve_praying_spot()
@@ -127,11 +126,24 @@ func change_job(new_job: citizens_info.Job):
 
 func change_stage(new_stage: citizens_info.Stage):
 	if new_stage == citizens_info.Stage.CULTIST:
-		pass
+		animation_handler.skin = "Cultist"
+		interactable.context_for_player = "cultist"
+		_speed = 3.0
 	elif new_stage == citizens_info.Stage.FANATIC:
-		pass
+		animation_handler.skin = "Fanatic"
+		interactable.context_for_player = "fanatic"
+		interactable.can_interact = false
+		_speed = 5.0
 	elif new_stage == citizens_info.Stage.TOWNIE:
-		pass
+		animation_handler.skin = "Townie"
+		interactable.context_for_player = "townie"
+		_speed = 1.0
+	elif new_stage == citizens_info.Stage.DESERTER:
+		animation_handler.skin = "Deserter"
+		interactable.context_for_player = "deserter"
+		interactable.can_interact = false
+		_speed = 4.0
+	print(str(self) + " changed to stage " + str(new_stage))
 
 func _ready():
 	_get_job_func(JobState.ENTER).call()
