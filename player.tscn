@@ -38,3 +38,5 @@ current = true
 shape = SubResource("SphereShape3D_wkrx4")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

@@ -119,3 +119,5 @@ transform = Transform3D(0.494251, -0.0263312, 0.162659, 0.0155931, 0.421368, 0.1
 transform = Transform3D(1.99245, 2.56114e-08, 4.47035e-08, -3.25963e-09, 2.33204, -8.9407e-08, -1.86265e-09, 2.98023e-08, 1, 0.0668049, 0.144014, 0.447298)
 light_color = Color(1, 1, 0.290196, 1)
 light_energy = 1.637
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
