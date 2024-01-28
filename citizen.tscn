@@ -9,7 +9,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vwh3h"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2mbss"]
-radius = 2.0
+radius = 1.45252
 
 [node name="Citizen" type="CharacterBody3D"]
 collision_layer = 2
@@ -26,6 +26,7 @@ cost = 1
 context_for_player = "townie"
 
 [node name="InteractionShape" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.73941)
 shape = SubResource("SphereShape3D_2mbss")
 
 [node name="InteractionIndicatorFavourProxy" type="Node3D" parent="Interactable"]
