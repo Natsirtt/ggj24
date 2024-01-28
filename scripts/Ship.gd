@@ -2,7 +2,7 @@ class_name Ship extends Node3D
 
 var free_praying_spots: Array[Node3D] = []
 var reserved_praying_spots: Array[Node3D] = []
-var fuel = 0
+var fuel = 1
 
 signal fuel_changed(fuel: int)
 
@@ -27,7 +27,11 @@ func refuel(extra_fuel: int):
 	fuel_changed.emit(fuel)
 
 func consume_fuel(removed_fuel: int):
+	print("consuming " + str(removed_fuel) + " fuel")
 	assert(removed_fuel > 0)
+	if fuel == 0:
+		player_info.player.end_game(false)
+		return
 	fuel = max(fuel - removed_fuel, 0)
 	fuel_changed.emit(fuel)
 

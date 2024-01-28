@@ -62,13 +62,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.926402, 0.373541, 0.0473903, -0.248054, 0.510754, 0.823164, 0.283281, -0.774337, 0.565822, 5.85105, 9.09247, 2.69682)
-light_color = Color(0.85098, 0.886275, 0.882353, 1)
+light_color = Color(0.882972, 0.874238, 0.879887, 1)
 light_energy = 0.517
 light_indirect_energy = 2.723
 shadow_enabled = true
 directional_shadow_split_1 = 0.0
 directional_shadow_fade_start = 0.0
-directional_shadow_max_distance = 91.5
+directional_shadow_max_distance = 58.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vv5aq")
@@ -83,16 +83,40 @@ transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01
 transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -12.7664, -1.26855, -10.1998)
 
 [node name="Root Scene11" parent="." instance=ExtResource("4_1vmkc")]
-transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -8.42866, 0.0744392, -16.8637)
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -8.42866, -1.28557, -16.8637)
 
 [node name="Root Scene12" parent="." instance=ExtResource("4_1vmkc")]
-transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 4.33021, 0.0744392, -16.8637)
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 4.33021, -1.32926, -16.8637)
 
 [node name="Root Scene13" parent="." instance=ExtResource("4_1vmkc")]
-transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 14.947, 0.686725, -15.3902)
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 14.947, -1.39789, -15.3902)
+
+[node name="Root Scene16" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.39531, 0.108422, 0.00180721, -0.114961, 1.31595, 0.0219347, 0, -0.0287422, 1.01109, 28.9963, -0.709023, -25.0348)
+
+[node name="Root Scene18" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(2.04515, 0.153572, 0.00182359, -0.168502, 1.86395, 0.0221335, 0, -0.0407112, 1.02025, 22.5465, -0.810887, -31.4581)
+
+[node name="Root Scene19" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(2.04515, 0.153572, 0.00182359, -0.168502, 1.86395, 0.0221335, 0, -0.0407112, 1.02025, 12.6623, -0.810887, -43.4961)
+
+[node name="Root Scene20" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(2.04515, 0.153572, 0.00182359, -0.168502, 1.86395, 0.0221335, 0, -0.0407112, 1.02025, -5.39709, -0.810887, -43.4961)
+
+[node name="Root Scene21" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(2.04515, 0.153572, 0.00182359, -0.168502, 1.86395, 0.0221335, 0, -0.0407112, 1.02025, -19.1813, -0.810887, -43.4961)
+
+[node name="Root Scene22" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(2.04515, 0.153572, 0.00182359, -0.168502, 1.86395, 0.0221335, 0, -0.0407112, 1.02025, -19.1813, -0.810887, -43.4961)
+
+[node name="Root Scene17" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -4.52804, -0.626484, -27.9172)
+
+[node name="Root Scene23" parent="." instance=ExtResource("4_1vmkc")]
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 9.52152, -0.626484, -27.9172)
 
 [node name="Root Scene14" parent="." instance=ExtResource("4_1vmkc")]
-transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 25.4011, 0.686725, -14.4282)
+transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, 25.4011, -1.45373, -14.4282)
 
 [node name="Root Scene10" parent="." instance=ExtResource("4_1vmkc")]
 transform = Transform3D(1.40004, 0, 0, 0, 1.32041, 0.022009, 0, -0.0287422, 1.01109, -22.1966, -1.26855, -10.1998)
