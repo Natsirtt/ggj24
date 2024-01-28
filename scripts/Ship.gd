@@ -75,6 +75,7 @@ func consume_fuel(removed_fuel: int):
 	assert(removed_fuel > 0)
 	if fuel == 0:
 		player_info.player.end_game(false)
+		$AnimationPlayer.play("Fall")
 		return
 	fuel = max(fuel - removed_fuel, 0)
 	fuel_changed.emit(fuel)

@@ -32,11 +32,26 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 2.13333, 1, -0.0138596, -0.822
 [sub_resource type="Animation" id="Animation_fucrc"]
 resource_name = "new_animation"
 length = 6.0
+step = 0.0333333
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root Scene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0333333, 1, 0, 0, 0, 1, 0.233333, 1, 0, 0, -0.0825691, 0.996585, 0.666667, 1, 0, 0, -0.734963, 0.678107, 0.7, 1, 0, 0, -0.747044, 0.664775, 0.833333, 1, 0, 0, -0.715156, 0.698965, 1.03333, 1, 0, 0, -0.70412, 0.710081)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root Scene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.166667, 1, 0, 0, 0, 0.566667, 1, 0, 0, 0, 0.733333, 1, 0, 0.359841, 0, 1.06667, 1, 0.448638, 0.0320907, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m2s3n"]
 _data = {
-"LiftOff": SubResource("Animation_bwd7i"),
-"new_animation": SubResource("Animation_fucrc")
+"Fall": SubResource("Animation_fucrc"),
+"LiftOff": SubResource("Animation_bwd7i")
 }
 
 [node name="Ship" type="Node3D"]
@@ -122,7 +137,7 @@ script = ExtResource("3_w2n0l")
 interactable_script = NodePath("..")
 
 [node name="Root Scene" parent="." instance=ExtResource("5_drrdo")]
-transform = Transform3D(1, 6.48549e-10, 0, 6.48551e-10, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Lamps" type="Node3D" parent="Root Scene"]
 transform = Transform3D(1, 1.3931e-10, 0, 1.3931e-10, 1, 0, 0, 0, 1, 0, 0, 0)
