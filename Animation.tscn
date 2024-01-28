@@ -2088,6 +2088,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("399_feeqv")
+}],
+"loop": true,
+"name": &"Goon_save_Idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("399_feeqv")
 }, {
 "duration": 1.0,
 "texture": ExtResource("400_k4ns1")
@@ -2714,9 +2722,9 @@ sprite_frames = SubResource("SpriteFrames_cbic1")
 animation = &"new_animation"
 
 [node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
-transform = Transform3D(1, -2.80977e-09, 5.48574e-20, 4.90476e-09, 1, 1.10686e-17, 1.52012e-19, 7.61061e-18, 1, -0.0179548, -3.59098e-05, -0.000895281)
+transform = Transform3D(1, -2.9956e-09, 5.48574e-20, 5.13759e-09, 1, 1.15023e-17, 1.52012e-19, 7.95026e-18, 1, -0.0179548, -3.59098e-05, -0.000895281)
 sprite_frames = SubResource("SpriteFrames_al0jc")
-animation = &"Cultist_pray_Into"
+animation = &"Goon_save_Idle"
 autoplay = "Player_Idle"
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
