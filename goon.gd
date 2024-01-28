@@ -15,6 +15,7 @@ var _target : Node3D
 var is_targeted_by_defender = false
 
 func _ready():
+	self.global_position = Vector3(global_position.x, 0.35 , global_position.z)
 	citizens_info.goons.append(self)
 	player_info.player.game_ended.connect(func(won: bool): leave_and_never_return(), CONNECT_ONE_SHOT)
 	navigation.target_reached.connect(_reached_target, CONNECT_ONE_SHOT)

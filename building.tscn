@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://chduldksk7ymn"]
+[gd_scene load_steps=6 format=3 uid="uid://dpnrfdqgyqogm"]
 
 [ext_resource type="Script" path="res://building.gd" id="1_mamfn"]
-[ext_resource type="PackedScene" uid="uid://cj5j5db0swntb" path="res://spawner.tscn" id="2_8nfhy"]
+[ext_resource type="PackedScene" uid="uid://dpn8q27v6h6qf" path="res://spawner.tscn" id="2_8nfhy"]
 [ext_resource type="PackedScene" uid="uid://bn0lba2b7kdj1" path="res://citizen.tscn" id="3_d542u"]
 [ext_resource type="PackedScene" uid="uid://da3xmxvrpjs2x" path="res://Art/Environment/Houses/House_small_01_scene.tscn" id="3_flxny"]
 
@@ -21,7 +21,7 @@ transform = Transform3D(1, 1.74623e-10, 0, -1.74623e-10, 1, 0, 0, 0, 1, 0.027831
 shape = SubResource("BoxShape3D_fqj2e")
 
 [node name="Spawner" parent="." instance=ExtResource("2_8nfhy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0383663, 0.947129, 0.957031)
+transform = Transform3D(1, 1.43683e-11, 0, 0, 1, 0, 0, 0, 1, 0.0389542, -0.0152612, 1.19166)
 initial_wait = 45
 seconds_between_spawns = 35
 scene_to_spawn = ExtResource("3_d542u")
