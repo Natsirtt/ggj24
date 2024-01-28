@@ -95,7 +95,12 @@ var state_machine = {
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
 			print("Entering defense militia")
-			timer.timeout.connect(func(): player_info.pay(1))
+			timer.timeout.connect(func():
+				if not player_info.can_afford(1):
+					change_stage(citizens_info.Stage.DESERTER)
+					change_job(citizens_info.Job.FLEE)
+				player_info.pay(1)
+			)
 			timer.start(seconds_between_defender_salary),
 		JobState.PROCESS: func(delta):
 			if _target == null:
@@ -105,6 +110,7 @@ var state_machine = {
 					new_target.is_targeted_by_defender = true
 					navigation.target_reached.connect(func():
 						new_target.scare_off()
+						character_interacted.emit("attack")
 						_target = null, CONNECT_ONE_SHOT)
 					_target = Target.new(new_target),
 		JobState.EXIT: func():
@@ -138,7 +144,9 @@ func _roam():
 
 func _pray():
 	# For some reason that I do not understand this is called even when
-	# the timer should have been cleared
+	# the timer should have been cleared. So let's hack it
+	if job != citizens_info.Job.PRAY:
+		return
 	player_info.generate_favour(favour_generated_per_prayer)
 	character_interacted.emit("pray")
 
