@@ -78,7 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37671, -4.76837e-07, 3.2238
 
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource("2_xggto")
-cost = 2
+cost = 3
 context_for_player = "ship"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]

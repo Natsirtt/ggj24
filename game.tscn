@@ -3,15 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="PackedScene" uid="uid://d4jsq0708dl2f" path="res://Ship.tscn" id="3_1pr2s"]
 [ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="4_5qbtd"]
-[ext_resource type="PackedScene" uid="uid://chduldksk7ymn" path="res://building.tscn" id="4_ifaxb"]
-[ext_resource type="PackedScene" uid="uid://bfccrd35b3m16" path="res://building_small.tscn" id="7_e5e5f"]
+[ext_resource type="PackedScene" uid="uid://dpnrfdqgyqogm" path="res://building.tscn" id="4_ifaxb"]
+[ext_resource type="PackedScene" uid="uid://brnb3nukhq4ky" path="res://building_small.tscn" id="7_e5e5f"]
 [ext_resource type="PackedScene" path="res://HUD.tscn" id="7_hx27e"]
-[ext_resource type="PackedScene" path="res://spawner.tscn" id="8_1lsvx"]
-[ext_resource type="PackedScene" path="res://goon.tscn" id="8_bktuc"]
+[ext_resource type="PackedScene" uid="uid://dpn8q27v6h6qf" path="res://spawner.tscn" id="8_1lsvx"]
+[ext_resource type="PackedScene" uid="uid://c75sy8kylvufe" path="res://goon.tscn" id="8_bktuc"]
 [ext_resource type="PackedScene" uid="uid://bo68vhogqfqm6" path="res://Art/Environment/Plants/oak_scene.tscn" id="9_ju3xr"]
 [ext_resource type="PackedScene" uid="uid://f6btxepntcfh" path="res://Art/Environment/Plants/bush_scene.tscn" id="10_kltpr"]
 [ext_resource type="PackedScene" uid="uid://bfmtmm3jf5wew" path="res://Art/Environment/Plants/pine_scene.tscn" id="11_ad5lf"]
-[ext_resource type="PackedScene" uid="uid://b05j4mic2cxwa" path="res://building_big.tscn" id="12_y03fp"]
+[ext_resource type="PackedScene" path="res://building_big.tscn" id="12_y03fp"]
 [ext_resource type="PackedScene" uid="uid://bn0lba2b7kdj1" path="res://citizen.tscn" id="13_wq8cm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uuu30"]
@@ -69,7 +69,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mam3r")
 transform = Transform3D(1, 0, 0, 0, 1, -6.65986e-13, 0, 6.65986e-13, 1, 0.825254, 0.926857, 0.838893)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_vxvn4")
 
 [node name="Ground4" type="MeshInstance3D" parent="NavigationRegion3D"]
