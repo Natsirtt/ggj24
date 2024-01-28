@@ -1,5 +1,6 @@
 class_name Ship extends Node3D
 
+
 var free_praying_spots: Array[Node3D] = []
 var reserved_praying_spots: Array[Node3D] = []
 var lamps: Array[Node3D] = []
@@ -8,9 +9,9 @@ var fuel = 0
 signal fuel_changed(fuel: int)
 
 func _ready():
-	lamps.append($Lamps/Lamp_01)
-	lamps.append($Lamps/Lamp_02)
-	lamps.append($Lamps/Lamp_03)
+	lamps.append($"Root Scene/Lamps/Lamp_01")
+	lamps.append($"Root Scene/Lamps/Lamp_02")
+	lamps.append($"Root Scene/Lamps/Lamp_03")
 	for l in lamps:
 		l.hide()
 	
@@ -43,6 +44,9 @@ func refuel(extra_fuel: int):
 	fuel_changed.emit(fuel)
 	if fuel == player_info.fuel_win_amount:
 		player_info.player.end_game(true)
+		$AnimationPlayer.play("LiftOff")
+		$Interactable/Indicator.hide()
+		player_info.player.hide()
 
 func consume_fuel(removed_fuel: int):
 	print("consuming " + str(removed_fuel) + " fuel")
