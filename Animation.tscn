@@ -1426,11 +1426,11 @@ sprite_frames = SubResource("SpriteFrames_cbic1")
 animation = &"new_animation"
 
 [node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
-transform = Transform3D(1, -1.33707e-09, 5.48574e-20, 2.1108e-09, 1, 4.56342e-18, 1.52012e-19, 2.12434e-18, 1, -0.00996268, -1.99254e-05, -0.000496652)
+transform = Transform3D(1, -1.4598e-09, 5.48574e-20, 2.34363e-09, 1, 4.9971e-18, 1.52012e-19, 2.58153e-18, 1, -0.00996268, -1.99254e-05, -0.000496652)
 sprite_frames = SubResource("SpriteFrames_al0jc")
-animation = &"Fanatic_Walk"
+animation = &"Fanatic_Idle"
 autoplay = "Player_Idle"
-frame_progress = 0.233002
+frame_progress = 0.368934
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {
