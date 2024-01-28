@@ -38,6 +38,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 2.0807, -5.11)
 [node name="Citizen" parent="." instance=ExtResource("4_hx448")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.8853)
 
+[node name="Citizen2" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.8311)
+
+[node name="Citizen3" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.5981)
+
+[node name="Citizen4" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.2616)
+
+[node name="Citizen5" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.3006)
+
+[node name="Citizen6" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.5256)
+
+[node name="Citizen7" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.9783)
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_uuu30")
 
