@@ -1,6 +1,6 @@
 class_name Goon extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 4.0
 
 signal character_moved(velocity)
 signal character_stopped
@@ -16,9 +16,9 @@ var is_targeted_by_defender = false
 
 func _ready():
 	citizens_info.goons.append(self)
-	player_info.player.game_ended.connect(func(won: bool): scare_off(), CONNECT_ONE_SHOT)
+	player_info.player.game_ended.connect(func(won: bool): leave_and_never_return(), CONNECT_ONE_SHOT)
 	navigation.target_reached.connect(_reached_target, CONNECT_ONE_SHOT)
-	interactable.interacted.connect(func(interactor): scare_off(), CONNECT_ONE_SHOT)
+	interactable.interacted.connect(func(interactor): leave_and_never_return(), CONNECT_ONE_SHOT)
 	var candidate_targets = citizens_info.get_stage(citizens_info.Stage.CULTIST).filter(func(citizen): return not citizen.is_targetted_by_goon and not citizen.job == citizens_info.Job.DEFEND)
 	if candidate_targets.size() == 0:
 		_target = world_info.ship
@@ -53,16 +53,13 @@ func _reached_target():
 
 func leave_and_never_return():
 	print("Goon leaving never to return")
+	timer.paused = true
+	is_targeted_by_defender = true # so if another reason to scare them off was used, they don't get chased anyway
 	var direction = maths.random_inside_unit_circle()
 	var proxy_target = Node3D.new()
 	add_child(proxy_target)
 	proxy_target.global_position = Vector3(direction.x * 100000, global_position.y, direction.y * 100000)
 	_target = proxy_target
-
-func scare_off():
-	timer.paused = true
-	is_targeted_by_defender = true # so if another reason to scare them off was used, they don't get chased anyway
-	leave_and_never_return()
 
 func _physics_process(delta):
 	var was_stopped = velocity.is_zero_approx()

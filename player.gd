@@ -41,9 +41,13 @@ func _process(_delta):
 	if game_has_ended:
 		return
 	
+	var not_interactable_anymore = _interactables_in_range.filter(func(i): return not i.can_interact)
+	for i in not_interactable_anymore:
+		_on_interaction_area_exited(i)
+	
 	if Input.is_action_just_pressed("interact") and _interactables_in_range.size() > 0:
 		var interactable = _interactables_in_range[0]
-		if player_info.can_afford(interactable.cost):
+		if interactable.can_interact and player_info.can_afford(interactable.cost):
 			player_info.pay(interactable.cost)
 			interactable.interact(self)
 			print("Player interacted")

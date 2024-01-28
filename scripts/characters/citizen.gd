@@ -54,6 +54,7 @@ var state_machine = {
 			# In dull life mode, citizens roam aimlessly. So we make them pick
 			# a target position within 50 meters to slowly go to, and then wait a
 			# random amount of time before doing it again.
+			timer.one_shot = false
 			timer.process_callback = Timer.TIMER_PROCESS_IDLE
 			timer.start(randf_range(min_dull_life_idle_time, max_dull_life_ilde_time))
 			timer.timeout.connect(func():
@@ -71,6 +72,7 @@ var state_machine = {
 	citizens_info.Job.PRAY: {
 		JobState.ENTER: func():
 			print("Entering pray job")
+			_speed = 3.0
 			var ship = world_info.ship
 			assert(ship.has_free_praying_spot())
 			_reserved_spot = ship.reserve_praying_spot()
@@ -81,6 +83,7 @@ var state_machine = {
 				# somehow _pray is already connected sometimes?
 				_disconnect_all_listeners()
 				timer.timeout.connect(_pray)
+				timer.one_shot = false
 				timer.start(seconds_between_favour_generation), CONNECT_ONE_SHOT
 			),
 		JobState.PROCESS: func(delta):
@@ -95,6 +98,7 @@ var state_machine = {
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
 			print("Entering defense militia")
+			_speed = 5.0
 			animation_handler.color_tint = Color.LIGHT_CORAL
 			timer.one_shot = false
 			timer.timeout.connect(func():
@@ -114,7 +118,7 @@ var state_machine = {
 					var new_target = candidate_goons.pick_random()
 					new_target.is_targeted_by_defender = true
 					navigation.target_reached.connect(func():
-						new_target.scare_off()
+						new_target.leave_and_never_return()
 						character_interacted.emit("attack")
 						_target = null, CONNECT_ONE_SHOT)
 					_target = Target.new(new_target),
@@ -138,8 +142,12 @@ var state_machine = {
 
 func _disconnect_all_listeners():
 	for connection in timer.timeout.get_connections():
+		if timer.timeout.is_null():
+			break
 		timer.timeout.disconnect(connection["callable"])
 	for connection in navigation.target_reached.get_connections():
+		if navigation.target_reached.is_null():
+			break
 		navigation.target_reached.disconnect(connection["callable"])
 
 func _roam():
@@ -150,10 +158,6 @@ func _roam():
 	_target = Target.new(Vector3(random_direction.x * random_distance, global_position.y, random_direction.y * random_distance))
 
 func _pray():
-	# For some reason that I do not understand this is called even when
-	# the timer should have been cleared. So let's hack it
-	if job != citizens_info.Job.PRAY:
-		return
 	player_info.generate_favour(favour_generated_per_prayer)
 	character_interacted.emit("pray")
 
@@ -161,6 +165,7 @@ func _get_job_func(state: JobState):
 	return state_machine[job][state]
 
 func change_job(new_job: citizens_info.Job):
+	assert(new_job != job or job == citizens_info.Job.LIVE_DULL_LIFE)
 	_get_job_func(JobState.EXIT).call()
 	animation_handler.color_tint = Color.WHITE
 	job = new_job
@@ -176,12 +181,12 @@ func change_stage(new_stage: citizens_info.Stage):
 		_speed = 3.0
 		$Interactable/InteractionIndicatorActionProxy.show()
 		$Interactable/InteractionIndicatorFavourProxy.hide()
-		change_job(citizens_info.Job.PRAY)
 	elif new_stage == citizens_info.Stage.FANATIC:
 		animation_handler.skin = "Fanatic"
 		interactable.context_for_player = "fanatic"
 		interactable.can_interact = false
 		_speed = 5.0
+		world_info.ship.refuel(1)
 	elif new_stage == citizens_info.Stage.TOWNIE:
 		animation_handler.skin = "Townie"
 		interactable.context_for_player = "townie"
