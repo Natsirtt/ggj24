@@ -41,6 +41,8 @@ func refuel(extra_fuel: int):
 	assert(extra_fuel > 0)
 	fuel += extra_fuel
 	fuel_changed.emit(fuel)
+	if fuel == player_info.fuel_win_amount:
+		player_info.player.end_game(true)
 
 func consume_fuel(removed_fuel: int):
 	print("consuming " + str(removed_fuel) + " fuel")
