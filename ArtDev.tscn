@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvhnyryxhuidi"]
+[gd_scene load_steps=13 format=3 uid="uid://dvhnyryxhuidi"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_jo0j6"]
 [ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="2_rx5od"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://da3xmxvrpjs2x" path="res://Art/Environment/Houses/House_small_01_scene.tscn" id="5_esjb0"]
 [ext_resource type="PackedScene" uid="uid://csog11a7toirx" path="res://Art/Environment/Rocketship/Tape_Scene.tscn" id="6_3nlrb"]
 [ext_resource type="PackedScene" uid="uid://bxgniohcy24q2" path="res://Rocketship_Scene.tscn" id="7_5ldd6"]
+[ext_resource type="PackedScene" uid="uid://cnagweafa4lrh" path="res://Art/Environment/Rocketship/Lamp_scene.tscn" id="8_udj8s"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
 lightmap_size_hint = Vector2i(502, 502)
@@ -60,7 +61,7 @@ mesh = SubResource("QuadMesh_asmqv")
 surface_material_override/0 = SubResource("StandardMaterial3D_22r0j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.703668, -0.480711, 0.523229, -0.251506, 0.520203, 0.81617, -0.664527, -0.705908, 0.245148, 5.89043, 8.61486, 0.454242)
+transform = Transform3D(0.926402, 0.373541, 0.0473903, -0.248054, 0.510754, 0.823164, 0.283281, -0.774337, 0.565822, 5.85105, 9.09247, 2.69682)
 light_color = Color(0.85098, 0.886275, 0.882353, 1)
 light_energy = 0.517
 light_indirect_energy = 2.723
@@ -116,7 +117,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25581, -1.59685, -9.39933)
 transform = Transform3D(0.999571, -0.0292999, 0, 0.0292999, 0.999571, 0, 0, 0, 1, -20.1271, -1.9661, -4.14909)
 
 [node name="Root Scene5" parent="." instance=ExtResource("6_3nlrb")]
-transform = Transform3D(0.754728, 0, 0.0960542, 0, 0.716893, 0, -0.0728316, 0, 0.995376, 13.4539, 0.676738, 2.22075)
+transform = Transform3D(0.758147, 0, 0.0151838, 0, 0.716893, 0, -0.0115129, 0, 0.999885, 13.4539, 0.676738, 2.16654)
 
 [node name="Root Scene6" parent="." instance=ExtResource("7_5ldd6")]
 transform = Transform3D(0.744756, 0, 0, 0, 0.744756, 0, 0, 0, 1, 13.4785, 0.260136, 2.70475)
+
+[node name="Lamp_01" parent="." instance=ExtResource("8_udj8s")]
+transform = Transform3D(0.501572, -0.0145024, 0.0119473, 0.0155931, 0.421368, 0.182864, -0.0089962, -0.0782041, 0.983065, 13.6304, 3.80483, 2.0275)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp_01"]
+transform = Transform3D(1.99245, 2.56114e-08, 4.47035e-08, -3.25963e-09, 2.33204, -8.9407e-08, -1.86265e-09, 2.98023e-08, 1, 0.0668049, 0.144014, 0.447298)
+light_color = Color(1, 1, 0.290196, 1)
+light_energy = 1.637
+
+[node name="Lamp_02" parent="." instance=ExtResource("8_udj8s")]
+transform = Transform3D(0.424396, -0.0364286, 0.175105, 0.0180952, 0.356943, 0.263167, -0.0901627, -0.0998327, 0.877035, 13.5611, 4.99401, 1.92621)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp_02"]
+transform = Transform3D(1.99245, 0, 0, 0, 2.33204, 0, 0, 0, 1, 0.0637627, 0.0314007, 0.438312)
+light_color = Color(1, 1, 0.290196, 1)
+light_energy = 1.637
+
+[node name="Lamp_03" parent="." instance=ExtResource("8_udj8s")]
+transform = Transform3D(0.284989, -0.214806, -0.00692464, 0.217894, 0.248976, 0.300489, -0.0761457, -0.0914951, 0.833947, 13.6472, 6.14782, 1.93121)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp_03"]
+transform = Transform3D(1.99245, 0, 0, 0, 2.33204, 0, 0, 0, 1, 0.0637627, 0.0314007, 0.438312)
+light_color = Color(1, 1, 0.290196, 1)
+light_energy = 1.637
