@@ -12,7 +12,13 @@ signal character_stage_changed(stage: citizens_info.Stage)
 var _target : Node3D
 
 func _ready():
-	pass
+	var candidate_targets = citizens_info.get_stage(citizens_info.Stage.CULTIST).filter(func(citizen): return not citizen.is_targetted_by_goon)
+	if candidate_targets.size() == 0:
+		_target = world_info.ship
+		return
+	
+	_target = candidate_targets.pick_random()
+	_target.is_targetted_by_goon = true
 
 func _physics_process(delta):
 	var was_stopped = velocity.is_zero_approx()

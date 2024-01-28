@@ -24,6 +24,7 @@ class Target:
 
 var _target: Target = null
 var _reserved_spot: Node3D = null
+var is_targetted_by_goon = false
 
 var _speed = 0.0
 @onready var timer: Timer = $Timer
