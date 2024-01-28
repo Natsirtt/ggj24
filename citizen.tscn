@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bn0lba2b7kdj1"]
 
 [ext_resource type="Script" path="res://scripts/characters/citizen.gd" id="1_40lgw"]
-[ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_qt0s1"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_c3j38"]
+[ext_resource type="Texture2D" uid="uid://dbhd1cj6mitmo" path="res://Art/UI/Favour_01.png" id="3_daktt"]
 [ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_yqckp"]
 [ext_resource type="PackedScene" uid="uid://dr2dytgfs0aoh" path="res://Animation.tscn" id="5_cvekp"]
 
@@ -28,11 +28,21 @@ context_for_player = "townie"
 [node name="InteractionShape" type="CollisionShape3D" parent="Interactable"]
 shape = SubResource("SphereShape3D_2mbss")
 
-[node name="InteractionIndicator" type="Sprite3D" parent="Interactable" node_paths=PackedStringArray("interactable_script")]
-transform = Transform3D(0.267305, 0, 0, 0, 0.470191, 0, 0, 0, 1.01035, 0, 1.34016, 0)
-texture = ExtResource("1_qt0s1")
+[node name="InteractionIndicatorFavourProxy" type="Node3D" parent="Interactable"]
+
+[node name="InteractionIndicatorFavour" type="Sprite3D" parent="Interactable/InteractionIndicatorFavourProxy" node_paths=PackedStringArray("interactable_script")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.59145, 0)
+texture = ExtResource("3_daktt")
 script = ExtResource("3_yqckp")
-interactable_script = NodePath("..")
+interactable_script = NodePath("../..")
+
+[node name="InteractionIndicatorActionProxy" type="Node3D" parent="Interactable"]
+
+[node name="InteractionIndicatorAction" type="Sprite3D" parent="Interactable/InteractionIndicatorActionProxy" node_paths=PackedStringArray("interactable_script")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.59145, 0)
+texture = ExtResource("3_daktt")
+script = ExtResource("3_yqckp")
+interactable_script = NodePath("../..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 

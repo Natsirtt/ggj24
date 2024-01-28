@@ -6,6 +6,7 @@ class_name Citizen extends CharacterBody3D
 @export var max_dull_life_roam_distance = 15.0
 @export var favour_generated_per_prayer = 1
 @export var seconds_between_favour_generation = 10
+@export var seconds_between_defender_salary = 3
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -94,9 +95,19 @@ var state_machine = {
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
 			print("Entering defense militia")
-			pass,
+			timer.timeout.connect(func(): player_info.pay(1))
+			timer.start(seconds_between_defender_salary),
 		JobState.PROCESS: func(delta):
-			pass,
+			if _target == null:
+				var candidate_goons = citizens_info.goons.filter(func(goon): return not goon.is_targeted_by_defender)
+				if candidate_goons.size() > 0:
+					var new_target = candidate_goons.pick_random()
+					new_target.is_targeted_by_defender = true
+					navigation.target_reached.connect(func():
+						var goon = _target.target as Goon
+						goon.scare_off()
+						_target = null, CONNECT_ONE_SHOT)
+					_target = Target.new(new_target),
 		JobState.EXIT: func():
 			print("Exiting defense militia")
 			_disconnect_all_timer_listeners(),
@@ -146,6 +157,8 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.context_for_player = "cultist"
 		interactable.cost = 0
 		_speed = 3.0
+		$Interactable/InteractionIndicatorActionProxy.show()
+		$Interactable/InteractionIndicatorFavourProxy.hide()
 		change_job(citizens_info.Job.PRAY)
 	elif new_stage == citizens_info.Stage.FANATIC:
 		animation_handler.skin = "Fanatic"
@@ -155,6 +168,8 @@ func change_stage(new_stage: citizens_info.Stage):
 	elif new_stage == citizens_info.Stage.TOWNIE:
 		animation_handler.skin = "Townie"
 		interactable.context_for_player = "townie"
+		$Interactable/InteractionIndicatorActionProxy.hide()
+		$Interactable/InteractionIndicatorFavourProxy.show()
 		interactable.cost = 1
 		_speed = 1.0
 	elif new_stage == citizens_info.Stage.DESERTER:

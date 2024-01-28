@@ -15,6 +15,7 @@ enum Job {
 }
 
 var citizens = []
+var goons = []
 
 func get_stage(stage: Stage):
 	return citizens.filter(func(citizen): return citizen.stage == stage)
