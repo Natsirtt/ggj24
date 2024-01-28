@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvhnyryxhuidi"]
+[gd_scene load_steps=16 format=3 uid="uid://dvhnyryxhuidi"]
 
 [ext_resource type="PackedScene" path="res://player.tscn" id="1_jo0j6"]
 [ext_resource type="Material" uid="uid://c17jxbcjvvtqu" path="res://Art/Environment/Ground_MAT.tres" id="2_rx5od"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://csog11a7toirx" path="res://Art/Environment/Rocketship/Tape_Scene.tscn" id="6_3nlrb"]
 [ext_resource type="PackedScene" uid="uid://bxgniohcy24q2" path="res://Rocketship_Scene.tscn" id="7_5ldd6"]
 [ext_resource type="PackedScene" uid="uid://cnagweafa4lrh" path="res://Art/Environment/Rocketship/Lamp_scene.tscn" id="8_udj8s"]
+[ext_resource type="PackedScene" uid="uid://bfmtmm3jf5wew" path="res://Art/Environment/Plants/pine_scene.tscn" id="9_xumab"]
+[ext_resource type="PackedScene" uid="uid://f6btxepntcfh" path="res://Art/Environment/Plants/bush_scene.tscn" id="10_y05h1"]
+[ext_resource type="PackedScene" uid="uid://bo68vhogqfqm6" path="res://Art/Environment/Plants/oak_scene.tscn" id="11_anyck"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_asmqv"]
 lightmap_size_hint = Vector2i(502, 502)
@@ -169,3 +172,24 @@ transform = Transform3D(0.284989, -0.214806, -0.00692464, 0.217894, 0.248976, 0.
 transform = Transform3D(1.99245, 0, 0, 0, 2.33204, 0, 0, 0, 1, 0.0637627, 0.0314007, 0.438312)
 light_color = Color(1, 1, 0.290196, 1)
 light_energy = 1.637
+
+[node name="Root Scene24" parent="." instance=ExtResource("9_xumab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0505, 0.944688, 0.752674)
+
+[node name="Root Scene27" parent="." instance=ExtResource("9_xumab")]
+transform = Transform3D(0.915043, 0, 0, 0, 0.740052, 0, 0, 0, 0.994067, -10.4659, 0.638173, 0.483365)
+
+[node name="Root Scene25" parent="." instance=ExtResource("10_y05h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52455, -0.755947, 0.0173137)
+
+[node name="Root Scene28" parent="." instance=ExtResource("10_y05h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47126, -0.755947, 1.23774)
+
+[node name="Root Scene26" parent="." instance=ExtResource("11_anyck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13771, 0, -2.82364)
+
+[node name="Root Scene29" parent="." instance=ExtResource("11_anyck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06504, 0, 1.01495)
+
+[node name="Root Scene30" parent="." instance=ExtResource("11_anyck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8675, 0, -2.99812)

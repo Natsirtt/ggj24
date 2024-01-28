@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dd3iodui7dchc"]
 
-[ext_resource type="Texture2D" uid="uid://mggsj17f0eb0" path="res://Art/Environment/house_small_01_albedo.png" id="1_grhyd"]
+[ext_resource type="Texture2D" uid="uid://mggsj17f0eb0" path="res://Art/Environment/Houses/house_small_01_albedo.png" id="1_grhyd"]
 [ext_resource type="Texture2D" uid="uid://nxhw0x0hl7ye" path="res://Art/Environment/NormalMap (1).png" id="2_d6q42"]
 
 [resource]

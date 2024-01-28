@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbhd1cj6mitmo"
-path.s3tc="res://.godot/imported/Favour_01.png-e851b3ff6a7bae90555864d2426d090f.s3tc.ctex"
+uid="uid://mggsj17f0eb0"
+path.s3tc="res://.godot/imported/house_small_01_albedo.png-8166fe02e1ba57a971e3fcddc8de7f77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/UI/Favour_01.png"
-dest_files=["res://.godot/imported/Favour_01.png-e851b3ff6a7bae90555864d2426d090f.s3tc.ctex"]
+source_file="res://Art/Environment/Houses/house_small_01_albedo.png"
+dest_files=["res://.godot/imported/house_small_01_albedo.png-8166fe02e1ba57a971e3fcddc8de7f77.s3tc.ctex"]
 
 [params]
 

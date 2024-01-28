@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mggsj17f0eb0"
-path.s3tc="res://.godot/imported/house_small_01_albedo.png-a343726caf2997abcb5eb5060e5f691d.s3tc.ctex"
+uid="uid://ds01pb8nxskab"
+path.s3tc="res://.godot/imported/plants_albedo.png-4ffa454ddb5c5ea4547c8f39f78bc0c2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Environment/house_small_01_albedo.png"
-dest_files=["res://.godot/imported/house_small_01_albedo.png-a343726caf2997abcb5eb5060e5f691d.s3tc.ctex"]
+source_file="res://Art/Environment/Plants/plants_albedo.png"
+dest_files=["res://.godot/imported/plants_albedo.png-4ffa454ddb5c5ea4547c8f39f78bc0c2.s3tc.ctex"]
 
 [params]
 

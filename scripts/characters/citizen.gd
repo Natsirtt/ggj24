@@ -6,6 +6,7 @@ class_name Citizen extends CharacterBody3D
 @export var max_dull_life_roam_distance = 15.0
 @export var favour_generated_per_prayer = 1
 @export var seconds_between_favour_generation = 10
+@export var seconds_between_defender_salary = 3
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -63,7 +64,7 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Exiting dull life")
-			_disconnect_all_timer_listeners()
+			_disconnect_all_listeners()
 			timer.stop()
 			_target = null,
 	},
@@ -78,7 +79,7 @@ var state_machine = {
 				print("Reached praying spot")
 				_target = null
 				# somehow _pray is already connected sometimes?
-				_disconnect_all_timer_listeners()
+				_disconnect_all_listeners()
 				timer.timeout.connect(_pray)
 				timer.start(seconds_between_favour_generation), CONNECT_ONE_SHOT
 			),
@@ -86,7 +87,7 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Exiting pray job")
-			_disconnect_all_timer_listeners()
+			_disconnect_all_listeners()
 			timer.stop()
 			world_info.ship.return_praying_spot(_reserved_spot)
 			_target = null,
@@ -94,12 +95,31 @@ var state_machine = {
 	citizens_info.Job.DEFEND: {
 		JobState.ENTER: func():
 			print("Entering defense militia")
-			pass,
+			timer.one_shot = false
+			timer.timeout.connect(func():
+				print("It's payday!")
+				if not player_info.can_afford(1):
+					print("You can't pay me? I'm done!")
+					change_stage(citizens_info.Stage.DESERTER)
+					change_job(citizens_info.Job.FLEE)
+					return
+				player_info.pay(1)
+			)
+			timer.start(seconds_between_defender_salary),
 		JobState.PROCESS: func(delta):
-			pass,
+			if _target == null:
+				var candidate_goons = citizens_info.goons.filter(func(goon): return not goon.is_targeted_by_defender)
+				if candidate_goons.size() > 0:
+					var new_target = candidate_goons.pick_random()
+					new_target.is_targeted_by_defender = true
+					navigation.target_reached.connect(func():
+						new_target.scare_off()
+						character_interacted.emit("attack")
+						_target = null, CONNECT_ONE_SHOT)
+					_target = Target.new(new_target),
 		JobState.EXIT: func():
 			print("Exiting defense militia")
-			_disconnect_all_timer_listeners(),
+			_disconnect_all_listeners(),
 	},
 	citizens_info.Job.FLEE: {
 		JobState.ENTER: func():
@@ -111,13 +131,15 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Stopped fleeing")
-			_disconnect_all_timer_listeners(),
+			_disconnect_all_listeners(),
 	},
 }
 
-func _disconnect_all_timer_listeners():
+func _disconnect_all_listeners():
 	for connection in timer.timeout.get_connections():
 		timer.timeout.disconnect(connection["callable"])
+	for connection in navigation.target_reached.get_connections():
+		navigation.target_reached.disconnect(connection["callable"])
 
 func _roam():
 	print("Starting new roam")
@@ -127,6 +149,10 @@ func _roam():
 	_target = Target.new(Vector3(random_direction.x * random_distance, global_position.y, random_direction.y * random_distance))
 
 func _pray():
+	# For some reason that I do not understand this is called even when
+	# the timer should have been cleared. So let's hack it
+	if job != citizens_info.Job.PRAY:
+		return
 	player_info.generate_favour(favour_generated_per_prayer)
 	character_interacted.emit("pray")
 
@@ -146,6 +172,8 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.context_for_player = "cultist"
 		interactable.cost = 0
 		_speed = 3.0
+		$Interactable/InteractionIndicatorActionProxy.show()
+		$Interactable/InteractionIndicatorFavourProxy.hide()
 		change_job(citizens_info.Job.PRAY)
 	elif new_stage == citizens_info.Stage.FANATIC:
 		animation_handler.skin = "Fanatic"
@@ -155,6 +183,8 @@ func change_stage(new_stage: citizens_info.Stage):
 	elif new_stage == citizens_info.Stage.TOWNIE:
 		animation_handler.skin = "Townie"
 		interactable.context_for_player = "townie"
+		$Interactable/InteractionIndicatorActionProxy.hide()
+		$Interactable/InteractionIndicatorFavourProxy.show()
 		interactable.cost = 1
 		_speed = 1.0
 	elif new_stage == citizens_info.Stage.DESERTER:

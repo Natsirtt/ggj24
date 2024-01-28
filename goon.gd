@@ -12,12 +12,14 @@ signal character_stage_changed(stage: citizens_info.Stage)
 @onready var timer: Timer = $Timer
 @onready var interactable: Interactable = $Interactable
 var _target : Node3D
+var is_targeted_by_defender = false
 
 func _ready():
+	citizens_info.goons.append(self)
 	player_info.player.game_ended.connect(func(won: bool): scare_off(), CONNECT_ONE_SHOT)
 	navigation.target_reached.connect(_reached_target, CONNECT_ONE_SHOT)
 	interactable.interacted.connect(func(interactor): scare_off(), CONNECT_ONE_SHOT)
-	var candidate_targets = citizens_info.get_stage(citizens_info.Stage.CULTIST).filter(func(citizen): return not citizen.is_targetted_by_goon)
+	var candidate_targets = citizens_info.get_stage(citizens_info.Stage.CULTIST).filter(func(citizen): return not citizen.is_targetted_by_goon and not citizen.job == citizens_info.Job.DEFEND)
 	if candidate_targets.size() == 0:
 		_target = world_info.ship
 		print("Set target to ship @" + str(_target.global_position))
@@ -59,6 +61,7 @@ func leave_and_never_return():
 
 func scare_off():
 	timer.paused = true
+	is_targeted_by_defender = true # so if another reason to scare them off was used, they don't get chased anyway
 	leave_and_never_return()
 
 func _physics_process(delta):
