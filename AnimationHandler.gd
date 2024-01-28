@@ -40,6 +40,7 @@ func update_velocity(velocity):
 	else:
 		_animated_sprite.play(skin + "_Idle")
 
+var setup_end_game = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	character_node.connect("character_moved", update_velocity)
@@ -52,7 +53,9 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if not setup_end_game:
+		player_info.player.game_ended.connect(_gameEnded)
+		setup_end_game = true
 
 var context_timings = {
 	"Goon_save": 1.0,
@@ -105,3 +108,7 @@ func _handleStageChange(State):
 	else:
 		_animated_sprite.play(skin + "_Idle")	
 		is_interacting = false
+
+func _gameEnded(Won):
+	if not Won and skin == "Player":
+		_playAnimWithInto(skin + "_dead")
