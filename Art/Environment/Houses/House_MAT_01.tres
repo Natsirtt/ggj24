@@ -9,3 +9,7 @@ albedo_texture = ExtResource("1_sjxxf")
 normal_enabled = true
 normal_scale = -0.3
 normal_texture = ExtResource("2_lvacd")
+proximity_fade_distance = 5.25
+distance_fade_mode = 1
+distance_fade_min_distance = 5.0
+distance_fade_max_distance = 9.0
