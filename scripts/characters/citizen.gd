@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var min_dull_life_roam_distance = 5.0
 @export var max_dull_life_roam_distance = 15.0
 @export var favour_generated_per_prayer = 1
-@export var seconds_between_favour_generation = 5
+@export var seconds_between_favour_generation = 10
 
 class Target:
 	enum Mode { OBJECT, POSITION }
@@ -36,7 +36,7 @@ var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 signal character_moved(velocity)
 signal character_stopped
 signal character_interacted
-signal stage_changed(stage: citizens_info.Stage)
+signal character_stage_changed(stage: citizens_info.Stage)
 signal job_changed(job: citizens_info.Job)
 
 enum JobState {
@@ -113,6 +113,7 @@ func _roam():
 
 func _pray():
 	player_info.generate_favour(favour_generated_per_prayer)
+	character_interacted.emit("pray")
 
 func _get_job_func(state: JobState):
 	return state_machine[job][state]
@@ -128,7 +129,9 @@ func change_stage(new_stage: citizens_info.Stage):
 	if new_stage == citizens_info.Stage.CULTIST:
 		animation_handler.skin = "Cultist"
 		interactable.context_for_player = "cultist"
+		interactable.cost = 0
 		_speed = 3.0
+		change_job(citizens_info.Job.PRAY)
 	elif new_stage == citizens_info.Stage.FANATIC:
 		animation_handler.skin = "Fanatic"
 		interactable.context_for_player = "fanatic"
@@ -137,23 +140,35 @@ func change_stage(new_stage: citizens_info.Stage):
 	elif new_stage == citizens_info.Stage.TOWNIE:
 		animation_handler.skin = "Townie"
 		interactable.context_for_player = "townie"
+		interactable.cost = 1
 		_speed = 1.0
 	elif new_stage == citizens_info.Stage.DESERTER:
 		animation_handler.skin = "Deserter"
 		interactable.context_for_player = "deserter"
 		interactable.can_interact = false
 		_speed = 4.0
-	print(str(self) + " changed to stage " + str(new_stage))
+	stage = new_stage
+	character_stage_changed.emit(stage)
+	print(str(self) + " changed to stage " + str(stage))
 
 func _ready():
-	_get_job_func(JobState.ENTER).call()
+	change_stage(citizens_info.Stage.TOWNIE)
+	change_job(citizens_info.Job.LIVE_DULL_LIFE)
 	interactable.interacted.connect(_on_interact)
 
 func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)
 
 func _on_interact(interactor):
-	pass
+	assert(stage == citizens_info.Stage.TOWNIE or stage == citizens_info.Stage.CULTIST)
+	if stage == citizens_info.Stage.TOWNIE:
+		change_stage(citizens_info.Stage.CULTIST)
+		change_job(citizens_info.Job.PRAY)
+	elif stage == citizens_info.Stage.CULTIST:
+		if job == citizens_info.Job.PRAY:
+			change_job(citizens_info.Job.DEFEND)
+		else:
+			change_job(citizens_info.Job.PRAY)
 
 func _physics_process(_delta):
 	var was_stopped = velocity.is_zero_approx()

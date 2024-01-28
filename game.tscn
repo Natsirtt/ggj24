@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d30pith2umoyx"]
+[gd_scene load_steps=12 format=3 uid="uid://d30pith2umoyx"]
 
 [ext_resource type="PackedScene" uid="uid://5xuuty2dlkdk" path="res://player.tscn" id="1_c6tpr"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_us4x3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bn0lba2b7kdj1" path="res://citizen.tscn" id="4_hx448"]
 [ext_resource type="PackedScene" uid="uid://chduldksk7ymn" path="res://building.tscn" id="4_ifaxb"]
 [ext_resource type="QuadMesh" uid="uid://dm4bm0pun3bub" path="res://meshes/ground.tres" id="5_1bndy"]
+[ext_resource type="PackedScene" uid="uid://doau3qjqx430j" path="res://HUD.tscn" id="7_hx27e"]
 
 [sub_resource type="Environment" id="Environment_vv5aq"]
 ambient_light_source = 2
@@ -37,6 +38,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86, 2.0807, -5.11)
 [node name="Citizen" parent="." instance=ExtResource("4_hx448")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.8853)
 
+[node name="Citizen2" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.8311)
+
+[node name="Citizen3" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.5981)
+
+[node name="Citizen4" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.2616)
+
+[node name="Citizen5" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.3006)
+
+[node name="Citizen6" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.5256)
+
+[node name="Citizen7" parent="." instance=ExtResource("4_hx448")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.9783)
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_uuu30")
 
@@ -53,3 +72,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_evbc7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground/StaticBody3D"]
 shape = SubResource("BoxShape3D_vxvn4")
+
+[node name="Hud" parent="." instance=ExtResource("7_hx27e")]

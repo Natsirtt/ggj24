@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnagweafa4lrh"]
+
+[ext_resource type="PackedScene" uid="uid://bd4xe2j31ml40" path="res://Art/Environment/Rocketship/Lamp.fbx" id="1_hun6m"]
+[ext_resource type="Material" uid="uid://cfwlexihcgpri" path="res://Art/Environment/Rocketship/Lamp.tres" id="2_ecv4h"]
+
+[node name="Root Scene" instance=ExtResource("1_hun6m")]
+
+[node name="Lamp" parent="RootNode" index="0"]
+material_override = ExtResource("2_ecv4h")
+cast_shadow = 0

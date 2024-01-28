@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4jsq0708dl2f"]
+[gd_scene load_steps=7 format=3 uid="uid://d4jsq0708dl2f"]
 
 [ext_resource type="Script" path="res://scripts/Ship.gd" id="1_vwvbp"]
+[ext_resource type="Script" path="res://interactable.gd" id="2_xggto"]
+[ext_resource type="Texture2D" uid="uid://cfas1w4p75jro" path="res://Art/UI/Interaction_Icon.png" id="3_hkj0l"]
+[ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_w2n0l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1youq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fajes"]
+radius = 1.5
 
 [node name="Ship" type="Node3D"]
 script = ExtResource("1_vwvbp")
@@ -43,3 +49,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71251, 0.271491, -3.3437)
 
 [node name="PrayingSpot10" type="Node3D" parent="Praying Spots Root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15759, 0, 5.80355)
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource("2_xggto")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("SphereShape3D_fajes")
+
+[node name="Indicator" type="Sprite3D" parent="Interactable" node_paths=PackedStringArray("interactable_script")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 1.49777, 0.684329)
+texture = ExtResource("3_hkj0l")
+script = ExtResource("3_w2n0l")
+interactable_script = NodePath("..")
