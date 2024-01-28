@@ -39,8 +39,8 @@ func update_velocity(velocity):
 func _ready():
 	character_node.connect("character_moved", update_velocity)
 	character_node.connect("character_stopped", update_velocity.bind(Vector3.ZERO))
-	character_node.connect("character_interacted", _handleInteract.bind(null))
-	character_node.connect("character_stage_changed", _handleStageChange.bind(null))
+	character_node.connect("character_interacted", _handleInteract)
+	character_node.connect("character_stage_changed", _handleStageChange)
 	timer = Timer.new()
 	add_child(timer)
 	_animated_sprite.play(skin + "_Idle")
@@ -51,14 +51,14 @@ func _process(delta):
 	
 	
 func _handleInteract(context):
-	_playAnimWithInto("Player_Joke")
+	_playAnimWithInto(skin + "_Joke")
 	self.is_interacting = true
 	
 	print("AnimHandleInteract")
 	
 	timer.one_shot = true
 	timer.timeout.connect(func(): is_interacting = false, CONNECT_ONE_SHOT)
-	timer.start(5)
+	timer.start(4)
 	
 	
 func _playAnimWithInto(AnimName):
@@ -67,4 +67,12 @@ func _playAnimWithInto(AnimName):
 	
 	
 func _handleStageChange(State):
-	pass	
+	if State == 1 or State == 2:
+		is_interacting = true
+		_animated_sprite.play(skin + "_Turn_Into")	
+		timer.one_shot = true
+		timer.timeout.connect(func(): _handleStageChange(-1) , CONNECT_ONE_SHOT)
+		timer.start(1)
+	else:
+		_animated_sprite.play(skin + "_Idle")	
+		is_interacting = false

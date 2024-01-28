@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Citizen extends CharacterBody3D
 
 @export var min_dull_life_idle_time = 5.0
 @export var max_dull_life_ilde_time = 20.0
@@ -24,6 +24,7 @@ class Target:
 
 var _target: Target = null
 var _reserved_spot: Node3D = null
+var is_targetted_by_goon = false
 
 var _speed = 0.0
 @onready var timer: Timer = $Timer
@@ -36,7 +37,7 @@ var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 signal character_moved(velocity)
 signal character_stopped
 signal character_interacted
-signal stage_changed(stage: citizens_info.Stage)
+signal character_stage_changed(stage: citizens_info.Stage)
 signal job_changed(job: citizens_info.Job)
 
 enum JobState {
@@ -76,6 +77,8 @@ var state_machine = {
 			navigation.target_reached.connect(func():
 				print("Reached praying spot")
 				_target = null
+				# somehow _pray is already connected sometimes?
+				_disconnect_all_timer_listeners()
 				timer.timeout.connect(_pray)
 				timer.start(seconds_between_favour_generation), CONNECT_ONE_SHOT
 			),
@@ -96,8 +99,20 @@ var state_machine = {
 			pass,
 		JobState.EXIT: func():
 			print("Exiting defense militia")
+			_disconnect_all_timer_listeners(),
+	},
+	citizens_info.Job.FLEE: {
+		JobState.ENTER: func():
+			print("Getting the hell outta here")
+			var direction = maths.random_inside_unit_circle()
+			# Just going to a bonkers distance
+			_target = Target.new(Vector3(direction.x * 100000, global_position.y, direction.y * 100000)),
+		JobState.PROCESS: func(delta):
 			pass,
-	}
+		JobState.EXIT: func():
+			print("Stopped fleeing")
+			_disconnect_all_timer_listeners(),
+	},
 }
 
 func _disconnect_all_timer_listeners():
@@ -148,13 +163,14 @@ func change_stage(new_stage: citizens_info.Stage):
 		interactable.can_interact = false
 		_speed = 4.0
 	stage = new_stage
-	stage_changed.emit(stage)
+	character_stage_changed.emit(stage)
 	print(str(self) + " changed to stage " + str(stage))
 
 func _ready():
 	change_stage(citizens_info.Stage.TOWNIE)
 	change_job(citizens_info.Job.LIVE_DULL_LIFE)
 	interactable.interacted.connect(_on_interact)
+	citizens_info.citizens.append(self)
 
 func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)

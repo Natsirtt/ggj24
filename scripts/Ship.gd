@@ -2,13 +2,38 @@ class_name Ship extends Node3D
 
 var free_praying_spots: Array[Node3D] = []
 var reserved_praying_spots: Array[Node3D] = []
-var fluel = 0
+var fuel = 1
+
+signal fuel_changed(fuel: int)
 
 func _ready():
 	world_info.ship = self
 	for spot in $"Praying Spots Root".get_children():
 		free_praying_spots.append(spot as Node3D)
 	assert(not free_praying_spots.any(func(x): return x == null))
+	$Interactable.interacted.connect(_on_interact)
+
+func _process(_delta):
+	$Interactable.can_interact = citizens_info.get_stage(citizens_info.Stage.CULTIST).size() > 0
+
+func _on_interact(_interactor):
+	var chosen_one = citizens_info.get_stage(citizens_info.Stage.CULTIST).pick_random()
+	chosen_one.change_stage(citizens_info.Stage.FANATIC)
+	chosen_one.change_job(citizens_info.Job.LIVE_DULL_LIFE)
+
+func refuel(extra_fuel: int):
+	assert(extra_fuel > 0)
+	fuel += extra_fuel
+	fuel_changed.emit(fuel)
+
+func consume_fuel(removed_fuel: int):
+	print("consuming " + str(removed_fuel) + " fuel")
+	assert(removed_fuel > 0)
+	if fuel == 0:
+		player_info.player.end_game(false)
+		return
+	fuel = max(fuel - removed_fuel, 0)
+	fuel_changed.emit(fuel)
 
 func has_free_praying_spot():
 	return free_praying_spots.size() > 0
