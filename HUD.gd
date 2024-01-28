@@ -7,6 +7,7 @@ func _ready():
 	player_info.favour_generated.connect(func(_extra): _set_favour_label())
 	player_info.favour_consumed.connect(func(_consumed): _set_favour_label())
 	world_info.ship.fuel_changed.connect(func(fuel): fuel_label.text = str(fuel))
+	fuel_label.text = str(world_info.ship.fuel)
 	_set_favour_label()
 
 func _set_favour_label():
