@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4jsq0708dl2f"]
+[gd_scene load_steps=8 format=3 uid="uid://d4jsq0708dl2f"]
 
 [ext_resource type="Script" path="res://scripts/Ship.gd" id="1_vwvbp"]
 [ext_resource type="Script" path="res://interactable.gd" id="2_xggto"]
 [ext_resource type="Texture2D" uid="uid://cfas1w4p75jro" path="res://Art/UI/Interaction_Icon.png" id="3_hkj0l"]
 [ext_resource type="Script" path="res://scripts/interaction/VisibleOnInteractable.gd" id="3_w2n0l"]
 [ext_resource type="PackedScene" path="res://Rocketship_Scene.tscn" id="5_drrdo"]
+[ext_resource type="PackedScene" path="res://Art/Environment/Rocketship/Lamp_scene.tscn" id="6_gbidb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fajes"]
 radius = 2.0
@@ -91,3 +92,29 @@ script = ExtResource("3_w2n0l")
 interactable_script = NodePath("..")
 
 [node name="Root Scene" parent="." instance=ExtResource("5_drrdo")]
+
+[node name="Lamps" type="Node3D" parent="."]
+
+[node name="Lamp_01" parent="Lamps" instance=ExtResource("6_gbidb")]
+transform = Transform3D(0.501572, -0.0145024, 0.0119473, 0.0155931, 0.421368, 0.182864, -0.0089962, -0.0782041, 0.983065, 0.156626, 4.63256, -0.763844)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamps/Lamp_01"]
+transform = Transform3D(1.99245, 2.56114e-08, 4.47035e-08, -3.25963e-09, 2.33204, -8.9407e-08, -1.86265e-09, 2.98023e-08, 1, 0.0668049, 0.144014, 0.447298)
+light_color = Color(1, 1, 0.290196, 1)
+light_energy = 1.637
+
+[node name="Lamp_02" parent="Lamps" instance=ExtResource("6_gbidb")]
+transform = Transform3D(0.493285, -0.0271483, 0.173225, 0.0155931, 0.421368, 0.182864, -0.0912428, -0.0747608, 0.967756, 0.156626, 6.28076, -0.763844)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamps/Lamp_02"]
+transform = Transform3D(1.99245, 2.56114e-08, 4.47035e-08, -3.25963e-09, 2.33204, -8.9407e-08, -1.86265e-09, 2.98023e-08, 1, 0.0668049, 0.144014, 0.447298)
+light_color = Color(1, 1, 0.290196, 1)
+light_energy = 1.637
+
+[node name="Lamp_03" parent="Lamps" instance=ExtResource("6_gbidb")]
+transform = Transform3D(0.494251, -0.0263312, 0.162659, 0.0155931, 0.421368, 0.182864, -0.0858566, -0.0750524, 0.969588, 0.156626, 7.67051, -0.867271)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamps/Lamp_03"]
+transform = Transform3D(1.99245, 2.56114e-08, 4.47035e-08, -3.25963e-09, 2.33204, -8.9407e-08, -1.86265e-09, 2.98023e-08, 1, 0.0668049, 0.144014, 0.447298)
+light_color = Color(1, 1, 0.290196, 1)
+light_energy = 1.637
