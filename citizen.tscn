@@ -54,3 +54,5 @@ transform = Transform3D(1.2919, 0, 0, 0, 1.2919, 0, 0, 0, 1.2919, 0, 0.644313, 0
 character_node = NodePath("..")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioTimer" type="Timer" parent="."]
