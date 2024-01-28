@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 player_info="*res://scripts/player_info.gd"
 world_info="*res://scripts/world_info.gd"
+citizens_info="*res://scripts/citizens_info.gd"
+maths="*res://scripts/maths.gd"
 
 [debug]
 

@@ -1,11 +1,16 @@
 class_name Player extends CharacterBody3D
 
-@onready var animation_handler = $Animation
+@onready var animation_handler: AnimationHandler = $Animation
 @onready var interaction_area = $InteractionZone
 var _interactables_in_range: Array[Interactable] = []
+var closest_interactable: Interactable = null
 
 signal character_moved(velocity)
-signal interacted
+signal character_stopped
+signal character_interacted
+# HACK! We want the AnimationHandler to work seamlessly with Player and Citizen and Goon;
+# overall 
+signal character_stage_changed(stage: citizens_info.Stage)
 
 const SPEED = 5.0
 
@@ -14,13 +19,32 @@ func _ready():
 	interaction_area.connect("area_exited", _on_interaction_area_exited)
 	player_info.player = self
 
+func _compute_closest_interactable():
+	if _interactables_in_range.size() == 0:
+		closest_interactable = null
+		return
+		
+	_interactables_in_range.sort_custom(func(a, b): return self.global_position.distance_squared_to(a.global_position) < self.global_position.distance_squared_to(b.global_position))
+	var new_closest := _interactables_in_range[0]
+	if closest_interactable != new_closest:
+		if closest_interactable != null:
+			closest_interactable.unready_interact(self)
+		new_closest.ready_interact(self)
+		closest_interactable = new_closest
+
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
 		get_tree().quit(0)
 	
 	if Input.is_action_just_pressed("interact") and _interactables_in_range.size() > 0:
-		_interactables_in_range[0].interact(self)
-		interacted.emit()
+		var interactable = _interactables_in_range[0]
+		if player_info.can_afford(interactable.cost):
+			player_info.pay(interactable.cost)
+			interactable.interact(self)
+			print("Player interacted")
+			character_interacted.emit(interactable.context_for_player)
+	
+	_compute_closest_interactable()
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -31,27 +55,29 @@ func _physics_process(_delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		character_moved.emit(velocity)
 	else:
+		if not velocity.is_zero_approx():
+			character_stopped.emit()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	character_moved.emit(velocity)
 
 	move_and_slide()
 
 func _on_interaction_area_entered(body):
-	if body is Interactable:
-		var closest = _interactables_in_range[0] as Interactable if _interactables_in_range.size() > 0 else null
-		_interactables_in_range.append(body as Interactable)
-		_interactables_in_range.sort_custom(func(a, b): return self.global_position.distance_squared_to(a.global_position) < self.global_position.distance_squared_to(b.global_position))
-		var new_closest = _interactables_in_range[0]
-		if closest != new_closest:
-			if closest != null:
-				closest.unready_interact(self)
-			new_closest.ready_interact(self)
+	var interactable := body as Interactable
+	if interactable == null or not interactable.can_interact:
+		return
+		
+	_interactables_in_range.append(interactable)
 
 func _on_interaction_area_exited(body):
 	var interactable = body as Interactable
-	if interactable != null:
-		if _interactables_in_range[0] == interactable:
-			interactable.unready_interact(self)
-		_interactables_in_range.erase(interactable)
+	if interactable == null:
+		return
+	
+	if interactable == closest_interactable:
+		interactable.unready_interact(self)
+		closest_interactable = null
+		
+	_interactables_in_range.erase(interactable)

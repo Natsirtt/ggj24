@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxgniohcy24q2"]
+
+[ext_resource type="PackedScene" uid="uid://dljf87qmrut4y" path="res://Art/Environment/Rocketship/rocketship.fbx" id="1_5x6si"]
+[ext_resource type="Material" uid="uid://d1w4a7wdtvqfi" path="res://Art/Environment/Rocketship/Rocketship_MAT.tres" id="2_8ba1t"]
+
+[node name="Root Scene" instance=ExtResource("1_5x6si")]
+
+[node name="rocketship" parent="RootNode" index="0"]
+material_override = ExtResource("2_8ba1t")

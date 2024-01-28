@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm8j4b62dhw16"]
+
+[ext_resource type="PackedScene" uid="uid://cv2kulgoewh6t" path="res://Art/Environment/Houses/House_02.fbx" id="1_khq6m"]
+[ext_resource type="Material" uid="uid://dsw6dpv12p55i" path="res://Art/Environment/Houses/House_MAT_01.tres" id="2_r3bmq"]
+
+[node name="Root Scene" instance=ExtResource("1_khq6m")]
+
+[node name="House_02" parent="RootNode" index="0"]
+material_override = ExtResource("2_r3bmq")
