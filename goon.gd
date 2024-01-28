@@ -9,6 +9,7 @@ signal character_interacted
 signal character_stage_changed(stage: citizens_info.Stage)
 
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
+@onready var timer: Timer = $Timer
 var _target : Node3D
 
 func _ready():
@@ -19,6 +20,23 @@ func _ready():
 	
 	_target = candidate_targets.pick_random()
 	_target.is_targetted_by_goon = true
+	navigation.target_reached.connect(_reached_target)
+
+func _reached_target():
+	var as_citizen := _target as Citizen
+	if as_citizen != null:
+		_target = null
+		as_citizen.change_stage(citizens_info.Stage.DESERTER)
+		as_citizen.change_job(citizens_info.Job.FLEE)
+		character_interacted.emit("save")
+		timer.one_shot = true
+		timer.timeout.connect(func():
+			var direction = maths.random_inside_unit_circle()
+			var proxy_target = Node3D.new()
+			add_child(proxy_target)
+			proxy_target.global_position = Vector3(direction.x * 100000, global_position.y, direction.y * 100000)
+			_target = proxy_target, CONNECT_ONE_SHOT)
+		timer.start(1)
 
 func _physics_process(delta):
 	var was_stopped = velocity.is_zero_approx()

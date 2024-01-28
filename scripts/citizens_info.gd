@@ -11,6 +11,7 @@ enum Job {
 	LIVE_DULL_LIFE,
 	DEFEND,
 	PRAY,
+	FLEE,
 }
 
 var citizens: Array[Citizen] = []

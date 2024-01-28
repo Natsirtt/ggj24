@@ -100,7 +100,19 @@ var state_machine = {
 		JobState.EXIT: func():
 			print("Exiting defense militia")
 			_disconnect_all_timer_listeners(),
-	}
+	},
+	citizens_info.Job.FLEE: {
+		JobState.ENTER: func():
+			print("Getting the hell outta here")
+			var direction = maths.random_inside_unit_circle()
+			# Just going to a bonkers distance
+			_target = Target.new(Vector3(direction.x * 100000, global_position.y, direction.y * 100000)),
+		JobState.PROCESS: func(delta):
+			pass,
+		JobState.EXIT: func():
+			print("Stopped fleeing")
+			_disconnect_all_timer_listeners(),
+	},
 }
 
 func _disconnect_all_timer_listeners():
