@@ -3,7 +3,7 @@ extends Node
 enum Stage {
 	TOWNIE,
 	CULTIST,
-	SACRIFICEE,
+	FANATIC,
 }
 
 enum Job {

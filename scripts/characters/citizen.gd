@@ -28,11 +28,13 @@ var _reserved_spot: Node3D = null
 var _speed = 0.0
 @onready var timer: Timer = $Timer
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
+@onready var interactable: Interactable = $Interactable
 var stage: citizens_info.Stage = citizens_info.Stage.TOWNIE
 var job: citizens_info.Job = citizens_info.Job.LIVE_DULL_LIFE
 
 signal character_moved(velocity)
 signal character_stopped
+signal character_interacted
 signal stage_changed(stage: citizens_info.Stage)
 signal job_changed(job: citizens_info.Job)
 
@@ -123,12 +125,23 @@ func change_job(new_job: citizens_info.Job):
 	job_changed.emit(job)
 	print(str(self) + "'s job is now " + str(job))
 
+func change_stage(new_stage: citizens_info.Stage):
+	if new_stage == citizens_info.Stage.CULTIST:
+		pass
+	elif new_stage == citizens_info.Stage.FANATIC:
+		pass
+	elif new_stage == citizens_info.Stage.TOWNIE:
+		pass
+
 func _ready():
 	_get_job_func(JobState.ENTER).call()
-	change_job(citizens_info.Job.PRAY)
+	interactable.interacted.connect(_on_interact)
 
 func _process(delta):
 	_get_job_func(JobState.PROCESS).call(delta)
+
+func _on_interact(interactor):
+	pass
 
 func _physics_process(_delta):
 	var was_stopped = velocity.is_zero_approx()

@@ -25,7 +25,7 @@ func _process(_delta):
 			player_info.pay(interactable.cost)
 			interactable.interact(self)
 			print("Player interacted")
-			character_interacted.emit()
+			character_interacted.emit(interactable.context_for_player)
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -45,19 +45,24 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _on_interaction_area_entered(body):
-	if body is Interactable:
-		var closest = _interactables_in_range[0] as Interactable if _interactables_in_range.size() > 0 else null
-		_interactables_in_range.append(body as Interactable)
-		_interactables_in_range.sort_custom(func(a, b): return self.global_position.distance_squared_to(a.global_position) < self.global_position.distance_squared_to(b.global_position))
-		var new_closest = _interactables_in_range[0]
-		if closest != new_closest:
-			if closest != null:
-				closest.unready_interact(self)
-			new_closest.ready_interact(self)
+	var interactable := body as Interactable
+	if interactable == null or not interactable.can_interact:
+		return
+		
+	var closest = _interactables_in_range[0] if _interactables_in_range.size() > 0 else null
+	_interactables_in_range.append(interactable)
+	_interactables_in_range.sort_custom(func(a, b): return self.global_position.distance_squared_to(a.global_position) < self.global_position.distance_squared_to(b.global_position))
+	var new_closest = _interactables_in_range[0]
+	if closest != new_closest:
+		if closest != null:
+			closest.unready_interact(self)
+		new_closest.ready_interact(self)
 
 func _on_interaction_area_exited(body):
 	var interactable = body as Interactable
-	if interactable != null:
-		if _interactables_in_range[0] == interactable:
-			interactable.unready_interact(self)
-		_interactables_in_range.erase(interactable)
+	if interactable == null:
+		return
+		
+	if _interactables_in_range[0] == interactable:
+		interactable.unready_interact(self)
+	_interactables_in_range.erase(interactable)
