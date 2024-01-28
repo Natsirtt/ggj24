@@ -1,4 +1,4 @@
-[gd_scene load_steps=565 format=3 uid="uid://dr2dytgfs0aoh"]
+[gd_scene load_steps=607 format=3 uid="uid://dr2dytgfs0aoh"]
 
 [ext_resource type="Script" path="res://AnimationHandler.gd" id="1_dqgho"]
 [ext_resource type="Texture2D" uid="uid://bhrok5uwurjog" path="res://icon.svg" id="1_sdt6l"]
@@ -197,106 +197,148 @@
 [ext_resource type="Texture2D" uid="uid://dxljg6c60pl0l" path="res://Sprites/Townie/TownieFanatic_Idle_0109.png" id="74_0pc8t"]
 [ext_resource type="Texture2D" uid="uid://co6g2e3ihh14j" path="res://Sprites/Player/Player_Joke_Into_0070.png" id="74_cpqmc"]
 [ext_resource type="Texture2D" uid="uid://5hc78dlnfgai" path="res://Sprites/Townie/Townie_Joke_Into_0095.png" id="74_iqd0d"]
+[ext_resource type="Texture2D" uid="uid://8ciay2h1s8v1" path="res://Sprites/Townie/Cultist_Attack_Into_0120.png" id="75_fhk1y"]
 [ext_resource type="Texture2D" uid="uid://c5devf6fimtx3" path="res://Sprites/Player/Player_Joke_Into_0071.png" id="75_jinwi"]
 [ext_resource type="Texture2D" uid="uid://bgg0823byaeai" path="res://Sprites/Townie/Townie_Joke_Into_0096.png" id="75_prrkg"]
 [ext_resource type="Texture2D" uid="uid://c15oswa1rdv36" path="res://Sprites/Townie/TownieFanatic_Idle_0110.png" id="75_wcab6"]
 [ext_resource type="Texture2D" uid="uid://iwaroiewlfu5" path="res://Sprites/Townie/TownieFanatic_Idle_0111.png" id="76_3i2ya"]
 [ext_resource type="Texture2D" uid="uid://b3jjryw6hbw18" path="res://Sprites/Player/Player_Joke_Into_0072.png" id="76_ao3uk"]
+[ext_resource type="Texture2D" uid="uid://bb80kwdlitqst" path="res://Sprites/Townie/Cultist_Attack_Into_0121.png" id="76_c03iq"]
 [ext_resource type="Texture2D" uid="uid://b0qvsde6xqhkw" path="res://Sprites/Townie/Townie_Joke_Into_0097.png" id="76_t0crw"]
 [ext_resource type="Texture2D" uid="uid://c2xwmbpxuvc8c" path="res://Sprites/Townie/Townie_Joke_Into_0098.png" id="77_71s2c"]
 [ext_resource type="Texture2D" uid="uid://bo8y7mid1t4bk" path="res://Sprites/Player/Player_Joke_Into_0073.png" id="77_752o1"]
+[ext_resource type="Texture2D" uid="uid://5blho0eckfr5" path="res://Sprites/Townie/Cultist_Attack_Into_0122.png" id="77_68146"]
 [ext_resource type="Texture2D" uid="uid://ei283e4dkcr3" path="res://Sprites/Townie/TownieFanatic_Idle_0112.png" id="77_x0ijn"]
 [ext_resource type="Texture2D" uid="uid://behw88vprgvbk" path="res://Sprites/Player/Player_Joke_Into_0074.png" id="78_j5rnc"]
 [ext_resource type="Texture2D" uid="uid://csgqpniuf1k8t" path="res://Sprites/Townie/TownieFanatic_Idle_0113.png" id="78_qxia8"]
 [ext_resource type="Texture2D" uid="uid://cdbchwom1jows" path="res://Sprites/Townie/Townie_Joke_Into_0099.png" id="78_v7swb"]
+[ext_resource type="Texture2D" uid="uid://df6qhjx6j7n0d" path="res://Sprites/Townie/Cultist_Attack_Into_0123.png" id="78_xb8rd"]
 [ext_resource type="Texture2D" uid="uid://dsj58d3icndfy" path="res://Sprites/Townie/TownieFanatic_Walk_0043.png" id="79_2ymcw"]
 [ext_resource type="Texture2D" uid="uid://bse3cenuxyxe0" path="res://Sprites/Player/Player_Joke_Into_0075.png" id="79_703vu"]
+[ext_resource type="Texture2D" uid="uid://caaiokamflp1h" path="res://Sprites/Townie/Cultist_Attack_Into_0124.png" id="79_odmoq"]
 [ext_resource type="Texture2D" uid="uid://dqa7pwb1abd5o" path="res://Sprites/Townie/Townie_Joke_Into_0100.png" id="79_tlfx2"]
 [ext_resource type="Texture2D" uid="uid://doktg5ry4jugp" path="res://Sprites/Townie/Townie_Joke_Into_0101.png" id="80_a3bt8"]
+[ext_resource type="Texture2D" uid="uid://brn4bije4l1nd" path="res://Sprites/Townie/Cultist_Attack_Into_0125.png" id="80_h3hqf"]
 [ext_resource type="Texture2D" uid="uid://dua00jd2t46rs" path="res://Sprites/Townie/TownieFanatic_Walk_0044.png" id="80_ihxu6"]
 [ext_resource type="Texture2D" uid="uid://bfj37umfjx43w" path="res://Sprites/Player/Player_Joke_Into_0076.png" id="80_k4w3g"]
 [ext_resource type="Texture2D" uid="uid://cwdjtwt162oxv" path="res://Sprites/Townie/Townie_Joke_Into_0102.png" id="81_0rys6"]
 [ext_resource type="Texture2D" uid="uid://dtwyke138nipw" path="res://Sprites/Townie/TownieFanatic_Walk_0045.png" id="81_7w3e2"]
 [ext_resource type="Texture2D" uid="uid://7q5vpqm4ptvy" path="res://Sprites/Player/Player_Joke_Into_0077.png" id="81_sy1aa"]
+[ext_resource type="Texture2D" uid="uid://q45gqwu0o0c2" path="res://Sprites/Townie/Cultist_Attack_Into_0126.png" id="81_v7gq2"]
 [ext_resource type="Texture2D" uid="uid://cx0dfwrkee74e" path="res://Sprites/Townie/Townie_Joke_Into_0103.png" id="82_2rk60"]
 [ext_resource type="Texture2D" uid="uid://r0wa1aj6m7ga" path="res://Sprites/Player/Player_Joke_Into_0078.png" id="82_a80y2"]
+[ext_resource type="Texture2D" uid="uid://b4hxtxunk8k5o" path="res://Sprites/Townie/Cultist_Attack_Into_0127.png" id="82_gt83m"]
 [ext_resource type="Texture2D" uid="uid://d27xtpnvsgt6j" path="res://Sprites/Townie/TownieFanatic_Walk_0046.png" id="82_j0bqd"]
+[ext_resource type="Texture2D" uid="uid://1nne2wbq3jku" path="res://Sprites/Townie/Cultist_Attack_Into_0128.png" id="83_eod2w"]
 [ext_resource type="Texture2D" uid="uid://16lsp5papnqf" path="res://Sprites/Townie/TownieFanatic_Walk_0047.png" id="83_qp88d"]
 [ext_resource type="Texture2D" uid="uid://djf8uknfpbsn6" path="res://Sprites/Player/Player_Joke_Into_0079.png" id="83_r88pe"]
 [ext_resource type="Texture2D" uid="uid://dn4c810ar4e3n" path="res://Sprites/Townie/Townie_Joke_Into_0104.png" id="83_segf2"]
 [ext_resource type="Texture2D" uid="uid://dsulu315fqbu2" path="res://Sprites/Townie/TownieFanatic_Walk_0048.png" id="84_4bbyg"]
 [ext_resource type="Texture2D" uid="uid://c11v26eyofmx2" path="res://Sprites/Player/Player_Joke_Into_0080.png" id="84_7awk3"]
 [ext_resource type="Texture2D" uid="uid://bk0wsvnmhy1vq" path="res://Sprites/Townie/Townie_Joke_Into_0105.png" id="84_u838u"]
+[ext_resource type="Texture2D" uid="uid://ddg2qfvjana6j" path="res://Sprites/Townie/Cultist_Attack_Into_0129.png" id="84_x7nki"]
+[ext_resource type="Texture2D" uid="uid://bgsexp5tjx0dd" path="res://Sprites/Townie/Cultist_Attack_Into_0130.png" id="85_5c6qm"]
 [ext_resource type="Texture2D" uid="uid://bf8kb7jtfc2nl" path="res://Sprites/Townie/Townie_Joke_Into_0106.png" id="85_d6r4p"]
 [ext_resource type="Texture2D" uid="uid://cba8se6xgul5b" path="res://Sprites/Townie/TownieFanatic_Walk_0049.png" id="85_g0gx0"]
 [ext_resource type="Texture2D" uid="uid://isg176odmkdt" path="res://Sprites/Player/Player_Joke_Idle_0081.png" id="85_mwboi"]
 [ext_resource type="Texture2D" uid="uid://cxb8vkarsqd4s" path="res://Sprites/Townie/Townie_Joke_Into_0107.png" id="86_l7m2i"]
+[ext_resource type="Texture2D" uid="uid://bgasyt1pd024l" path="res://Sprites/Townie/Cultist_Attack_Into_0131.png" id="86_n64vs"]
 [ext_resource type="Texture2D" uid="uid://03tevkoo4ul3" path="res://Sprites/Townie/TownieFanatic_Walk_0050.png" id="86_t61qk"]
 [ext_resource type="Texture2D" uid="uid://c2br5748r4320" path="res://Sprites/Player/Player_Joke_Idle_0082.png" id="86_uq60p"]
 [ext_resource type="Texture2D" uid="uid://cq8rc16mxmtpa" path="res://Sprites/Townie/Townie_Joke_Into_0108.png" id="87_8uhby"]
 [ext_resource type="Texture2D" uid="uid://lon3rpq2viub" path="res://Sprites/Townie/TownieFanatic_Walk_0051.png" id="87_mgp6y"]
 [ext_resource type="Texture2D" uid="uid://dnwd7fn5iksty" path="res://Sprites/Player/Player_Joke_Idle_0083.png" id="87_niu2f"]
+[ext_resource type="Texture2D" uid="uid://shvfl40md3b2" path="res://Sprites/Townie/Cultist_Attack_Into_0132.png" id="87_u6hwx"]
+[ext_resource type="Texture2D" uid="uid://c7mv4c1eaemxs" path="res://Sprites/Townie/Cultist_Attack_Into_0133.png" id="88_dxs8y"]
 [ext_resource type="Texture2D" uid="uid://27c1pdvhftph" path="res://Sprites/Townie/TownieFanatic_Walk_0052.png" id="88_e66ha"]
 [ext_resource type="Texture2D" uid="uid://2t5oqrkbhga3" path="res://Sprites/Townie/Townie_Joke_Into_0109.png" id="88_rhat4"]
 [ext_resource type="Texture2D" uid="uid://cj2iprtrudnsh" path="res://Sprites/Player/Player_Joke_Idle_0084.png" id="88_vegdl"]
 [ext_resource type="Texture2D" uid="uid://wm7im806fwv8" path="res://Sprites/Townie/TownieFanatic_Walk_0053.png" id="89_4nrmg"]
 [ext_resource type="Texture2D" uid="uid://dle042a6u2a0a" path="res://Sprites/Player/Player_Joke_Idle_0085.png" id="89_6jnyt"]
 [ext_resource type="Texture2D" uid="uid://b3ouoyxbo53mi" path="res://Sprites/Townie/Townie_Joke_Into_0110.png" id="89_e0rof"]
+[ext_resource type="Texture2D" uid="uid://m2psecopt2nf" path="res://Sprites/Townie/Cultist_Attack_Into_0134.png" id="89_lx2xi"]
+[ext_resource type="Texture2D" uid="uid://d338n6kw1e3nh" path="res://Sprites/Townie/Cultist_Attack_Into_0135.png" id="90_5woow"]
 [ext_resource type="Texture2D" uid="uid://b2vj56kymo0op" path="res://Sprites/Player/Player_Joke_Idle_0086.png" id="90_h3vgp"]
 [ext_resource type="Texture2D" uid="uid://wyfh5qbfo4x4" path="res://Sprites/Townie/TownieFanatic_Walk_0054.png" id="90_nwqsu"]
 [ext_resource type="Texture2D" uid="uid://digydcdjt3y2f" path="res://Sprites/Townie/Townie_Joke_Into_0111.png" id="90_ruy8n"]
+[ext_resource type="Texture2D" uid="uid://c70kwba3d71oa" path="res://Sprites/Townie/Cultist_Attack_Into_0136.png" id="91_0oe2k"]
 [ext_resource type="Texture2D" uid="uid://on3jenahp2vj" path="res://Sprites/Player/Player_Joke_Idle_0087.png" id="91_472qj"]
 [ext_resource type="Texture2D" uid="uid://dub1816j3kx6f" path="res://Sprites/Townie/TownieFanatic_Walk_0055.png" id="91_ndcr6"]
 [ext_resource type="Texture2D" uid="uid://brk7cgph0vqhj" path="res://Sprites/Townie/Townie_Joke_Into_0112.png" id="91_xajs2"]
 [ext_resource type="Texture2D" uid="uid://cjftqwyxekth0" path="res://Sprites/Townie/TownieFanatic_Walk_0056.png" id="92_7hneo"]
 [ext_resource type="Texture2D" uid="uid://c1uwewct27dib" path="res://Sprites/Player/Player_Joke_Idle_0088.png" id="92_w1na3"]
+[ext_resource type="Texture2D" uid="uid://icxypi6x6pob" path="res://Sprites/Townie/Cultist_Attack_Into_0137.png" id="92_y7arn"]
 [ext_resource type="Texture2D" uid="uid://cxyjvc3gfgs4b" path="res://Sprites/Player/Player_Joke_Idle_0089.png" id="93_0ynq0"]
 [ext_resource type="Texture2D" uid="uid://dcaj1tg73br8t" path="res://Sprites/Townie/TownieFanatic_Walk_0057.png" id="93_dh3y4"]
+[ext_resource type="Texture2D" uid="uid://cqaqsi014sl7c" path="res://Sprites/Townie/Cultist_Attack_Into_0138.png" id="93_f6oym"]
 [ext_resource type="Texture2D" uid="uid://cnu0aihxuqfon" path="res://Sprites/Townie/TownieFanatic_Walk_0058.png" id="94_1q615"]
+[ext_resource type="Texture2D" uid="uid://djaq4ag47cbvw" path="res://Sprites/Townie/Cultist_Attack_Into_0139.png" id="94_7nsa6"]
 [ext_resource type="Texture2D" uid="uid://cfycb17i8eouy" path="res://Sprites/Player/Player_Joke_Idle_0090.png" id="94_xwupn"]
 [ext_resource type="Texture2D" uid="uid://gho61wn0btnq" path="res://Sprites/Townie/TownieFanatic_Walk_0059.png" id="95_4d7yp"]
+[ext_resource type="Texture2D" uid="uid://d3gksxwfcx27j" path="res://Sprites/Townie/Cultist_Attack_Into_0140.png" id="95_b6cwg"]
 [ext_resource type="Texture2D" uid="uid://drfhcgfs3guse" path="res://Sprites/Player/Player_Joke_Idle_0091.png" id="95_r4r02"]
 [ext_resource type="Texture2D" uid="uid://jf0eifcv6cho" path="res://Sprites/Townie/TownieFanatic_Walk_0060.png" id="96_68o25"]
 [ext_resource type="Texture2D" uid="uid://c17u6cbotnpl3" path="res://Sprites/Player/Player_Joke_Idle_0092.png" id="96_kcsao"]
+[ext_resource type="Texture2D" uid="uid://chjj65k20bkdj" path="res://Sprites/Townie/Cultist_Attack_Into_0141.png" id="96_swhkd"]
 [ext_resource type="Texture2D" uid="uid://bt4ceawx15a7f" path="res://Sprites/Player/Player_Joke_Idle_0093.png" id="97_d6mal"]
 [ext_resource type="Texture2D" uid="uid://bqvhdwa7kh1bp" path="res://Sprites/Townie/TownieFanatic_Walk_0061.png" id="97_lixgx"]
+[ext_resource type="Texture2D" uid="uid://bb0fth4ka0p8t" path="res://Sprites/Townie/Cultist_Attack_Into_0142.png" id="97_oyv4d"]
+[ext_resource type="Texture2D" uid="uid://bdyfgmhb1olt1" path="res://Sprites/Townie/Cultist_Attack_Into_0143.png" id="98_w42pe"]
 [ext_resource type="Texture2D" uid="uid://j7ntts6crj87" path="res://Sprites/Townie/TownieFanatic_Walk_0062.png" id="98_xad52"]
 [ext_resource type="Texture2D" uid="uid://h13opr6rad0e" path="res://Sprites/Player/Player_Joke_Idle_0094.png" id="98_yqjko"]
 [ext_resource type="Texture2D" uid="uid://blf0onaipdb5n" path="res://Sprites/Townie/TownieFanatic_Walk_0063.png" id="99_brnxu"]
 [ext_resource type="Texture2D" uid="uid://0hc75lkp7ecw" path="res://Sprites/Player/Player_Joke_Idle_0095.png" id="99_os30d"]
+[ext_resource type="Texture2D" uid="uid://bnfmsj6afy11y" path="res://Sprites/Townie/Cultist_Attack_Into_0144.png" id="99_qf1w4"]
 [ext_resource type="Texture2D" uid="uid://dvmk25b1k72e5" path="res://Sprites/Townie/TownieFanatic_Walk_0064.png" id="100_id14n"]
 [ext_resource type="Texture2D" uid="uid://b3yw5e1wveoay" path="res://Sprites/Player/Player_Joke_Idle_0096.png" id="100_k2q0k"]
+[ext_resource type="Texture2D" uid="uid://bolwwel4hmrni" path="res://Sprites/Townie/Cultist_Attack_Into_0145.png" id="100_ylecf"]
 [ext_resource type="Texture2D" uid="uid://ckwaudilqevbh" path="res://Sprites/Townie/TownieFanatic_Walk_0065.png" id="101_1frb4"]
 [ext_resource type="Texture2D" uid="uid://ducup3fgcmf5d" path="res://Sprites/Player/Player_Joke_Idle_0097.png" id="101_gmr4g"]
+[ext_resource type="Texture2D" uid="uid://by727dwyt4e3w" path="res://Sprites/Townie/Cultist_Attack_Into_0146.png" id="101_kifuk"]
+[ext_resource type="Texture2D" uid="uid://bmd2guwbo6xkf" path="res://Sprites/Townie/Cultist_Attack_Into_0147.png" id="102_6i0s4"]
 [ext_resource type="Texture2D" uid="uid://ddangptx5r5vv" path="res://Sprites/Player/Player_Joke_Idle_0098.png" id="102_87x6u"]
 [ext_resource type="Texture2D" uid="uid://dpe7ralmpi6g1" path="res://Sprites/Townie/TownieFanatic_Walk_0066.png" id="102_gwy64"]
 [ext_resource type="Texture2D" uid="uid://cxdhdxo0puapo" path="res://Sprites/Townie/TownieFanatic_Walk_0067.png" id="103_huqke"]
 [ext_resource type="Texture2D" uid="uid://c3fj1nb86grao" path="res://Sprites/Player/Player_Joke_Idle_0099.png" id="103_y8rau"]
+[ext_resource type="Texture2D" uid="uid://b30cb2up1n0nw" path="res://Sprites/Townie/Cultist_Attack_Into_0148.png" id="103_yh2rc"]
 [ext_resource type="Texture2D" uid="uid://bufrsjy2pikys" path="res://Sprites/Townie/TownieFanatic_Walk_0068.png" id="104_3agrp"]
 [ext_resource type="Texture2D" uid="uid://dotj28xqvc2ok" path="res://Sprites/Player/Player_Joke_Idle_0100.png" id="104_5c01g"]
+[ext_resource type="Texture2D" uid="uid://ffyop57fw26d" path="res://Sprites/Townie/Cultist_Attack_Into_0149.png" id="104_mkpvq"]
 [ext_resource type="Texture2D" uid="uid://k2xup0878407" path="res://Sprites/Player/Player_Joke_Idle_0101.png" id="105_72b0k"]
 [ext_resource type="Texture2D" uid="uid://ce6ppwtkg5nv0" path="res://Sprites/Townie/TownieFanatic_Walk_0069.png" id="105_a43ss"]
+[ext_resource type="Texture2D" uid="uid://7cfpwshmur1t" path="res://Sprites/Townie/Cultist_Attack_Into_0150.png" id="105_lls4g"]
 [ext_resource type="Texture2D" uid="uid://g8ew88wcswal" path="res://Sprites/Townie/TownieFanatic_Walk_0070.png" id="106_25agu"]
+[ext_resource type="Texture2D" uid="uid://cendobdtj2gy8" path="res://Sprites/Townie/Cultist_Attack_Into_0151.png" id="106_lohe8"]
 [ext_resource type="Texture2D" uid="uid://yax4axi8sd7a" path="res://Sprites/Player/Player_Joke_Idle_0102.png" id="106_nb5re"]
 [ext_resource type="Texture2D" uid="uid://dad6rrwkt618d" path="res://Sprites/Townie/TownieFanatic_Walk_0071.png" id="107_3mj47"]
+[ext_resource type="Texture2D" uid="uid://brda0vm1q3t0b" path="res://Sprites/Townie/Cultist_Attack_Into_0152.png" id="107_73rij"]
 [ext_resource type="Texture2D" uid="uid://bjhdt8g2rlmjc" path="res://Sprites/Player/Player_Joke_Idle_0103.png" id="107_ekv84"]
+[ext_resource type="Texture2D" uid="uid://d0wcqueee4pmf" path="res://Sprites/Townie/Cultist_Attack_Into_0153.png" id="108_8rqaf"]
 [ext_resource type="Texture2D" uid="uid://c8sw2hdktvvea" path="res://Sprites/Townie/TownieFanatic_Walk_0072.png" id="108_dxr8g"]
 [ext_resource type="Texture2D" uid="uid://c7bwl2i5s5l2o" path="res://Sprites/Player/Player_Joke_Idle_0104.png" id="108_uumpv"]
 [ext_resource type="Texture2D" uid="uid://cnljdi76naf13" path="res://Sprites/Player/Player_Joke_Idle_0105.png" id="109_enhsa"]
+[ext_resource type="Texture2D" uid="uid://mkg8egyfexiq" path="res://Sprites/Townie/Cultist_Attack_Into_0154.png" id="109_holpu"]
 [ext_resource type="Texture2D" uid="uid://dhkksnbr4ph3p" path="res://Sprites/Townie/TownieFanatic_Walk_0073.png" id="109_n2c0u"]
+[ext_resource type="Texture2D" uid="uid://c5p5pwwlj0sbd" path="res://Sprites/Townie/Cultist_Attack_Into_0155.png" id="110_7wf4l"]
 [ext_resource type="Texture2D" uid="uid://qiisv4knkste" path="res://Sprites/Townie/TownieFanatic_Walk_0074.png" id="110_w4icj"]
 [ext_resource type="Texture2D" uid="uid://bofdgk7xhwngv" path="res://Sprites/Player/Player_Joke_Idle_0106.png" id="110_w8h6n"]
+[ext_resource type="Texture2D" uid="uid://b0fxw325jsrc1" path="res://Sprites/Townie/Cultist_Attack_Into_0156.png" id="111_2vx1i"]
 [ext_resource type="Texture2D" uid="uid://dke2pgm3ri8ga" path="res://Sprites/Townie/TownieFanatic_Walk_0075.png" id="111_cm50t"]
 [ext_resource type="Texture2D" uid="uid://c2uqw0x77do06" path="res://Sprites/Player/Player_Joke_Idle_0107.png" id="111_nkp6h"]
+[ext_resource type="Texture2D" uid="uid://b17mlicudxhkx" path="res://Sprites/Townie/Cultist_Attack_Into_0157.png" id="112_dgkbq"]
 [ext_resource type="Texture2D" uid="uid://d0h8ebh6qkal7" path="res://Sprites/Townie/TownieFanatic_Walk_0076.png" id="112_ds6yr"]
 [ext_resource type="Texture2D" uid="uid://dt7u2i2uviwlw" path="res://Sprites/Player/Player_Joke_Idle_0108.png" id="112_jqisg"]
 [ext_resource type="Texture2D" uid="uid://bsaxobt8h0wn8" path="res://Sprites/Player/Player_Joke_Idle_0109.png" id="113_iluo0"]
 [ext_resource type="Texture2D" uid="uid://dyr57xytw547y" path="res://Sprites/Townie/TownieFanatic_Walk_0077.png" id="113_ur10g"]
+[ext_resource type="Texture2D" uid="uid://bdjiit6a0hprp" path="res://Sprites/Townie/Cultist_Attack_Into_0158.png" id="113_w4cgi"]
 [ext_resource type="Texture2D" uid="uid://e4e36meu427f" path="res://Sprites/Player/Player_Joke_Idle_0110.png" id="114_6mrnq"]
 [ext_resource type="Texture2D" uid="uid://dv477756td6vu" path="res://Sprites/Townie/TownieFanatic_Walk_0078.png" id="114_7gtj4"]
+[ext_resource type="Texture2D" uid="uid://dqwwq0ag6l0ym" path="res://Sprites/Townie/Cultist_Attack_Into_0159.png" id="114_12utg"]
+[ext_resource type="Texture2D" uid="uid://mal4d23b058i" path="res://Sprites/Townie/Cultist_Attack_Into_0160.png" id="115_2cl1y"]
 [ext_resource type="Texture2D" uid="uid://ccaxlha1sr5j3" path="res://Sprites/Townie/TownieFanatic_Walk_0079.png" id="115_50jg3"]
 [ext_resource type="Texture2D" uid="uid://d2siywj6dkx42" path="res://Sprites/Player/Player_Joke_Idle_0111.png" id="115_hhxey"]
 [ext_resource type="Texture2D" uid="uid://d2iunx2v2v72a" path="res://Sprites/Townie/TownieFanatic_Walk_0080.png" id="116_2x3es"]
+[ext_resource type="Texture2D" uid="uid://1v1niil3xn0i" path="res://Sprites/Townie/Cultist_Attack_Into_0161.png" id="116_kljg5"]
 [ext_resource type="Texture2D" uid="uid://dkfpwbdlpbi10" path="res://Sprites/Player/Player_Joke_Idle_0112.png" id="116_ku7th"]
 [ext_resource type="Texture2D" uid="uid://c7qenfv2u1i2k" path="res://Sprites/Townie/TownieFanatic_WalkSlow_0019.png" id="117_tbys0"]
 [ext_resource type="Texture2D" uid="uid://btj7djhqq4li4" path="res://Sprites/Townie/TownieFanatic_WalkSlow_0020.png" id="118_yvyg5"]
@@ -806,6 +848,137 @@ animations = [{
 "loop": true,
 "name": &"Cultist_Walk",
 "speed": 35.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("75_fhk1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_c03iq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_68146")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_xb8rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_odmoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_h3hqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_v7gq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_gt83m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_eod2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_x7nki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_5c6qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_n64vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_u6hwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_dxs8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_lx2xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_5woow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_0oe2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_y7arn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_f6oym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_7nsa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_b6cwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_swhkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_oyv4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_w42pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_qf1w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_ylecf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_kifuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_6i0s4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_yh2rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_mkpvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_lls4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_lohe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_73rij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_8rqaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_holpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_7wf4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_2vx1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_dgkbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_w4cgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_12utg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_2cl1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_kljg5")
+}],
+"loop": true,
+"name": &"Cultist_attack_Into",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -2724,8 +2897,9 @@ animation = &"new_animation"
 [node name="DeerBody" type="AnimatedSprite3D" parent="Body"]
 transform = Transform3D(1, -2.9956e-09, 5.48574e-20, 5.13759e-09, 1, 1.15023e-17, 1.52012e-19, 7.95026e-18, 1, -0.0179548, -3.59098e-05, -0.000895281)
 sprite_frames = SubResource("SpriteFrames_al0jc")
-animation = &"Goon_save_Idle"
+animation = &"Cultist_attack_Into"
 autoplay = "Player_Idle"
+frame_progress = 0.770417
 
 [node name="SpriteDirection" type="AnimationPlayer" parent="Body/DeerBody"]
 libraries = {
