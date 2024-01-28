@@ -1,6 +1,6 @@
 class_name Goon extends CharacterBody3D
 
-const SPEED = 4.0
+const SPEED = 3.5
 
 signal character_moved(velocity)
 signal character_stopped

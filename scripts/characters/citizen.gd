@@ -5,7 +5,7 @@ class_name Citizen extends CharacterBody3D
 @export var min_dull_life_roam_distance = 5.0
 @export var max_dull_life_roam_distance = 15.0
 @export var favour_generated_per_prayer = 1
-@export var seconds_between_favour_generation = 6
+@export var seconds_between_favour_generation = 4
 @export var seconds_between_defender_salary = 2
 
 class Target:
